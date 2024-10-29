@@ -8,18 +8,23 @@ html,
 body {
   height: 100%;
   font-family: Arial, sans-serif;
+  background-color: #e6f7ff;
 }
 .main-page-container {
-  background-color: #e6f7ff; /* Light blue background */
-  height: 50vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
 }
 .main-logo-container {
-  padding: 25px 50px 100px 50px;
-  background-color: #e6f7ff;
+  width: 100%;
+  margin-bottom: 10px;
+  float: left;
+
+  /* padding: 25px 50px 100px 50px; */
+  /* background-color: #e6f7ff; */
 }
 .main-logo {
   width: 130px;

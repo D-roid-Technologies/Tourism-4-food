@@ -5,7 +5,7 @@ import Home from "../UI/Pages/home/Home";
 import Login from "../UI/Pages/home/login/Login";
 import Main from "../UI/Pages/main/Main";
 
-const Index: React.FunctionComponent<RouterType> = ({ width }) => {
+const Index: React.FunctionComponent<RouterType> = () => {
   return (
     <BrowserRouter>
       <Routes>
