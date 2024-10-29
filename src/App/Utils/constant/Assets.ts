@@ -3,7 +3,7 @@ const Assets = {
     companyName: "Tourism For Food",
   },
   images: {
-    companyLogo: require("../../Assets/Images/t-logo.png"),
+    companyLogo: require("../../Assets/Images/Tourism-logo.png"),
     threeDots: require("../../Assets/Images/dots.png"),
   },
 };
