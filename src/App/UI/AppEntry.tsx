@@ -59,7 +59,7 @@ const AppEntry: React.FunctionComponent<AppEntryType> = ({ closeModal }) => {
         </div>
       )}
       <Index width={appWidth} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

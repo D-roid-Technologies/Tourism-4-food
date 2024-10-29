@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.main-page-container {
+  background-color: #e6f7ff; /* Light blue background */
+  height: 50vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-logo-container {
+  padding: 25px 50px 100px 50px;
+  background-color: #e6f7ff;
+}
+.main-logo {
+  width: 120px;
+  height: 120px; /* Set height equal to width for a perfect circle */
+  border: none;
+  object-fit: contain;
+  border-radius: 50%; /* Makes the element a circle */
+  background-color: #e0f2fa;
+  transition: transform 0.3s ease-in-out;
+}
+.main-logo:hover {
+  cursor: pointer;
+  border-color: #3498db;
+  transform: scale(1.05);
+}
+
+.main-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.main-page-content {
+  text-align: center;
+}
+
+.main-page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.main-button {
+  width: 600px;
+  padding: 27px;
+  margin: 10px 0;
+  background-color: #ff914d; /* Orange color for buttons */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-button:hover {
+  background-color: #f08442;
+  transform: scale(1.02);
+}
+
+.main-button-label {
+  flex-grow: 1;
+  text-align: center; /* Center the label text */
+}
+
+.ellipsis {
+  margin-left: 10px; /* Space between label and ellipsis */
+  font-size: 18px;
+}
