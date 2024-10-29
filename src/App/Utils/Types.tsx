@@ -8,7 +8,7 @@ export type AppEntryType = {
 };
 
 export type RouterType = {
-  width: number;
+  // width: number;
 };
 
 export type DimensionType = {

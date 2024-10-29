@@ -1,5 +1,7 @@
 import React from "react";
-import Navbar from "../../Components/navbar/NavBar";
+import Navbar from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
+import "../home/Home.css";
 
 const Home: React.FunctionComponent = () => {
   return (
@@ -8,7 +10,8 @@ const Home: React.FunctionComponent = () => {
         <div>
           <Navbar />
         </div>
-        <div>Home</div>
+        <div className="home-container">Home</div>
+        <Footer />
       </main>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../navbar/NavBar.css";
 import { Assets } from "../../../Utils/constant/Assets";
+import { useNavigate } from "react-router-dom";
 
 interface MenuItem {
   title: string;
@@ -37,6 +38,7 @@ const menuItems: MenuItem[] = [
 ];
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const handleMouseEnter = (menu: string) => {
@@ -49,7 +51,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
+      <div className="navbar-logo" onClick={() => navigate("/")}>
         <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
       </div>
       <ul className="navbar-menu">
