@@ -7,7 +7,7 @@ import { RootState, store } from "../Redux/Store";
 import { addHeight, addWidth } from "../Redux/slices/Dimension";
 import { useSelector } from "react-redux";
 import { updateModal } from "../Redux/slices/AppEntrySlice";
-import Footer from "./components/footer/Footer";
+import Footer from "./Components/footer/Footer";
 
 const AppEntry: React.FunctionComponent<AppEntryType> = ({ closeModal }) => {
   const appEntry = useSelector((state: RootState) => state.appEntry);

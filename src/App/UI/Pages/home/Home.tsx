@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/navbar/NavBar";
+import Navbar from "../../Components/navbar/NavBar";
 
 const Home: React.FunctionComponent = () => {
   return (
