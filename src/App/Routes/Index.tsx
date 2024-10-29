@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import WelcomePage from "../UI/Pages/WelcomePage";
+import { RouterType } from "../Utils/Types";
+import Home from "../UI/Pages/home/Home";
 
-const Index: React.FunctionComponent = () => {
+const Index: React.FunctionComponent<RouterType> = ({ width }) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<WelcomePage />} />
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/aboutus" element={<AboutUs />} /> */}
       </Routes>
     </BrowserRouter>
   );
