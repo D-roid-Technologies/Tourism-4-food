@@ -22,8 +22,8 @@ body {
   background-color: #e6f7ff;
 }
 .main-logo {
-  width: 120px;
-  height: 120px; /* Set height equal to width for a perfect circle */
+  width: 130px;
+  height: 130px; /* Set height equal to width for a perfect circle */
   border: none;
   object-fit: contain;
   border-radius: 50%; /* Makes the element a circle */
@@ -54,7 +54,7 @@ body {
 
 .main-button {
   width: 600px;
-  padding: 27px;
+  padding: 26px;
   margin: 10px 0;
   background-color: #ff914d; /* Orange color for buttons */
   color: white;

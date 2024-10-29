@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navbar/NavBar";
-import "../home/Home.css";
 import Footer from "../../components/footer/Footer";
+import "../home/Home.css";
 
 const Home: React.FunctionComponent = () => {
   return (
