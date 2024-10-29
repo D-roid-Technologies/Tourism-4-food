@@ -12,7 +12,8 @@ const Main: React.FC = () => {
         <img
           src={Assets.images.companyLogo}
           alt="Tourism4Food Logo"
-          onClick={() => navigate("/")}
+          // onClick={() => navigate("/")}
+          onClick={() => (window.location.href = "")}
           className="main-logo"
         />
       </div>
