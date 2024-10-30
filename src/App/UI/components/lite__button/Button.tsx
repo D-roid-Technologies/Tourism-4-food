@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const buttonClass = `button ${
-    variant === "blur" ? "button--blur" : ""
+    variant === "blur" ? "button__blur" : ""
   } ${className}`;
 
   return href ? (

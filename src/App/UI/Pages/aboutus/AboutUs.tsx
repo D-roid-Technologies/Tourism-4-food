@@ -150,40 +150,31 @@ const AboutUs: React.FC = () => {
         <div className="about__achievements">
           <h2>Our Achievements</h2>
         </div>
-        <section
-          className="p-5 about__achievements__section"
-          style={{
-            width: "100%",
-            backgroundColor: "#001525",
-            height: "550px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "0 20px",
-          }}
-        >
-          <div className="center__content">
-            <span>Picture and Description of Achievements</span>
-            <Button
-              variant="blur"
-              label="Learn More"
-              style={{ marginTop: "20px" }}
-            />
-          </div>
-          <div className="learn-more-button">
-            <Button
-              style={{
-                height: "70px",
-                width: "70px",
-                borderRadius: "50%",
-                color: "#ff914d",
-                padding: "0",
-                // fontSize: "26px",
-              }}
-              variant="blur"
-            >
-              <IoIosArrowForward />{" "}
-            </Button>
+        <section className="about__achievements__section">
+          <div className="cover">
+            <div className="center__content">
+              <span>Picture and Description of Achievements</span>
+              <Button
+                variant="blur"
+                label="Learn More"
+                style={{ marginTop: "20px" }}
+              />
+            </div>
+            <div className="learn-more-button">
+              <Button
+                style={{
+                  height: "70px",
+                  width: "70px",
+                  borderRadius: "50%",
+                  color: "#ff914d",
+                  padding: "0",
+                  // fontSize: "26px",
+                }}
+                variant="blur"
+              >
+                <IoIosArrowForward />{" "}
+              </Button>
+            </div>
           </div>
         </section>
         <div className="about__achievements">
@@ -207,8 +198,12 @@ const AboutUs: React.FC = () => {
                       src={team.teamImage}
                       alt={team.teamName}
                     />
-                    <h2 style={{ color: "#333333" }}>{team.teamName}</h2>
-                    <p style={{ color: "#666666" }}>{team.teamPosition}</p>
+                    <h2 className="mt-3" style={{ color: "#333333" }}>
+                      {team.teamName}
+                    </h2>
+                    <p style={{ color: "#666666", marginTop: "-6px" }}>
+                      {team.teamPosition}
+                    </p>
                   </div>
                 </div>
               );
@@ -230,7 +225,7 @@ const AboutUs: React.FC = () => {
               {/* Display partner logos and links */}
             </h4>
             <div className="button__group mt-5">
-              <Button label="Become An Partners" />
+              <Button label="Become a Partners" />
             </div>
           </div>
         </div>
