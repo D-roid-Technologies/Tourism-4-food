@@ -1,11 +1,15 @@
 .footer {
+  background-color: #f9f9f9;
+  color: #001525;
+  font-family: Arial, sans-serif;
+  padding: 50px 0;
+  border-top: 2px solid black;
+}
+.footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #f9f9f9;
-  color: #333;
-  font-family: Arial, sans-serif;
+  padding: 0 100px;
 }
 
 .footer-section {
@@ -15,8 +19,9 @@
 }
 
 .footer-section h4 {
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  color: #001525;
+  margin-bottom: 10px;
 }
 
 .footer-section ul {
@@ -38,30 +43,40 @@
 }
 
 .footer-language a {
-  color: #333;
+  color: #001525;
   text-decoration: none;
   font-size: 16px;
 }
 
 .footer-subscribe {
-  min-width: 200px;
+  min-width: 420px;
 }
 
 .footer-subscribe h4 {
   font-size: 16px;
-  color: #333;
+  color: #001525;
 }
 
 .footer-subscribe form {
   display: flex;
   flex-direction: column;
+  padding: 30px 30px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.input-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
 }
 
 .footer-subscribe input {
   padding: 8px;
-  margin: 5px 0;
+  margin: 15px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: #d2cfcf;
 }
 
 .footer-subscribe button {
@@ -71,6 +86,11 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centers the button horizontally */
+  display: block; /* Centers block elements with margin auto */
 }
 
 .footer-subscribe button:hover {
@@ -78,21 +98,24 @@
 }
 
 .footer-bottom {
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .footer-bottom p,
 .footer-bottom a {
   margin: 5px 0;
-  font-size: 12px;
-  color: #333;
+  font-size: 13px;
+  color: #001525;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 .footer-bottom a {
-  text-decoration: none;
-  color: #f17c1b;
+  /* text-decoration: none; */
+  color: #001525;
 }
 
 .footer-bottom a:hover {

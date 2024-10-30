@@ -11,7 +11,7 @@ body {
   background-color: #e6f7ff;
 }
 .main-page-container {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,5 +85,5 @@ body {
 
 .ellipsis {
   margin-left: 10px; /* Space between label and ellipsis */
-  font-size: 18px;
+  font-size: 22px;
 }
