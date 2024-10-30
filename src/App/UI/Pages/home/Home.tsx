@@ -39,27 +39,31 @@ const Home: React.FunctionComponent = () => {
         />
       </div>
       {/* get involved section */}
-      <div className="get-involved-container">
-        <h2>Get Involved</h2>
-        <p>Join us in harnessing the power of food to nourish the world.</p>
-        <div className="actions">
-          <div className="action-item">
-            <span role="img" aria-label="Donate">
-              <img src={Assets.images.homeDonateImage} alt="helping hands" />
-            </span>
-            <a href="#donate">Donate</a>
-          </div>
-          <div className="action-item">
-            <span role="img" aria-label="Volunteer">
-              <img src={Assets.images.homeDonateImage} alt="helping hands" />
-            </span>
-            <a href="#volunteer">Volunteer</a>
-          </div>
-          <div className="action-item">
-            <span role="img" aria-label="Partner">
-              <img src={Assets.images.homeDonateImage} alt="helping hands" />
-            </span>
-            <a href="#partner">Partner with Us</a>
+      <div className="get-involved-main-cont">
+        <div className="get-involved-container">
+          <h2>Get Involved</h2>
+          <p>
+            Join us in harnessing the power of food to <br /> nourish the world.
+          </p>
+          <div className="actions">
+            <div className="action-item">
+              <span role="img" aria-label="Donate">
+                <img src={Assets.images.homeDonateImage} alt="helping hands" />
+              </span>
+              <a href="#donate">Donate</a>
+            </div>
+            <div className="action-item">
+              <span role="img" aria-label="Volunteer">
+                <img src={Assets.images.homeDonateImage} alt="helping hands" />
+              </span>
+              <a href="#volunteer">Volunteer</a>
+            </div>
+            <div className="action-item">
+              <span role="img" aria-label="Partner">
+                <img src={Assets.images.homeDonateImage} alt="helping hands" />
+              </span>
+              <a href="#partner">Partner with Us</a>
+            </div>
           </div>
         </div>
       </div>
