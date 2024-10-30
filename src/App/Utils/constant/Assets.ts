@@ -8,6 +8,7 @@ const Assets = {
     homeHeroImage: require("../../Assets/Images/home-hero-image.png"),
     homeEatChallenge: require("../../Assets/Images/eat-challenge.png"),
     homeDonateImage: require("../../Assets/Images/home-donate-image.png"),
+    travelBag: require("../../Assets/Images/Cartoon style traveling concept with baggage.png"),
   },
 };
 

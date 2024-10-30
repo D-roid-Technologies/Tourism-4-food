@@ -67,6 +67,33 @@ const Home: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
+      {/* Liberian school lunch */}
+      <div className="liberian-banner">
+        <div className="liberian-overlay">
+          <h1 className="liberian-header">
+            The Liberia School Lunch Challenge
+          </h1>
+          <p className="liberian-details">
+            Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt.
+          </p>
+          <button className="liberia-learn-more-button">Learn More</button>
+        </div>
+      </div>
+      {/* BookingCard section */}
+      <div className="booking-card-container">
+        <div className="booking-card">
+          <div className="booking-content">
+            <h2>
+              Enjoy Seamless booking services and travel wherever you want
+            </h2>
+            <button className="booking-button">Book now</button>
+          </div>
+          <div className="booking-image">
+            <img src={Assets.images.travelBag} alt="Travel bags" />
+          </div>
+        </div>
+      </div>
       <Footer />
     </main>
   );

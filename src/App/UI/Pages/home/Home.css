@@ -41,7 +41,8 @@
 }
 
 .explore-btn {
-  background-color: #ffa726;
+  background-color: #ff7043;
+  /* background-color: #ffa726; */
   border: none;
   color: white;
 }
@@ -111,8 +112,109 @@
   font-weight: bold;
   margin-top: 5px;
   font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .action-item a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  transform: scale(1.02);
+}
+/* liberian school lunch */
+.liberian-banner {
+  /* background-image: url("/path/to/liberia-flag.jpg"); */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.liberian-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Creates a semi-transparent overlay */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.liberian-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.liberian-details {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.liberia-learn-more-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.liberia-learn-more-button:hover {
+  background-color: #e64a19;
+}
+
+/* BookingCard.css */
+.booking-card-container {
+  padding: 100px 100px;
+}
+.booking-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #50b1e9 0%, #3f85a2 99%);
+  padding: 0 0;
+  border-radius: 12px;
+  /* max-width: 600px; */
+  margin: 0 auto;
+}
+
+.booking-content {
+  flex: 1;
+  padding-left: 50px;
+}
+
+.booking-content h2 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  line-height: 60px;
+}
+
+.booking-button {
+  padding: 12px 45px;
+  background-color: #ffffff;
+  color: #ff5722;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 3em;
+  transition: transform 0.3s ease-in-out;
+}
+.booking-button:hover {
+  transform: scale(1.05);
+}
+.booking-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-image img {
+  max-width: 100%;
+  height: 570px;
 }
