@@ -1,3 +1,115 @@
-.home-container {
-  margin-bottom: 15em;
+/* HeroSection.css */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 40px; */
+  background-color: #f9f9f9;
+  margin-bottom: 150px;
+}
+
+.home-hero-content {
+  max-width: 50%;
+  margin-left: 40px;
+}
+
+.home-hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 65px;
+}
+
+.home-hero-subtitle {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.home-hero-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn {
+  background-color: #ffa726;
+  border: none;
+  color: white;
+}
+
+.book-btn {
+  background-color: #ff7043;
+  border: none;
+  color: white;
+}
+
+.home-hero-image img {
+  width: 100%;
+  max-width: 700px;
+}
+.eat-challenge-video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  /* height: auto; */
+}
+/* get involved section */
+/* GetInvolved.css */
+
+.get-involved-container {
+  background: linear-gradient(to bottom, #7ec9e3, #c7e7b4);
+  padding: 100px 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.get-involved-container h2 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.get-involved-container p {
+  color: #ff914d;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  /* font-size: 25px;
+  color: #ff914d; */
+  margin: 30px 0 50px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  gap: 30px;
+}
+
+.action-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.action-item a:hover {
+  text-decoration: underline;
 }
