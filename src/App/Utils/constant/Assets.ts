@@ -10,6 +10,11 @@ const Assets = {
     aboutHistoryImage: require("../../Assets/Images/about__history.png"),
     ceoDummy: require("../../Assets/Images/CEO.png"),
     dooDummy: require("../../Assets/Images/DOO.png"),
+    coomeEatImage: require("../../Assets/Images/come__eat__image.png"),
+    coachMe: require("../../Assets/Images/coach__me.png"),
+    bridgeBuilders: require("../../Assets/Images/bridge__builders.png"),
+    volunteerCorp: require("../../Assets/Images/volunteer__corp.png"),
+    ourPartnerships: require("../../Assets/Images/our__partnerships.png"),
   },
 };
 
