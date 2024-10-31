@@ -1,3 +1,233 @@
-.home-container {
-  margin-bottom: 15em;
+/* HeroSection.css */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 40px; */
+  background-color: #f9f9f9;
+  margin-bottom: 150px;
+}
+
+.home-hero-content {
+  max-width: 50%;
+  margin-left: 40px;
+}
+
+.home-hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 65px;
+}
+
+.home-hero-subtitle {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.home-hero-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn {
+  background-color: #ff7043;
+  /* background-color: #ffa726; */
+  border: none;
+  color: white;
+}
+
+.book-btn {
+  background-color: #ff7043;
+  border: none;
+  color: white;
+}
+
+.home-hero-image img {
+  width: 100%;
+  max-width: 700px;
+}
+.eat-challenge-video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  /* height: auto; */
+}
+/* get involved section */
+/* GetInvolved.css */
+.get-involved-main-cont {
+  padding: 100px 100px;
+}
+.get-involved-container {
+  background: linear-gradient(to bottom, #7ec9e3, #c7e7b4);
+  padding: 100px 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.get-involved-container h2 {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.get-involved-container p {
+  color: #ff914d;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  /* font-size: 25px;
+  color: #ff914d; */
+  margin: 40px 0 50px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  gap: 30px;
+}
+
+.donate-home-details {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.donate-home-details:hover {
+  text-decoration: none;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+/* liberian school lunch */
+.liberian-banner {
+  background-image: url("../../../Assets/Images/liberian-flag.png");
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.liberian-overlay {
+  /* background-color: rgba(0, 0, 0, 0.5); Creates a semi-transparent overlay */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* border-radius: 8px; */
+}
+
+.liberian-header {
+  color: #f0f0f0;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.liberian-details {
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+
+.liberia-learn-more-button {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff914d;
+  padding: 18px 50px;
+  border-radius: 15.822px;
+  background: rgba(255, 145, 77, 0.1);
+  box-shadow: 8.781px -8.781px 8.781px 0px rgba(194, 110, 59, 0.1) inset,
+    -8.781px 8.781px 8.781px 0px rgba(255, 255, 255, 0.1) inset;
+  /* backdrop-filter: blur(8.781266212463379px); */
+  transition: background-color 0.3s ease;
+}
+
+.liberia-learn-more-button:hover {
+  background-color: #e64a19;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* BookingCard.css */
+.booking-card-container {
+  padding: 100px 100px;
+}
+.booking-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #50b1e9 0%, #3f85a2 99%);
+  padding: 0 0;
+  border-radius: 12px;
+  /* max-width: 600px; */
+  margin: 0 auto;
+}
+
+.booking-content {
+  flex: 1;
+  padding-left: 50px;
+}
+
+.booking-content h2 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  line-height: 60px;
+  letter-spacing: 2px;
+}
+
+.booking-button {
+  padding: 15px 50px;
+  background-color: #ffffff;
+  color: #ff5722;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 3em;
+  transition: transform 0.3s ease-in-out;
+}
+.booking-button:hover {
+  transform: scale(1.05);
+}
+.booking-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.booking-image img {
+  max-width: 150%;
+  height: 570px;
 }

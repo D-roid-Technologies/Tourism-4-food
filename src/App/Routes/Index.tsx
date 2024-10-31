@@ -5,6 +5,7 @@ import Home from "../UI/Pages/home/Home";
 import AboutUs from "../UI/Pages/aboutus/AboutUs";
 import Login from "../UI/Pages/home/login/Login";
 import Main from "../UI/Pages/main/Main";
+import Donate from "../UI/Pages/donate/Donate";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -13,6 +14,7 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>

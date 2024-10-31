@@ -14,7 +14,7 @@ body {
   background-color: #e6f7ff;
 }
 .main-page-container {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,6 +96,9 @@ body {
 
 .ellipsis {
   margin-left: 10px; /* Space between label and ellipsis */
+<<<<<<< HEAD
+  font-size: 22px;
+=======
   font-size: 18px;
   transform: rotate(90deg);
 }
@@ -116,4 +119,5 @@ body {
     top: 2%;
     left: 2%;
   }
+>>>>>>> 70de00b52bae128e5f4dc8cb5d3e3470b1676213
 }
