@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,8 @@
 html,
 body {
   height: 100%;
-  font-family: Arial, sans-serif;
+  /* added font poppins as seen on figma  */
+  font-family: "Poppins", sans-serif;
   background-color: #e6f7ff;
 }
 .main-page-container {
@@ -19,16 +22,19 @@ body {
   padding: 0 20px;
 }
 .main-logo-container {
-  width: 100%;
+  /* width: 100%;
   margin-bottom: 10px;
-  float: left;
-
+  float: left; */
+  /*Style to position logo at the top left of the app*/
+  position: absolute;
+  top: 5%;
+  left: 5%;
   /* padding: 25px 50px 100px 50px; */
   /* background-color: #e6f7ff; */
 }
 .main-logo {
-  width: 130px;
-  height: 130px; /* Set height equal to width for a perfect circle */
+  width: 110px;
+  height: 110px; /* Set height equal to width for a perfect circle */
   border: none;
   object-fit: contain;
   border-radius: 50%; /* Makes the element a circle */
@@ -42,10 +48,15 @@ body {
 }
 
 .main-app {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 50vh; */
+  /*Style to position the main app content at the center of the app*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .main-page-content {
@@ -85,5 +96,28 @@ body {
 
 .ellipsis {
   margin-left: 10px; /* Space between label and ellipsis */
+<<<<<<< HEAD
   font-size: 22px;
+=======
+  font-size: 18px;
+  transform: rotate(90deg);
+}
+
+/* responsiveness  */
+@media (max-width: 576px) {
+  .main-app {
+    width: 97%;
+  }
+  .main-button {
+    width: 100%;
+  }
+  .main-logo {
+    width: 90px;
+    height: 90px;
+  }
+  .main-logo-container {
+    top: 2%;
+    left: 2%;
+  }
+>>>>>>> 70de00b52bae128e5f4dc8cb5d3e3470b1676213
 }

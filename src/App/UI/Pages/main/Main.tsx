@@ -1,6 +1,6 @@
 import React from "react";
 import "../main/Main.css";
-import LandingButton from "../../components/landingbutton/LandingButton";
+import LandingButton from "../../Components/landingbutton/LandingButton";
 import { Assets } from "../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,8 @@ const Main: React.FC = () => {
         <img
           src={Assets.images.companyLogo}
           alt="Tourism4Food Logo"
-          onClick={() => navigate("/")}
+          // onClick={() => navigate("/")}
+          onClick={() => (window.location.href = "")}
           className="main-logo"
         />
       </div>
