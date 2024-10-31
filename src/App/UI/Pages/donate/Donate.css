@@ -1,0 +1,128 @@
+.donate-hero-section {
+  background-image: url("../../../Assets//Images//donate-hero-image.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.donate-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+}
+
+.donate-overlay {
+  position: relative; /* Keeps the text above the overlay */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* border-radius: 8px; */
+}
+
+.donate-header {
+  color: #f0f0f0;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.donate-details {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+/* FORM SECTION */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+.donation-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.donation-option {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.donation-option:hover {
+  background-color: #e0e0e0;
+}
+
+.donation-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #ffa500;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #ff8c00;
+}

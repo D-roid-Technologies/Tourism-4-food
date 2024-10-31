@@ -172,7 +172,7 @@ const AboutUs: React.FC = () => {
                 }}
                 variant="blur"
               >
-                <IoIosArrowForward />{" "}
+                <IoIosArrowForward />
               </Button>
             </div>
           </div>
