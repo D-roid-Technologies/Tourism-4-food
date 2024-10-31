@@ -14,11 +14,8 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
         <Route path="/donate" element={<Donate />} />
-=======
         <Route path="/about-us" element={<AboutUs />} />
->>>>>>> 70de00b52bae128e5f4dc8cb5d3e3470b1676213
       </Routes>
     </BrowserRouter>
   );
