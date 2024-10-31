@@ -3,8 +3,10 @@ import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import "../home/Home.css";
 import { Assets } from "../../../Utils/constant/Assets";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FunctionComponent = () => {
+  const navigate = useNavigate();
   return (
     <main>
       <div>
@@ -50,19 +52,37 @@ const Home: React.FunctionComponent = () => {
               <span role="img" aria-label="Donate">
                 <img src={Assets.images.homeDonateImage} alt="helping hands" />
               </span>
-              <a href="#donate">Donate</a>
+              {/* <a href="#donate">Donate</a> */}
+              <span
+                onClick={() => navigate("/donate")}
+                className="donate-home-details"
+              >
+                Donate
+              </span>
             </div>
             <div className="action-item">
               <span role="img" aria-label="Volunteer">
                 <img src={Assets.images.homeDonateImage} alt="helping hands" />
               </span>
-              <a href="#volunteer">Volunteer</a>
+              {/* <a href="#volunteer">Volunteer</a> */}
+              <span
+                onClick={() => navigate("")}
+                className="donate-home-details"
+              >
+                Volunteer
+              </span>
             </div>
             <div className="action-item">
               <span role="img" aria-label="Partner">
                 <img src={Assets.images.homeDonateImage} alt="helping hands" />
               </span>
-              <a href="#partner">Partner with Us</a>
+              {/* <a href="#partner">Partner with Us</a> */}
+              <span
+                onClick={() => navigate("")}
+                className="donate-home-details"
+              >
+                Partner with Us
+              </span>
             </div>
           </div>
         </div>
@@ -71,7 +91,8 @@ const Home: React.FunctionComponent = () => {
       <div className="liberian-banner">
         <div className="liberian-overlay">
           <h1 className="liberian-header">
-            The Liberia School Lunch Challenge
+            The Liberia School Lunch <br />
+            Challenge
           </h1>
           <p className="liberian-details">
             Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh

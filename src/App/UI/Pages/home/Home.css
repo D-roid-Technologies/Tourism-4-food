@@ -106,7 +106,7 @@
   gap: 30px;
 }
 
-.action-item a {
+.donate-home-details {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
@@ -115,16 +115,17 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.action-item a:hover {
+.donate-home-details:hover {
   text-decoration: none;
   transform: scale(1.02);
+  cursor: pointer;
 }
 /* liberian school lunch */
 .liberian-banner {
-  /* background-image: url("/path/to/liberia-flag.jpg"); */
+  background-image: url("../../../Assets/Images/liberian-flag.png");
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,37 +133,48 @@
 }
 
 .liberian-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Creates a semi-transparent overlay */
+  /* background-color: rgba(0, 0, 0, 0.5); Creates a semi-transparent overlay */
   text-align: center;
   color: white;
   padding: 20px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .liberian-header {
-  font-size: 2rem;
-  font-weight: bold;
+  color: #f0f0f0;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   margin-bottom: 10px;
 }
 
 .liberian-details {
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .liberia-learn-more-button {
-  background-color: #ff5722;
-  color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff914d;
+  padding: 18px 50px;
+  border-radius: 15.822px;
+  background: rgba(255, 145, 77, 0.1);
+  box-shadow: 8.781px -8.781px 8.781px 0px rgba(194, 110, 59, 0.1) inset,
+    -8.781px 8.781px 8.781px 0px rgba(255, 255, 255, 0.1) inset;
+  /* backdrop-filter: blur(8.781266212463379px); */
   transition: background-color 0.3s ease;
 }
 
 .liberia-learn-more-button:hover {
   background-color: #e64a19;
+  color: #ffffff;
+  transform: scale(1.02);
 }
 
 /* BookingCard.css */
@@ -192,10 +204,11 @@
   font-weight: 600;
   line-height: normal;
   line-height: 60px;
+  letter-spacing: 2px;
 }
 
 .booking-button {
-  padding: 12px 45px;
+  padding: 15px 50px;
   background-color: #ffffff;
   color: #ff5722;
   border: none;
@@ -211,10 +224,10 @@
 .booking-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .booking-image img {
-  max-width: 100%;
+  max-width: 150%;
   height: 570px;
 }
