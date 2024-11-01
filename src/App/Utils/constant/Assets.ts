@@ -20,6 +20,9 @@ const Assets = {
     bridgeBuilders: require("../../Assets/Images/bridge__builders.png"),
     volunteerCorp: require("../../Assets/Images/volunteer__corp.png"),
     ourPartnerships: require("../../Assets/Images/our__partnerships.png"),
+    bookingsCardOne: require("../../Assets/Images/3d icon for traveling and vacation.png"),
+    bookingsCardTwo: require("../../Assets/Images/Work team digital art.png"),
+    mobileArt: require("../../Assets/Images/Mobile app location digital art.png"),
   },
 };
 

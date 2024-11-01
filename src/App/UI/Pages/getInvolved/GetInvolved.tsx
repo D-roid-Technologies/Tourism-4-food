@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import "../../components/liteGrid@v1.0/lite-grid.css";
-import Button from "../../components/lite__button/Button";
+import Button from "../../components/button/Button";
 import "../getInvolved/GetInvolved.css";
 import { Assets } from "../../../Utils/constant/Assets";
 
@@ -83,7 +83,7 @@ const GetInvolved: React.FC = () => {
         </div>
         <section className="wrapper get__involved__section">
           <div className="cover">
-            <div className="center__content">
+            <div className="get__involved__center__content">
               <span>donate</span>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
@@ -98,7 +98,7 @@ const GetInvolved: React.FC = () => {
         <br />
         <section className="wrapper get__involved__section__alt">
           <div className="cover">
-            <div className="center__content">
+            <div className="get__involved__center__content">
               <span>CORPORATE ENGAGEMENT</span>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
