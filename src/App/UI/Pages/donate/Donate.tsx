@@ -51,140 +51,144 @@ const Donate: React.FunctionComponent = () => {
           </div>
         </div>
         {/* FORM SECTION */}
-        <div className="container">
-          <h1>Donate to Tourism4Food</h1>
-          <p>Help us provide fresh meals to communities in need</p>
-          <div className="donation-options">
-            <button className="donation-option">One-time donation</button>
-            <button className="donation-option">Monthly</button>
+        <div className="donate-form-container">
+          <div className="container">
+            <h1 className="t-donate-heading">Donate to Tourism4Food</h1>
+            <p className="t-donate-details">
+              Help us provide fresh meals to communities in need
+            </p>
+            <div className="donation-options">
+              <button className="donation-option">One-time donation</button>
+              <button className="donation-option-two">Monthly</button>
+            </div>
+            <form onSubmit={handleSubmit} className="donation-form">
+              <div className="form-group">
+                <label className="form-group-heading">Your Information</label>
+                <select
+                  name="title"
+                  onChange={handleChange}
+                  value={formData.title}
+                >
+                  <option value="">Suffix</option>
+                  <option value="Mr">Mr.</option>
+                  <option value="Ms">Ms.</option>
+                  <option value="Mrs">Mrs.</option>
+                  <option value="Dr">Dr.</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={handleChange}
+                  value={formData.firstName}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="middleName"
+                  placeholder="Middle Name"
+                  onChange={handleChange}
+                  value={formData.middleName}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={handleChange}
+                  value={formData.lastName}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                  value={formData.email}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="gender"
+                  placeholder="Gender"
+                  onChange={handleChange}
+                  value={formData.gender}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Address"
+                  onChange={handleChange}
+                  value={formData.address}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="postalCode"
+                  placeholder="Postal Code"
+                  onChange={handleChange}
+                  value={formData.postalCode}
+                />
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  onChange={handleChange}
+                  value={formData.city}
+                />
+              </div>
+              <div className="form-group">
+                <select
+                  name="country"
+                  onChange={handleChange}
+                  value={formData.country}
+                >
+                  <option value="">Country</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="UK">UK</option>
+                  {/* Add more countries as needed */}
+                </select>
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  onChange={handleChange}
+                  value={formData.phoneNumber}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="donationAmount"
+                  placeholder="Donation Amount"
+                  onChange={handleChange}
+                  value={formData.donationAmount}
+                />
+              </div>
+              <div className="form-group agreement">
+                <input
+                  type="checkbox"
+                  name="agreement"
+                  onChange={handleChange}
+                  checked={formData.agreement}
+                />
+                <label>Yes, I agree to the Terms and Conditions</label>
+              </div>
+              <button type="submit" className="submit-button">
+                Donate
+              </button>
+            </form>
           </div>
-          <form onSubmit={handleSubmit} className="donation-form">
-            <div className="form-group">
-              <label>Title</label>
-              <select
-                name="title"
-                onChange={handleChange}
-                value={formData.title}
-              >
-                <option value="">Select</option>
-                <option value="Mr">Mr.</option>
-                <option value="Ms">Ms.</option>
-                <option value="Mrs">Mrs.</option>
-                <option value="Dr">Dr.</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                onChange={handleChange}
-                value={formData.firstName}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="middleName"
-                placeholder="Middle Name"
-                onChange={handleChange}
-                value={formData.middleName}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                onChange={handleChange}
-                value={formData.lastName}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleChange}
-                value={formData.email}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="gender"
-                placeholder="Gender"
-                onChange={handleChange}
-                value={formData.gender}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="address"
-                placeholder="Address"
-                onChange={handleChange}
-                value={formData.address}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="postalCode"
-                placeholder="Postal Code"
-                onChange={handleChange}
-                value={formData.postalCode}
-              />
-              <input
-                type="text"
-                name="city"
-                placeholder="City"
-                onChange={handleChange}
-                value={formData.city}
-              />
-            </div>
-            <div className="form-group">
-              <select
-                name="country"
-                onChange={handleChange}
-                value={formData.country}
-              >
-                <option value="">Country</option>
-                <option value="USA">USA</option>
-                <option value="Canada">Canada</option>
-                <option value="UK">UK</option>
-                {/* Add more countries as needed */}
-              </select>
-              <input
-                type="text"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                onChange={handleChange}
-                value={formData.phoneNumber}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="donationAmount"
-                placeholder="Donation Amount"
-                onChange={handleChange}
-                value={formData.donationAmount}
-              />
-            </div>
-            <div className="form-group agreement">
-              <input
-                type="checkbox"
-                name="agreement"
-                onChange={handleChange}
-                checked={formData.agreement}
-              />
-              <label>Yes, I agree to the Terms and Conditions</label>
-            </div>
-            <button type="submit" className="submit-button">
-              Donate
-            </button>
-          </form>
         </div>
       </div>
     </>
