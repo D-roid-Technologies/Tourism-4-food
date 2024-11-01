@@ -10,6 +10,7 @@ html,
 body {
   height: 100%;
   /* added font poppins as seen on figma  */
+  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   background-color: #e6f7ff;
 }

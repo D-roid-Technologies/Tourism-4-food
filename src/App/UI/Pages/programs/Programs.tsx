@@ -4,7 +4,7 @@ import Footer from "../../components/footer/Footer";
 import "../programs/Programs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
-import Button from "../../components/lite__button/Button";
+import Button from "../../components/button/Button";
 
 const Programs: React.FC = () => {
   return (

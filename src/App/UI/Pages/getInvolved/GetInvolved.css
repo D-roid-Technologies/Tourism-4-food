@@ -125,7 +125,7 @@ span {
   justify-content: center;
   align-items: center;
 }
-.center__content {
+.get__involved__center__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,14 +143,14 @@ span {
   font-size: 35px;
 }
 
-.center__content span {
+.get__involved__center__content span {
   /* text-align: center; */
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: bolder;
 }
 
-.center__content p {
+.get__involved__center__content p {
   /* text-align: center; */
   font-size: 1.5rem;
   color: #fff;

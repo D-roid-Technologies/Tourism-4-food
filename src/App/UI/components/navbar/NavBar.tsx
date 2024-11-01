@@ -5,35 +5,56 @@ import { useNavigate } from "react-router-dom";
 
 interface MenuItem {
   title: string;
-  submenu: string[];
+  submenu: { label: string; path: string }[];
   description: string;
 }
 
 const menuItems: MenuItem[] = [
   {
     title: "About Us",
-    description: "Brief about Tourism4food",
-    submenu: ["History", "Achievements", "Team Profile", "Executive Summary"],
+    description: "",
+    submenu: [
+      { label: "History", path: "/aboutus#history" },
+      { label: "Achievements", path: "/aboutus#achievements" },
+      { label: "Team Profile", path: "/aboutus#team" },
+      { label: "Executive Summary", path: "/aboutus" },
+    ],
   },
   {
     title: "Company",
-    description: "Brief about what Tourism4food has done",
-    submenu: ["Programs", "Campaigns", "Resources", "Legal"],
+    description: "",
+    submenu: [
+      { label: "Resources", path: "/getinvolved" },
+      { label: "Programs", path: "/programs" },
+      { label: "Campaigns", path: "/campaigns" },
+      { label: "Legal", path: "/legal" },
+    ],
   },
   {
     title: "Activities",
     description: "",
-    submenu: ["Activity 1", "Activity 2", "Activity 3"],
+    submenu: [
+      { label: "Activity 1", path: "/activity-1" },
+      { label: "Activity 2", path: "/activity-2" },
+      { label: "Activity 3", path: "/activity-3" },
+    ],
   },
   {
     title: "Get Involved",
     description: "",
-    submenu: ["Volunteer", "Donate", "Participate"],
+    submenu: [
+      { label: "Volunteer", path: "/volunteer" },
+      { label: "Donate", path: "/donate" },
+      { label: "Participate", path: "/participate" },
+    ],
   },
   {
     title: "Contact Us",
     description: "",
-    submenu: ["Contact Form", "FAQ"],
+    submenu: [
+      { label: "Contact Form", path: "/contact-form" },
+      { label: "FAQ", path: "/faq" },
+    ],
   },
 ];
 
@@ -47,6 +68,15 @@ const Navbar: React.FC = () => {
 
   const handleMouseLeave = () => {
     setActiveMenu(null);
+  };
+
+  const handleSubmenuClick = (path: string) => {
+    if (path.includes("#")) {
+      const [basePath, anchor] = path.split("#");
+      navigate(basePath, { state: { scrollTo: anchor } });
+    } else {
+      navigate(path);
+    }
   };
 
   return (
@@ -74,8 +104,12 @@ const Navbar: React.FC = () => {
                 <p className="dropdown-description">{item.description}</p>
                 <ul className="dropdown-menu">
                   {item.submenu.map((subitem) => (
-                    <li key={subitem} className="dropdown-item">
-                      {subitem}
+                    <li
+                      key={subitem.label}
+                      className="dropdown-item"
+                      onClick={() => handleSubmenuClick(subitem.path)}
+                    >
+                      {subitem.label}
                     </li>
                   ))}
                 </ul>
