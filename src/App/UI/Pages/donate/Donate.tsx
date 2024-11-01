@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../donate/Donate.css";
-import Navbar from "../../Components/navbar/NavBar";
+import Navbar from "../../components/navbar/NavBar";
 
 const Donate: React.FunctionComponent = () => {
   const [formData, setFormData] = useState({
