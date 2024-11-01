@@ -2,6 +2,24 @@ import React, { useState } from "react";
 import "../donate/Donate.css";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
+import LandingButton from "../../components/landingbutton/LandingButton";
+interface FormData {
+  title: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  email: string;
+  gender: string;
+  address: string;
+  postalCode: string;
+  city: string;
+  country: string;
+  phoneNumber: string;
+  donationAmount: string;
+  agreement: boolean;
+  comments: string;
+}
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -72,7 +90,7 @@ const Donate: React.FunctionComponent = () => {
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     title: "",
     firstName: "",
     middleName: "",
@@ -86,10 +104,13 @@ const Donate: React.FunctionComponent = () => {
     phoneNumber: "",
     donationAmount: "",
     agreement: false,
+    comments: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value, type } = e.target;
 
@@ -248,12 +269,28 @@ const Donate: React.FunctionComponent = () => {
                 <input
                   type="text"
                   name="donationAmount"
-                  placeholder="Donation Inpact"
+                  placeholder="Enter Amount"
                   onChange={handleChange}
+                  required
                   value={formData.donationAmount}
                   className="code-input"
                 />
               </div>
+              <div>
+                <textarea
+                  name="comments"
+                  placeholder="Donate Impact"
+                  onChange={handleChange}
+                  value={formData.comments || ""}
+                  className="code-input"
+                  rows={6}
+                />
+              </div>
+              <p className="donta-form-agreement">
+                By donating, you agree to our &nbsp;
+                <a href="/privacy-policy">Privacy Policy</a> and &nbsp;
+                <a href="/terms">Terms and Conditions</a>
+              </p>
               <div className="form-group agreement">
                 <input
                   type="checkbox"
@@ -261,12 +298,19 @@ const Donate: React.FunctionComponent = () => {
                   onChange={handleChange}
                   checked={formData.agreement}
                 />
-                <label>Yes, I agree to the Terms and Conditions</label>
+                <div className="agreement-labels">
+                  <label>Yes, I agree</label>
+                  <label>No, I dont agree </label>
+                </div>
               </div>
+            </form>
+            <div className="submit-btn-container">
               <button type="submit" className="submit-button">
                 Donate
               </button>
-            </form>
+            </div>
+
+            {/* <LandingButton label={"Donate"} /> */}
           </div>
         </div>
         <section className="faq-main-container">
