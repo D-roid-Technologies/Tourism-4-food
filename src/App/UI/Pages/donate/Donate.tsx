@@ -1,8 +1,77 @@
 import React, { useState } from "react";
 import "../donate/Donate.css";
 import Navbar from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 const Donate: React.FunctionComponent = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const faqData: FAQItem[] = [
+    {
+      question: "Can I donate via ACH/wire?",
+      answer:
+        "Yes, we accept ACH/wire transfers. Please contact our support team for detailed instructions.",
+    },
+    {
+      question: "Can I donate by check?",
+      answer: "Yes, you can send donations by check to our mailing address.",
+    },
+    {
+      question: "Can I donate using PayPal or Venmo?",
+      answer:
+        "Yes, we accept donations through both PayPal and Venmo platforms.",
+    },
+    {
+      question: "Can I donate stock?",
+      answer:
+        "Yes, we accept stock donations. Please contact us for transfer details.",
+    },
+    {
+      question: "Can I donate using cryptocurrency?",
+      answer: "Yes, we accept various cryptocurrencies for donations.",
+    },
+    {
+      question: "Will I get a receipt?",
+      answer:
+        "Yes, you'll receive a receipt via email immediately after your donation.",
+    },
+    {
+      question: "Is my donation tax deductible?",
+      answer: "Yes, all donations are tax deductible as allowed by law.",
+    },
+    {
+      question: "Can I dedicate my donation to someone?",
+      answer:
+        "Yes, you can dedicate your donation in honor or memory of someone.",
+    },
+    {
+      question: "What are the fees associated with my donation?",
+      answer:
+        "We cover all processing fees to ensure 100% of your donation goes to our cause.",
+    },
+    {
+      question: "How will my donation appear on my credit card statement?",
+      answer: "It will appear as 'Tourism4Food Donation' on your statement.",
+    },
+    {
+      question: "Is my donation secure?",
+      answer:
+        "Yes, we use industry-standard encryption to protect all transactions.",
+    },
+    {
+      question: "How can I contact you?",
+      answer:
+        "You can reach us through our contact form or at support@tourism4food.org",
+    },
+  ];
+
+  const toggleAccordion = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   const [formData, setFormData] = useState({
     title: "",
     firstName: "",
@@ -37,7 +106,7 @@ const Donate: React.FunctionComponent = () => {
   };
   return (
     <>
-      <div>
+      <div className="donate-main-container-file">
         <Navbar />
         <div className="donate-hero-section">
           <div className="donate-hero-overlay"></div>
@@ -83,6 +152,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="First Name"
                   onChange={handleChange}
                   value={formData.firstName}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -92,6 +162,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Middle Name"
                   onChange={handleChange}
                   value={formData.middleName}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -101,6 +172,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Last Name"
                   onChange={handleChange}
                   value={formData.lastName}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -110,6 +182,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Email"
                   onChange={handleChange}
                   value={formData.email}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -119,6 +192,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Gender"
                   onChange={handleChange}
                   value={formData.gender}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -128,6 +202,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Address"
                   onChange={handleChange}
                   value={formData.address}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -137,6 +212,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Postal Code"
                   onChange={handleChange}
                   value={formData.postalCode}
+                  className="code-input"
                 />
                 <input
                   type="text"
@@ -144,6 +220,7 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="City"
                   onChange={handleChange}
                   value={formData.city}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
@@ -164,15 +241,17 @@ const Donate: React.FunctionComponent = () => {
                   placeholder="Phone Number"
                   onChange={handleChange}
                   value={formData.phoneNumber}
+                  className="code-input"
                 />
               </div>
               <div className="form-group">
                 <input
                   type="text"
                   name="donationAmount"
-                  placeholder="Donation Amount"
+                  placeholder="Donation Inpact"
                   onChange={handleChange}
                   value={formData.donationAmount}
+                  className="code-input"
                 />
               </div>
               <div className="form-group agreement">
@@ -190,6 +269,36 @@ const Donate: React.FunctionComponent = () => {
             </form>
           </div>
         </div>
+        <section className="faq-main-container">
+          <div className="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-list">
+              {faqData.map((item, index) => (
+                <div key={index} className="faq-item">
+                  <button
+                    className={`faq-question ${
+                      activeIndex === index ? "active" : ""
+                    }`}
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    {item.question}
+                    <span className="faq-icon">
+                      {activeIndex === index ? "-" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`faq-answer ${
+                      activeIndex === index ? "active" : ""
+                    }`}
+                  >
+                    {item.answer}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <Footer />
       </div>
     </>
   );
