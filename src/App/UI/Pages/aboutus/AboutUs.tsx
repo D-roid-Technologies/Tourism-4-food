@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../../Components/navbar/NavBar";
-import Footer from "../../Components/footer/Footer";
+import Navbar from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
 import "../aboutus/AboutUs.css";
-import "../../Components/liteGrid@v1.0/lite-grid.css";
+import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
-import Button from "../../Components/lite__button/Button";
+import Button from "../../components/lite__button/Button";
 import { IoIosArrowForward } from "react-icons/io";
 
 //about section two content
