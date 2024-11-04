@@ -1,0 +1,147 @@
+.resources__title {
+  text-align: center;
+  margin: 85px auto;
+  padding: 2rem;
+  border-bottom: 1px solid #001525;
+}
+
+.resources__title p {
+  color: #001525;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* -------------------  */
+.featured__blog {
+  background: #fff;
+  margin: 80px auto;
+  padding: 3.6rem;
+}
+
+.featured__con {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+.featured__con > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.blog__split,
+.research {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.blog__split .blog__info {
+  border-radius: 20px;
+  background: rgba(194, 110, 59, 0.1);
+  padding: 2rem;
+  margin-top: 30px;
+}
+
+.blog__split .blog__info .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.blog__items {
+  padding: 10px;
+}
+.blog__items li:nth-child(1) {
+  margin-top: 0 !important;
+}
+.blog__items li {
+  margin-top: 30px;
+  font-size: 17px;
+}
+
+.text__ {
+  margin: 90px auto;
+  text-align: left;
+}
+
+.text__ h1 {
+  color: #001525;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.text__ p {
+  color: #001525;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* ----------------------------- */
+.resources__achievements__section {
+  height: 550px;
+  width: 100%;
+  background: url(../../../Assets/Images/our__achievements.png) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-attachment: fixed;
+}
+
+.resources__achievements__section .cover {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #001525d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+}
+
+.learn-more-button {
+  position: absolute;
+  right: 20px;
+}
+
+.about__achievements h2 {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  /* font-weight: 400; */
+  color: #333333;
+  text-align: center;
+  font-size: 35px;
+}
+
+.center__content span {
+  /* text-align: center; */
+  font-size: 4rem;
+  font-weight: bolder;
+}
+/* ------------------  */
+.market__research {
+  margin-top: -40px;
+}
+.research {
+  text-align: center;
+  margin-top: 40px;
+}
+.research p {
+  margin-top: 20px;
+  color: #001525;
+  font-size: 24px;
+}

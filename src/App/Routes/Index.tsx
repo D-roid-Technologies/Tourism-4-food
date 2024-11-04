@@ -12,6 +12,7 @@ import Donate from "../UI/Pages/donate/Donate";
 import Bookings from "../UI/Pages/bookings/Bookings";
 import Contact from "../UI/Pages/contact/Contact";
 import Legal from "../UI/Pages/legal/Legal";
+import Resources from "../UI/Pages/Resources/Resources";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -28,6 +29,7 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/legal" element={<Legal />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
     </BrowserRouter>
   );

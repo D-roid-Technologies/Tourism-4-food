@@ -23,6 +23,12 @@ const Assets = {
     bookingsCardOne: require("../../Assets/Images/3d icon for traveling and vacation.png"),
     bookingsCardTwo: require("../../Assets/Images/Work team digital art.png"),
     mobileArt: require("../../Assets/Images/Mobile app location digital art.png"),
+    featuredBlogImage: require("../../Assets/Images/featured__blog__img.png"),
+    partnership: require("../../Assets/Images/partnership.png"),
+    economicImpact: require("../../Assets/Images/economic__impact.png"),
+    targetAudience: require("../../Assets/Images/target__audience.png"),
+    globalHunger: require("../../Assets/Images/Global Hunger Issues.png"),
+    volunteerism: require("../../Assets/Images/volunteerism.png"),
   },
 };
 
