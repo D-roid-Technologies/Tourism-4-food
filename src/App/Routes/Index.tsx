@@ -10,6 +10,8 @@ import Campaigns from "../UI/Pages/campaigns/Campaigns";
 import GetInvolved from "../UI/Pages/getInvolved/GetInvolved";
 import Donate from "../UI/Pages/donate/Donate";
 import Bookings from "../UI/Pages/bookings/Bookings";
+import Contact from "../UI/Pages/contact/Contact";
+import Legal from "../UI/Pages/legal/Legal";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -24,6 +26,8 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/getinvolved" element={<GetInvolved />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/legal" element={<Legal />} />
       </Routes>
     </BrowserRouter>
   );

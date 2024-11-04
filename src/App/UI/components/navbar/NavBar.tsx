@@ -52,8 +52,8 @@ const menuItems: MenuItem[] = [
     title: "Contact Us",
     description: "",
     submenu: [
-      { label: "Contact Form", path: "/contact-form" },
-      { label: "FAQ", path: "/faq" },
+      { label: "Contact Form", path: "/contact" },
+      { label: "FAQ", path: "/contact#faq" },
     ],
   },
 ];
