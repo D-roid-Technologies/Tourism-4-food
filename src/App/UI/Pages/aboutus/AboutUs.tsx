@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import "../aboutus/AboutUs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
-import Button from "../../components/lite__button/Button";
+import Button from "../../components/button/Button";
 import { IoIosArrowForward } from "react-icons/io";
+import { useLocation } from "react-router-dom"; // Import useLocation
 
 //about section two content
 interface AboutContentTwo {
@@ -49,6 +50,17 @@ const team__section: teamSection[] = [
 ];
 
 const AboutUs: React.FC = () => {
+  const location = useLocation(); // Get the location
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <main>
@@ -86,7 +98,7 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
         <div className="wrapper about__history">
-          <div className="group about__history__container">
+          <div className="group about__history__container" id="history">
             <div className="about__history__title">
               <h2>History</h2>
             </div>
@@ -147,7 +159,7 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="about__achievements">
+        <div className="about__achievements" id="achievements">
           <h2>Our Achievements</h2>
         </div>
         <section className="about__achievements__section">
@@ -179,7 +191,7 @@ const AboutUs: React.FC = () => {
         </section>
         <div className="about__achievements">
           <h2>Meet Our Team</h2>
-          <div className="skip">
+          <div className="skip" id="team">
             <h4>
               Leadership Team: A team of dedicated professionals leading Tourism
               4 Food with expertise in tourism, hospitality, and social

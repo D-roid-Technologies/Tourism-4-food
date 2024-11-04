@@ -5,7 +5,7 @@ import "../campaigns/Campaigns.css";
 // importing programs css file for a unifrom banner style
 import "../programs/Programs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
-import Button from "../../components/lite__button/Button";
+import Button from "../../components/button/Button";
 
 const Campaigns: React.FC = () => {
   return (

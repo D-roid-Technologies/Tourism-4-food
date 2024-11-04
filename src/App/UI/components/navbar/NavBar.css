@@ -5,7 +5,6 @@
   padding: 16px 32px;
   border-bottom: 1px solid #333333;
   background-color: #ffffff;
-  font-family: Arial, sans-serif;
 }
 
 .navbar-logo img {
@@ -31,12 +30,14 @@
   color: #333;
   cursor: pointer;
   display: flex;
+  font-family: "Poppins", sans-serif;
   align-items: center;
 }
 
 .menu-button span {
   margin-left: 4px;
   font-size: 12px;
+  color: inherit;
 }
 
 .menu-button.active {
