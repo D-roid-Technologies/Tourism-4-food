@@ -18,7 +18,7 @@ const Assets = {
     coomeEatImage: require("../../Assets/Images/come__eat__image.png"),
     coachMe: require("../../Assets/Images/coach__me.png"),
     bridgeBuilders: require("../../Assets/Images/bridge__builders.png"),
-    volunteerCorp: require("../../Assets/Images/volunteer__corp.png"),
+    volunteerCorp: require("../../Assets/Images/get-involved-volunteer-illustrator-removebg-preview.png"),
     ourPartnerships: require("../../Assets/Images/our__partnerships.png"),
     bookingsCardOne: require("../../Assets/Images/3d icon for traveling and vacation.png"),
     bookingsCardTwo: require("../../Assets/Images/Work team digital art.png"),

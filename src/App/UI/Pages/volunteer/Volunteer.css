@@ -1,11 +1,13 @@
 .vol-hero-section {
   background-image: url("../../../Assets//Images//volunteer-page-image.png");
-  background-size: cover;
+  background-size: contain; /* Changed from 'cover' to 'contain' */
+  background-repeat: no-repeat; /* Added to prevent image repetition */
   background-position: center;
   height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed;
   position: relative;
 }
 .vol-hero-overlay {
@@ -33,6 +35,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-top: 2em;
   margin-bottom: 40px;
 }
 
