@@ -1,0 +1,26 @@
+.footer-two {
+  padding: 20px 0;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-two-content {
+  margin: 0 auto;
+  padding: 0 50px;
+  gap: 15px;
+}
+
+.footer-two-content p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555555;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.droid-link a {
+  text-decoration: none;
+}
+.tforfood-link a {
+  text-decoration: none;
+}
