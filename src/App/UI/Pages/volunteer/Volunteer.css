@@ -1,3 +1,52 @@
+.vol-hero-section {
+  background-image: url("../../../Assets//Images//volunteer-page-image.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.vol-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+}
+
+.vol-overlay {
+  position: relative; /* Keeps the text above the overlay */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* border-radius: 8px; */
+}
+
+.vol-header {
+  color: #f0f0f0;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.vol-details {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+/* FORM SECTION */
 .signup-container {
   display: flex;
   justify-content: center;

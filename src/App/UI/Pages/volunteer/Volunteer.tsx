@@ -29,6 +29,19 @@ const Volunteer: React.FunctionComponent = () => {
     <main>
       <div>
         <Navbar />
+        <div className="vol-hero-section">
+          <div className="vol-hero-overlay"></div>
+          <div className="vol-overlay">
+            <h1 className="vol-header">Volunteer with Us</h1>
+            <p className="vol-details">
+              Thank you so much for your interest in volunteering with
+              Tourism4Food . To find out more about our volunteer opportunities,
+              please register to our Volunteer Corps!  If you have any
+              additional questions, please feel free to reach out at email We
+              look forward to serving with you in the future!
+            </p>
+          </div>
+        </div>
         {/* form section */}
         <div className="signup-container">
           {/* <div className="signup-card-container"> */}
