@@ -12,7 +12,7 @@ import Donate from "../UI/Pages/donate/Donate";
 import Bookings from "../UI/Pages/bookings/Bookings";
 import Contact from "../UI/Pages/contact/Contact";
 import Legal from "../UI/Pages/legal/Legal";
-import Resources from "../UI/Pages/Resources/Resources";
+import Resources from "../UI/Pages/resources/Resources";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
