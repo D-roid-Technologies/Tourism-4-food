@@ -24,7 +24,7 @@ const menuItems: MenuItem[] = [
     title: "Company",
     description: "",
     submenu: [
-      { label: "Resources", path: "/getinvolved" },
+      { label: "Resources", path: "/resources" },
       { label: "Programs", path: "/programs" },
       { label: "Campaigns", path: "/campaigns" },
       { label: "Legal", path: "/legal" },
@@ -59,6 +59,8 @@ const menuItems: MenuItem[] = [
       { label: "Volunteer Oppurtunities", path: "" },
       { label: "Media Inquiries", path: "" },
       { label: "Partnerships", path: "" },
+      { label: "Contact Form", path: "/contact" },
+      { label: "FAQ", path: "/contact#faq" },
     ],
   },
 ];
