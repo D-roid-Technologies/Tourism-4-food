@@ -91,8 +91,7 @@ const Home: React.FunctionComponent = () => {
       <div className="liberian-banner">
         <div className="liberian-overlay">
           <h1 className="liberian-header">
-            The Liberia School Lunch <br />
-            Challenge
+            School Feeding Program <br />
           </h1>
           <p className="liberian-details">
             Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh

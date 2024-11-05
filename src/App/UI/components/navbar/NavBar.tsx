@@ -34,9 +34,11 @@ const menuItems: MenuItem[] = [
     title: "Activities",
     description: "",
     submenu: [
-      { label: "Activity 1", path: "/activity-1" },
-      { label: "Activity 2", path: "/activity-2" },
-      { label: "Activity 3", path: "/activity-3" },
+      { label: "Book Event", path: "" },
+      { label: "Book Travels", path: "" },
+      { label: "Book Tours", path: "" },
+      { label: "Consultancy Service", path: "" },
+      { label: "Shop for Tourism Products", path: "" },
     ],
   },
   {
@@ -45,15 +47,18 @@ const menuItems: MenuItem[] = [
     submenu: [
       { label: "Volunteer", path: "/volunteer" },
       { label: "Donate", path: "/donate" },
-      { label: "Participate", path: "/participate" },
+      { label: "Parner with Us", path: "" },
+      { label: "Cooperate Engagement", path: "" },
     ],
   },
   {
     title: "Contact Us",
     description: "",
     submenu: [
-      { label: "Contact Form", path: "/contact-form" },
-      { label: "FAQ", path: "/faq" },
+      { label: "General Inquiries", path: "" },
+      { label: "Volunteer Oppurtunities", path: "" },
+      { label: "Media Inquiries", path: "" },
+      { label: "Partnerships", path: "" },
     ],
   },
 ];
