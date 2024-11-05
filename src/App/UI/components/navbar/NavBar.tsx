@@ -24,7 +24,7 @@ const menuItems: MenuItem[] = [
     title: "Company",
     description: "",
     submenu: [
-      { label: "Resources", path: "/getinvolved" },
+      { label: "Resources", path: "/resources" },
       { label: "Programs", path: "/programs" },
       { label: "Campaigns", path: "/campaigns" },
       { label: "Legal", path: "/legal" },
@@ -34,7 +34,7 @@ const menuItems: MenuItem[] = [
     title: "Activities",
     description: "",
     submenu: [
-      { label: "Activity 1", path: "/activity-1" },
+      { label: "Activity 1", path: "/getinvolved" },
       { label: "Activity 2", path: "/activity-2" },
       { label: "Activity 3", path: "/activity-3" },
     ],
@@ -52,8 +52,8 @@ const menuItems: MenuItem[] = [
     title: "Contact Us",
     description: "",
     submenu: [
-      { label: "Contact Form", path: "/contact-form" },
-      { label: "FAQ", path: "/faq" },
+      { label: "Contact Form", path: "/contact" },
+      { label: "FAQ", path: "/contact#faq" },
     ],
   },
 ];

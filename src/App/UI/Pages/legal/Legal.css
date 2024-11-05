@@ -1,0 +1,43 @@
+.legal__section {
+  width: 100%;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 30px;
+  margin: 100px auto;
+}
+.legal__section__alt {
+  width: 100%;
+  background: #fff;
+  padding: 3rem;
+  margin: 100px auto;
+}
+
+.legal__section .legal__title,
+.legal__section__alt .legal__title {
+  color: #001525;
+  text-align: center;
+  font-size: 40px;
+  margin: 40px 0;
+  text-transform: capitalize;
+}
+
+.legal__container {
+  margin: 50px 0;
+  padding: 0 20px;
+}
+
+.legal__container .legal__title_p {
+  color: #ff914d;
+  font-size: 24px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+.legal__container .legal__p {
+  color: #ff914d;
+  font-size: 18px;
+  margin: 10px 0;
+  text-decoration: underline;
+}
