@@ -29,6 +29,9 @@ const Assets = {
     targetAudience: require("../../Assets/Images/target__audience.png"),
     globalHunger: require("../../Assets/Images/Global Hunger Issues.png"),
     volunteerism: require("../../Assets/Images/volunteerism.png"),
+    onboardingOne: require("../../Assets/Images/Onboarding 1.png"),
+    onboardingTwo: require("../../Assets/Images/Onboarding 2.png"),
+    onboardingThree: require("../../Assets/Images/Onboarding 3.png"),
   },
 };
 
