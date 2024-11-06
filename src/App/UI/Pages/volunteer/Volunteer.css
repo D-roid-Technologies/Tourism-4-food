@@ -144,8 +144,10 @@
   font-size: 16px;
   cursor: pointer;
   margin-top: 1rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .volunteer-next-button:hover {
   background-color: #ff6632;
+  transform: scale(1.02);
 }
