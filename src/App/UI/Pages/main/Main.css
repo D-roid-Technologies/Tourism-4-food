@@ -13,6 +13,7 @@ body {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   background-color: #e6f7ff;
+  overflow: hidden;
 }
 .main-page-container {
   height: 100vh;
