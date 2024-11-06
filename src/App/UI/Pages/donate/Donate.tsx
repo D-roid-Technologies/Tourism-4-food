@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../donate/Donate.css";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import LandingButton from "../../components/landingbutton/LandingButton";
+import { useLocation, useNavigate } from "react-router-dom"; // Import useLocation
+
 interface FormData {
   title: string;
   firstName: string;
@@ -27,6 +29,16 @@ interface FAQItem {
 
 const Donate: React.FunctionComponent = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation(); // Get the location
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const faqData: FAQItem[] = [
     {
@@ -129,7 +141,7 @@ const Donate: React.FunctionComponent = () => {
     <>
       <div className="donate-main-container-file">
         <Navbar />
-        <div className="donate-hero-section">
+        <div className="donate-hero-section" id="donatehero">
           <div className="donate-hero-overlay"></div>
           <div className="donate-overlay">
             <h1 className="donate-header">DONATE</h1>

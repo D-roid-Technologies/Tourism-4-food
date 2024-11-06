@@ -46,9 +46,9 @@ const menuItems: MenuItem[] = [
     description: "",
     submenu: [
       { label: "Volunteer", path: "/volunteer" },
-      { label: "Donate", path: "/donate" },
-      { label: "Parner with Us", path: "" },
-      { label: "Cooperate Engagement", path: "" },
+      { label: "Donate", path: "/getinvolved#donate" },
+      { label: "Parner with Us", path: "/getinvolved#partner" },
+      { label: "Cooperate Engagement", path: "/getinvolved#engagement" },
     ],
   },
   {
