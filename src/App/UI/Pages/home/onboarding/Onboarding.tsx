@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Onboarding.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Button from "../../components/button/Button";
-import { Assets } from "../../../Utils/constant/Assets";
+import Button from "../../../components/button/Button";
+import { Assets } from "../../../../Utils/constant/Assets";
 
 interface SlideData {
   image: any;
