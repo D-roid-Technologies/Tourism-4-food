@@ -5,7 +5,7 @@ import "../aboutus/AboutUs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
 import Button from "../../components/button/Button";
-import { IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowForward } from "react-icons/io";
 import { useLocation } from "react-router-dom"; // Import useLocation
 
 //about section two content
@@ -172,7 +172,7 @@ const AboutUs: React.FC = () => {
                 style={{ marginTop: "20px" }}
               />
             </div>
-            <div className="learn-more-button">
+            {/* <div className="learn-more-button">
               <Button
                 style={{
                   height: "70px",
@@ -186,7 +186,7 @@ const AboutUs: React.FC = () => {
               >
                 <IoIosArrowForward />
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
         <div className="about__achievements">

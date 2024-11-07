@@ -15,6 +15,7 @@ import Legal from "../UI/Pages/legal/Legal";
 import Resources from "../UI/Pages/resources/Resources";
 import Volunteer from "../UI/Pages/volunteer/Volunteer";
 import Onboarding from "../UI/Pages/onboarding/Onboarding";
+import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -35,6 +36,7 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/resources" element={<Resources />} />
         <Route path="/volunteer" element={<Volunteer />} />
         <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/verifyemail" element={<VerifyEmail />} />
       </Routes>
     </BrowserRouter>
   );
