@@ -7,7 +7,7 @@ import "../programs/Programs.css";
 import "./Resources.css";
 import { Assets } from "../../../Utils/constant/Assets";
 import Button from "../../components/button/Button";
-import { IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowForward } from "react-icons/io";
 
 interface research {
   researchImage: any;
@@ -130,7 +130,7 @@ const Resources: React.FC = () => {
                 style={{ marginTop: "20px" }}
               /> */}
             </div>
-            <div className="learn-more-button">
+            {/* <div className="learn-more-button">
               <Button
                 style={{
                   height: "70px",
@@ -144,7 +144,7 @@ const Resources: React.FC = () => {
               >
                 <IoIosArrowForward />
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
         {/* ------------  */}

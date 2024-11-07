@@ -1,11 +1,11 @@
-.onboarding-container {
+.onboarding__container {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow-y: auto;
   background-color: #fff;
 }
 

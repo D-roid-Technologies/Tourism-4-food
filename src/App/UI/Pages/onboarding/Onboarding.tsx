@@ -57,7 +57,7 @@ const Onboarding: React.FC = () => {
   };
 
   return (
-    <div className="onboarding-container">
+    <div className="onboarding__container">
       <Slider ref={sliderRef} {...settings} className="onboarding__slider">
         {slides.map((slide, index) => (
           <div className="slide" key={index}>

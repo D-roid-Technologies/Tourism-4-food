@@ -32,6 +32,7 @@ const Assets = {
     onboardingOne: require("../../Assets/Images/Onboarding 1.png"),
     onboardingTwo: require("../../Assets/Images/Onboarding 2.png"),
     onboardingThree: require("../../Assets/Images/Onboarding 3.png"),
+    verifyImage: require("../../Assets/Images/verify.png"),
   },
 };
 

@@ -9,12 +9,12 @@
 html,
 body {
   height: 100%;
-  /* added font poppins as seen on figma  */
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   background-color: #e6f7ff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
+
 .main-page-container {
   height: 100vh;
   display: flex;
@@ -24,15 +24,9 @@ body {
   padding: 0 20px;
 }
 .main-logo-container {
-  /* width: 100%;
-  margin-bottom: 10px;
-  float: left; */
-  /*Style to position logo at the top left of the app*/
   position: absolute;
   top: 5%;
   left: 5%;
-  /* padding: 25px 50px 100px 50px; */
-  /* background-color: #e6f7ff; */
 }
 .main-logo {
   width: 110px;
