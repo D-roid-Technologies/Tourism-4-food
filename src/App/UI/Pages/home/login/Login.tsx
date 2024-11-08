@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../login/Login.css";
-import Navbar from "../../../components/navbar/NavBar";
 import { Assets } from "../../../../Utils/constant/Assets";
+import { useNavigate } from "react-router-dom";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const Login: React.FunctionComponent = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -13,7 +15,29 @@ const Login: React.FunctionComponent = () => {
   return (
     <div>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
+        <div className="login-nav">
+          <div className="login-navbar-logo" onClick={() => navigate("/home")}>
+            <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
+          </div>
+        </div>
+        {/* BACK BUTTON */}
+        <div className="form-project-container">
+          <button onClick={() => navigate("")} className="form-btn-hero">
+            <IoChevronBackOutline className="form-back-btn-icon" />
+          </button>
+          <div>
+            <p>
+              Don’t have an account? &nbsp;
+              <span
+                className="create-color"
+                onClick={() => navigate("/onboarding")}
+              >
+                Create an account.
+              </span>
+            </p>
+          </div>
+        </div>
         {/* login section */}
         <div className="login-container">
           <div className="login-left">
@@ -29,13 +53,13 @@ const Login: React.FunctionComponent = () => {
               <p>Welcome, put in your account information to continue</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="login-form">
-              <h2>Login</h2>
+            <form onSubmit={handleSubmit} className="login-forms">
+              <h3>Login</h3>
 
               <div className="login-form-group">
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="Enter Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
@@ -48,6 +72,7 @@ const Login: React.FunctionComponent = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
+                  // maxLength={50}
                 />
                 <a href="/forgot-password" className="forgot-password">
                   Forgot password?
@@ -70,13 +95,15 @@ const Login: React.FunctionComponent = () => {
                 </button>
               </div>
 
-              <button type="submit" className="login-btn">
-                Login
-              </button>
+              <div className="login-btn-container">
+                <button type="submit" className="login-btn">
+                  Login
+                </button>
+              </div>
 
-              <p className="signup-prompt">
+              {/* <p className="signup-prompt">
                 Don't have an account? <a href="/signup">Create an account.</a>
-              </p>
+              </p> */}
             </form>
           </div>
         </div>
