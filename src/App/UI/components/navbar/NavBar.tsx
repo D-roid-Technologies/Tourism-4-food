@@ -125,7 +125,9 @@ const Navbar: React.FC = () => {
           </li>
         ))}
       </ul>
-      <button className="login-button">Log In</button>
+      <button className="login-button" onClick={() => navigate("/login")}>
+        Log In
+      </button>
     </nav>
   );
 };
