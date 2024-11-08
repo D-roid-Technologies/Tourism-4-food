@@ -9,7 +9,6 @@ const Login: React.FunctionComponent = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your login logic here
   };
   return (
     <div>

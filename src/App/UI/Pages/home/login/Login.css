@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 0 100px;
   gap: 2rem;
   background-color: #ffffff;
@@ -16,7 +16,7 @@
 }
 
 .login-left img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 
@@ -74,7 +74,7 @@
 .divider::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 3px solid #948f8f;
 }
 
 .divider span {
@@ -85,11 +85,11 @@
 .social-login {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .social-login button {
-  width: 40px;
+  width: 100px;
   height: 40px;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
