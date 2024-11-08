@@ -37,6 +37,7 @@ const Assets = {
     googleLogo: require("../../Assets/Images/google-icon.png"),
     facebookLogo: require("../../Assets/Images/facebook-icon.png"),
     appleLogo: require("../../Assets/Images/apple-icon.png"),
+    verifyImage: require("../../Assets/Images/verify.png"),
   },
 };
 
