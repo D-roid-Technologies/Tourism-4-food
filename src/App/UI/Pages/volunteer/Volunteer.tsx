@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "../../Components/navbar/NavBar";
+import Navbar from "../..//components/navbar/NavBar";
 import "../volunteer/Volunteer.css";
-import FooterTwo from "../../Components/footertwo/FooterTwo";
+import FooterTwo from "../..//components/footertwo/FooterTwo";
 
 const Volunteer: React.FunctionComponent = () => {
   const [formData, setFormData] = useState({

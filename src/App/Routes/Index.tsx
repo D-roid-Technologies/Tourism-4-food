@@ -12,12 +12,11 @@ import Donate from "../UI/Pages/donate/Donate";
 import Bookings from "../UI/Pages/bookings/Bookings";
 import Contact from "../UI/Pages/contact/Contact";
 import Legal from "../UI/Pages/legal/Legal";
-// import Resources from "../UI/Pages/resources/Resources";
 import Volunteer from "../UI/Pages/volunteer/Volunteer";
 import Onboarding from "../UI/Pages/home/onboarding/Onboarding";
-import Resources from "../UI/Pages/Resources/Resources";
-// import Onboarding from "../UI/Pages/onboarding/Onboarding";
+import Resources from "../UI/Pages/resources/Resources";
 import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
+import EnterCode from "../UI/Pages/verifyemail/enterCode/EnterCode";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -39,6 +38,7 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/volunteer" element={<Volunteer />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/verifyemail" element={<VerifyEmail />} />
+        <Route path="/entercode" element={<EnterCode />} />
       </Routes>
     </BrowserRouter>
   );

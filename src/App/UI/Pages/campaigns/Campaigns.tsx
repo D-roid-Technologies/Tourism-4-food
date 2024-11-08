@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../../Components/navbar/NavBar";
-import Footer from "../../Components/footer/Footer";
+import Navbar from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
 import "../campaigns/Campaigns.css";
 // importing programs css file for a unifrom banner style
 import "../programs/Programs.css";
-import "../../Components/liteGrid@v1.0/lite-grid.css";
-import Button from "../../Components/button/Button";
+import "../../components/liteGrid@v1.0/lite-grid.css";
+import Button from "../../components/button/Button";
 
 const Campaigns: React.FC = () => {
   return (

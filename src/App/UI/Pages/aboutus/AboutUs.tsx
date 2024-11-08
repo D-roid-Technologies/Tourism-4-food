@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Navbar from "../../Components/navbar/NavBar";
-import Footer from "../../Components/footer/Footer";
+import Navbar from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
 import "../aboutus/AboutUs.css";
-import "../../Components/liteGrid@v1.0/lite-grid.css";
+import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
-import Button from "../../Components/button/Button";
+import Button from "../../components/button/Button";
 // import { IoIosArrowForward } from "react-icons/io";
 import { useLocation } from "react-router-dom"; // Import useLocation
 

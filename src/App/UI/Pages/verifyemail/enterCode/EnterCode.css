@@ -1,0 +1,21 @@
+.verify__code__container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.verify__code__box {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ff914d;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.verify__code__box:focus {
+  background: rgba(217, 217, 217, 0.3);
+}

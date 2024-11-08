@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../login/Login.css";
-import Navbar from "../../../Components/navbar/NavBar";
+import Navbar from "../../../components/navbar/NavBar";
 import { Assets } from "../../../../Utils/constant/Assets";
 
 const Login: React.FunctionComponent = () => {
