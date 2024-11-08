@@ -38,6 +38,7 @@ const Assets = {
     facebookLogo: require("../../Assets/Images/facebook-icon.png"),
     appleLogo: require("../../Assets/Images/apple-icon.png"),
     verifyImage: require("../../Assets/Images/verify.png"),
+    signupPageIllustrator: require("../../Assets/Images/signup-page-illustrator.png"),
   },
 };
 
