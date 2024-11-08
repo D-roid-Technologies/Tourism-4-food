@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/navbar/NavBar";
-import Footer from "../../components/footer/Footer";
+import Navbar from "../../Components/navbar/NavBar";
+import Footer from "../../Components/footer/Footer";
 import "../../../../App.css";
 // importing programs css file for a unifrom banner style
 import "../programs/Programs.css";
 import "./Contact.css";
 import { useLocation } from "react-router-dom"; // Import useLocation
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import Button from "../../components/button/Button";
+import Button from "../../Components/button/Button";
 
 interface FAQItem {
   question: string;

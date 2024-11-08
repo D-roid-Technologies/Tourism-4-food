@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Navbar from "../../components/navbar/NavBar";
-import Footer from "../../components/footer/Footer";
-import "../../components/liteGrid@v1.0/lite-grid.css";
-import Button from "../../components/button/Button";
+import Navbar from "../../Components/navbar/NavBar";
+import Footer from "../../Components/footer/Footer";
+import "../../Components/liteGrid@v1.0/lite-grid.css";
+import Button from "../../Components/button/Button";
 import "../getInvolved/GetInvolved.css";
 import { Assets } from "../../../Utils/constant/Assets";
 import { useLocation, useNavigate } from "react-router-dom"; // Import useLocation
