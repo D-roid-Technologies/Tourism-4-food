@@ -1,6 +1,6 @@
 import React from "react";
 import { Assets } from "../../../Utils/constant/Assets";
-import "./VerifyEmail.css";
+import "../verifyemail/VerifyEmail.css";
 import Button from "../../components/button/Button";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
