@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../donate/Donate.css";
-import Navbar from "../../components/navbar/NavBar";
-import Footer from "../../components/footer/Footer";
-import LandingButton from "../../components/landingbutton/LandingButton";
+import Navbar from "../../Components/navbar/NavBar";
+import Footer from "../../Components/footer/Footer";
+// import LandingButton from "../../components/landingbutton/LandingButton";
 import { useLocation, useNavigate } from "react-router-dom"; // Import useLocation
 
 interface FormData {
