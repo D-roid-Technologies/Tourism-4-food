@@ -1,6 +1,6 @@
 import React from "react";
 import "../main/Main.css";
-import LandingButton from "../../Components/landingbutton/LandingButton";
+import LandingButton from "../../components/landingbutton/LandingButton";
 import { Assets } from "../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 
