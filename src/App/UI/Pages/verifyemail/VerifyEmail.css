@@ -54,7 +54,7 @@
   font-size: 1.1rem;
 }
 
-.top__btn {
+.bottom__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +71,27 @@
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+.main__logo__container {
+  position: absolute;
   top: 5%;
   left: 5%;
+}
+
+.main__logo {
+  width: 90px;
+  height: 90px; /* Set height equal to width for a perfect circle */
+  border: none;
+  object-fit: contain;
+  border-radius: 50%; /* Makes the element a circle */
+  background-color: #e0f2fa;
+  transition: transform 0.3s ease-in-out;
+}
+.main__logo:hover {
+  cursor: pointer;
+  border-color: #3498db;
+  transform: scale(1.05);
 }
