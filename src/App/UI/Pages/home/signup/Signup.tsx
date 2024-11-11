@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import "../login/Login.css";
-// import { Assets } from "../../../../Utils/constant/Assets";
+// import "../login/Login.css";
+import "../signup/Signup.css";
+import { Assets } from "../../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
 
-import Navbar from "../../../components/navbar/NavBar";
-import { Assets } from "../../../../Utils/constant/Assets";
-
-const Login: React.FunctionComponent = () => {
+const Signup: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -31,12 +29,9 @@ const Login: React.FunctionComponent = () => {
           </button>
           <div>
             <p>
-              Don’t have an account? &nbsp;
-              <span
-                className="create-color"
-                onClick={() => navigate("/onboarding")}
-              >
-                Create an account.
+              Already have an account? &nbsp;
+              <span className="create-color" onClick={() => navigate("/login")}>
+                Login
               </span>
             </p>
           </div>
@@ -45,20 +40,28 @@ const Login: React.FunctionComponent = () => {
         <div className="login-container">
           <div className="login-left">
             <img
-              src={Assets.images.loginIllustrator}
+              src={Assets.images.signupPageIllustrator}
               alt="Login illustration"
             />
           </div>
 
           <div className="login-right">
             <div className="login-header">
-              <h1>Welcome back 👋</h1>
-              <p>Welcome, put in your account information to continue</p>
+              <h1>Create your account</h1>
             </div>
 
             <form onSubmit={handleSubmit} className="login-forms">
-              <h3>Login</h3>
+              <h3>Sign up</h3>
 
+              <div className="login-form-group">
+                <input
+                  type="email"
+                  placeholder="Enter full name"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="login-input"
+                />
+              </div>
               <div className="login-form-group">
                 <input
                   type="email"
@@ -77,9 +80,6 @@ const Login: React.FunctionComponent = () => {
                   className="login-input"
                   // maxLength={50}
                 />
-                <a href="/forgot-password" className="forgot-password">
-                  Forgot password?
-                </a>
               </div>
 
               <div className="divider">
@@ -100,7 +100,7 @@ const Login: React.FunctionComponent = () => {
 
               <div className="login-btn-container">
                 <button type="submit" className="login-btn">
-                  Login
+                  Sign up
                 </button>
               </div>
 
@@ -115,4 +115,4 @@ const Login: React.FunctionComponent = () => {
   );
 };
 
-export default Login;
+export default Signup;

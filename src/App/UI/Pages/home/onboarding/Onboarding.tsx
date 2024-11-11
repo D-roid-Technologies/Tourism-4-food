@@ -6,6 +6,7 @@ import "./Onboarding.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Button from "../../../components/button/Button";
 import { Assets } from "../../../../Utils/constant/Assets";
+import { useNavigate } from "react-router-dom";
 
 interface SlideData {
   image: any;
@@ -31,6 +32,7 @@ const slides: SlideData[] = [
 ];
 
 const Onboarding: React.FC = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider>(null);
 
@@ -91,7 +93,8 @@ const Onboarding: React.FC = () => {
           <Button
             className="finish__btn"
             label="Get Started"
-            onClick={() => console.log("Onboarding completed!")}
+            // onClick={() => console.log("Onboarding completed!")}
+            onClick={() => navigate("/signup")}
           />
         )}
       </div>
