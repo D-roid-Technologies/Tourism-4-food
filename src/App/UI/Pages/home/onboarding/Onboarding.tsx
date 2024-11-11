@@ -60,6 +60,15 @@ const Onboarding: React.FC = () => {
 
   return (
     <div className="onboarding__container">
+      <div className="main__logo__container">
+        <img
+          src={Assets.images.companyLogo}
+          alt="Tourism4Food Logo"
+          // onClick={() => navigate("/")}
+          onClick={() => (window.location.href = "")}
+          className="main__logo"
+        />
+      </div>
       <Slider ref={sliderRef} {...settings} className="onboarding__slider">
         {slides.map((slide, index) => (
           <div className="slide" key={index}>

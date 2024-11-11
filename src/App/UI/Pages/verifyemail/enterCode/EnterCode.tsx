@@ -9,14 +9,19 @@ import { useNavigate } from "react-router-dom";
 import "../VerifyEmail.css";
 import "../enterCode/EnterCode.css";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { Assets } from "../../../../Utils/constant/Assets";
 import Button from "../../../components/button/Button";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useToastMessages from "./ToastMessage";
 
 const EnterCode: React.FC = () => {
   const [code, setCode] = useState<string[]>(new Array(6).fill(""));
-  const [resendTimer, setResendTimer] = useState(120); // 2 min in seconds
+  const [resendTimer, setResendTimer] = useState(10); // 2 min in seconds
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const navigate = useNavigate();
   const requiredCode = "123456";
+  const { successToast, errorToast, successToastTwo } = useToastMessages();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,10 +42,10 @@ const EnterCode: React.FC = () => {
 
     if (!newCode.includes("")) {
       if (newCode.join("") === requiredCode) {
-        setTimeout(() => alert("Code is correct"), 500);
-        // setTimeout(() => navigate("/onboarding"), 3000);
+        setTimeout(() => successToast(), 500);
+        setTimeout(() => navigate("/onboarding"), 2500);
       } else {
-        setTimeout(() => alert("Incorrect Code"), 500);
+        setTimeout(() => errorToast(), 500);
       }
     }
   };
@@ -55,11 +60,25 @@ const EnterCode: React.FC = () => {
     }
   };
 
+  const handleReset = () => {
+    setResendTimer(120);
+    successToastTwo();
+  };
+
   const isCodeComplete = code.every((digit) => digit !== "");
 
   return (
     <div className="verifyemail__container">
-      <span className="top__btn">
+      <div className="main__logo__container">
+        <img
+          src={Assets.images.companyLogo}
+          alt="Tourism4Food Logo"
+          // onClick={() => navigate("/")}
+          onClick={() => (window.location.href = "")}
+          className="main__logo"
+        />
+      </div>
+      <span className="bottom__btn" onClick={() => navigate("/verifyemail")}>
         <MdKeyboardArrowLeft />
       </span>
       <div className="verifyemail__content">
@@ -94,11 +113,10 @@ const EnterCode: React.FC = () => {
           onClick={() => {
             const enteredCode = code.join("");
             if (enteredCode === requiredCode) {
-              alert("Code is correct");
-              //   setTimeout(() => navigate("/onboarding"), 2000);
+              successToast();
+              setTimeout(() => navigate("/onboarding"), 2500);
             } else {
-              alert("Incorrect code");
-              console.error("Incorrect code");
+              errorToast();
             }
           }}
         />
@@ -106,11 +124,10 @@ const EnterCode: React.FC = () => {
           label={`Resend Code ${resendTimer > 0 ? `(${resendTimer}s)` : ""}`}
           style={{ marginTop: "15px", background: "#F0F0F0", color: "#ff914d" }}
           disabled={resendTimer > 0}
-          onClick={() => {
-            setResendTimer(120);
-          }}
+          onClick={handleReset}
         />
       </div>
+      <ToastContainer />
     </div>
   );
 };
