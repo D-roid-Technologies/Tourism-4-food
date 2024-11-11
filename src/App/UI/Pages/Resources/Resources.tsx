@@ -1,12 +1,13 @@
 import React from "react";
-import Navbar from "../../Components/navbar/NavBar";
-import Footer from "../../Components/footer/Footer";
+
 import "../../../../App.css";
 // importing programs css file for a unifrom banner style
 import "../programs/Programs.css";
 import "./Resources.css";
 import { Assets } from "../../../Utils/constant/Assets";
-import Button from "../../Components/button/Button";
+import Button from "../../components/button/Button";
+import Footer from "../../Components/footer/Footer";
+import Navbar from "../../Components/navbar/NavBar";
 // import { IoIosArrowForward } from "react-icons/io";
 
 interface research {
