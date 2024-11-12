@@ -1,0 +1,109 @@
+.create__pin__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-color: #ffff;
+  transition: all 0.4s ease;
+}
+
+.create__pin__container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.create__pin__container p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.pin__input__container {
+  display: flex;
+  gap: 24px;
+  margin: 25px;
+}
+
+.pin__box {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ff914d;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.pin__box:focus {
+  background: rgba(217, 217, 217, 0.3);
+  outline: none;
+}
+
+.create__pin__container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  width: 25%;
+}
+
+.create__pin__container button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.main__logo__container {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.main__logo {
+  width: 90px;
+  height: 90px; /* Set height equal to width for a perfect circle */
+  border: none;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 50%; /* Makes the element a circle */
+  background-color: #e0f2fa;
+  transition: transform 0.3s ease-in-out;
+}
+.main__logo:hover {
+  cursor: pointer;
+  border-color: #3498db;
+  transform: scale(1.05);
+}
+
+.bottom__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  line-height: 75px;
+  color: #ff914d;
+  fill: rgba(255, 145, 77, 0.1);
+  box-shadow: 4.667px -4.667px 4.667px 0px rgba(194, 110, 59, 0.1) inset,
+    -4.667px 4.667px 4.667px 0px rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(4.666666507720947px);
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+.Toastify__toast-container {
+  width: 500px !important;
+}

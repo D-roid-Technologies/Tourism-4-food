@@ -40,7 +40,33 @@ const useToastMessages = () => {
       theme: "colored",
     });
   };
-  return { successToast, errorToast, successToastTwo };
+  // --------------
+  const successPin = () => {
+    toast.success("Pin created successfully! Redirecting…", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+  // --------------
+  const errorPin = () => {
+    toast.error("Pins do not match. Please try again!", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+  return { successToast, errorToast, successToastTwo, successPin, errorPin };
 };
 
 export default useToastMessages;
