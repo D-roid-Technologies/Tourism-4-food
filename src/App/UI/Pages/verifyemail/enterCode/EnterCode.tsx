@@ -13,7 +13,7 @@ import { Assets } from "../../../../Utils/constant/Assets";
 import Button from "../../../components/button/Button";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useToastMessages from "./ToastMessage";
+import useToastMessages from "../../../../Utils/constant/ToastMessage";
 
 const EnterCode: React.FC = () => {
   const [code, setCode] = useState<string[]>(new Array(6).fill(""));
@@ -43,7 +43,7 @@ const EnterCode: React.FC = () => {
     if (!newCode.includes("")) {
       if (newCode.join("") === requiredCode) {
         setTimeout(() => successToast(), 500);
-        setTimeout(() => navigate("/onboarding"), 2500);
+        setTimeout(() => navigate("/createcode"), 3000);
       } else {
         setTimeout(() => errorToast(), 500);
       }
@@ -114,7 +114,7 @@ const EnterCode: React.FC = () => {
             const enteredCode = code.join("");
             if (enteredCode === requiredCode) {
               successToast();
-              setTimeout(() => navigate("/onboarding"), 2500);
+              setTimeout(() => navigate("/createcode"), 3000);
             } else {
               errorToast();
             }
