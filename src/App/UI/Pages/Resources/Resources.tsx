@@ -121,7 +121,7 @@ const Resources: React.FC = () => {
           </p>
         </div>
         {/* ----------------  */}
-        <section className="resources__achievements__section">
+        <div className="resources__achievements__section">
           <div className="cover">
             <div className="center__content">
               <span>Picture and videos if necessary</span>
@@ -147,7 +147,7 @@ const Resources: React.FC = () => {
               </Button>
             </div> */}
           </div>
-        </section>
+        </div>
         {/* ------------  */}
         <div className="resources__title app__wrapper">
           <p>Market Research</p>
