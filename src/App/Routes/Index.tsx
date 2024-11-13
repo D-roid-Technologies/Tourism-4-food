@@ -17,8 +17,11 @@ import Onboarding from "../UI/Pages/home/onboarding/Onboarding";
 import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
 import EnterCode from "../UI/Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../UI/Pages/home/signup/Signup";
-import Resources from "../UI/Pages/Resources/Resources";
+// import Resources from "../UI/Pages/Resources/Resources";
 // import Resources from "../UI/Pages/resources/Resources";
+// import Resources from "../UI/Pages/resources/Resources";
+import CreateCode from "../UI/Pages/createCode/CreateCode";
+import Resources from "../UI/Pages/Resources/Resources";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (
@@ -42,6 +45,8 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/verifyemail" element={<VerifyEmail />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/entercode" element={<EnterCode />} />
+        <Route path="/createcode" element={<CreateCode />} />
+        {/* <Route path="" element={} /> */}
       </Routes>
     </BrowserRouter>
   );

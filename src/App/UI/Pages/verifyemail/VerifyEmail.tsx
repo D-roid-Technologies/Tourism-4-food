@@ -9,15 +9,15 @@ const VerifyEmail: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="verifyemail__container">
-       <div className="main__logo__container">
-       <img
+      <div className="main__logo__container">
+        <img
           src={Assets.images.companyLogo}
           alt="Tourism4Food Logo"
           // onClick={() => navigate("/")}
           onClick={() => (window.location.href = "")}
           className="main__logo"
         />
-       </div>
+      </div>
       <span className="bottom__btn">
         <MdKeyboardArrowLeft />
       </span>
