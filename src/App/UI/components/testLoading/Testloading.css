@@ -1,0 +1,33 @@
+.loading__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.loading__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2.6px;
+  background-color: #f28d4e;
+  animation: loading 2s linear forwards;
+}
+
+/* Loading animation */
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
