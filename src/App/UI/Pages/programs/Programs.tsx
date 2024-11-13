@@ -21,8 +21,8 @@ const Programs: React.FC = () => {
               <h1>our programs</h1>
               <div className="wrapper">
                 <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Blanditiis provident officia ex.
+                  Our Meal Distribution program focuses on providing meals to
+                  school-age children, one plate at a time.
                 </span>
               </div>
             </div>
