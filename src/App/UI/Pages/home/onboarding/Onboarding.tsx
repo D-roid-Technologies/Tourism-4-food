@@ -78,7 +78,7 @@ const Onboarding: React.FC = () => {
         ))}
       </Slider>
       <div className="onboarding__controls">
-        <p className="skip__text" onClick={() => navigate("/dashboard")}>
+        <p className="skip__text" onClick={() => navigate("/userdashboard")}>
           Skip
         </p>
         {currentSlide < slides.length - 1 ? (
@@ -90,7 +90,7 @@ const Onboarding: React.FC = () => {
             className="finish__btn"
             label="Get Started"
             // onClick={() => console.log("Onboarding completed!")}
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/userdashboard")}
           />
         )}
       </div>

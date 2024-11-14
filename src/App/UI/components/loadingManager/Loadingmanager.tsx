@@ -19,7 +19,7 @@ import EnterCode from "../../Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../../Pages/home/signup/Signup";
 import Resources from "../../Pages/resources/Resources";
 import CreateCode from "../../Pages/createCode/CreateCode";
-import UserDashboard from "../../Pages/userDashboard/UserDashboard";
+import UserDashboard from "../../Pages/userdashboard/UserDashboard";
 
 const LoadingManager: React.FC = () => {
   const [loading, setLoading] = useState(false);
