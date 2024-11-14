@@ -18,7 +18,7 @@ import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
 import EnterCode from "../UI/Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../UI/Pages/home/signup/Signup";
 import CreateCode from "../UI/Pages/createCode/CreateCode";
-import Resources from "../UI/Pages/Resources/Resources";
+import Resources from "../UI/Pages/resources/Resources";
 import UserDashboard from "../UI/Pages/userdashboard/UserDashboard";
 
 const Index: React.FunctionComponent<RouterType> = () => {
@@ -45,10 +45,24 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/entercode" element={<EnterCode />} />
         <Route path="/createcode" element={<CreateCode />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
-        {/* <Route path="" element={} /> */}
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default Index;
+
+// IGNORE - TESTING A LOADING FUNCTION
+// import React from "react";
+// import { BrowserRouter } from "react-router-dom";
+// import LoadingManager from "../UI/components/loadingManager/Loadingmanager";
+
+// const Index: React.FC = () => {
+//   return (
+//     <BrowserRouter>
+//       <LoadingManager />
+//     </BrowserRouter>
+//   );
+// };
+
+// export default Index;

@@ -1,29 +1,33 @@
-.dashboard-container {
-  display: flex;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  background-color: #001529;
+  color: white;
+  overflow-y: auto;
   min-height: 100vh;
 }
 
-.sidebar {
-  width: 240px;
-  background-color: #001529;
-  color: white;
-  padding: 20px;
-}
-
 .dashboardlogo {
-  margin-bottom: 30px;
+  margin: 30px 0;
+  text-align: center;
 }
 
 .nav-menu .nav-item {
-  padding: 12px;
-  margin: 15px 0;
+  padding: 20px 25px;
+  /* font-weight: bold; */
+  font-size: 16px;
+  margin: 0;
   cursor: pointer;
 }
 
 .nav-menu .nav-item.active {
   background-color: #ff7043;
 }
-
+.nav-menu .nav-item:hover {
+  background-color: #ff7043;
+}
 .main-content {
   flex: 1;
   padding: 20px;

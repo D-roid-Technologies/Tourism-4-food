@@ -90,7 +90,7 @@ const CreateCode: React.FC = () => {
         {currentPin.map((digit, index) => (
           <input
             key={index}
-            type="text"
+            type="password"
             maxLength={1}
             value={digit}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>

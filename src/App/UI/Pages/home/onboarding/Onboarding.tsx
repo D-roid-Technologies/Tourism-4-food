@@ -54,10 +54,6 @@ const Onboarding: React.FC = () => {
     }
   };
 
-  const handleSkip = () => {
-    console.log("User skipped the onboarding process.");
-  };
-
   return (
     <div className="onboarding__container">
       <div className="main__logo__container">
@@ -82,7 +78,7 @@ const Onboarding: React.FC = () => {
         ))}
       </Slider>
       <div className="onboarding__controls">
-        <p className="skip__text" onClick={handleSkip}>
+        <p className="skip__text" onClick={() => navigate("/userdashboard")}>
           Skip
         </p>
         {currentSlide < slides.length - 1 ? (
@@ -94,7 +90,7 @@ const Onboarding: React.FC = () => {
             className="finish__btn"
             label="Get Started"
             // onClick={() => console.log("Onboarding completed!")}
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/userdashboard")}
           />
         )}
       </div>

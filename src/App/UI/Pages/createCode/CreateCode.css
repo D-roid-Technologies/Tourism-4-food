@@ -50,8 +50,7 @@
   color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer; 
-  transition: background-color 0.3s ease;
+  cursor: pointer;
   margin: 10px 0;
   width: 25%;
 }
