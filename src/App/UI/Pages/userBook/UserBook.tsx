@@ -1,16 +1,15 @@
 import React from "react";
 import DashboardHeader from "../../components/dashboardHeader/DashboardHeader";
 import DashboardNavbar from "../../components/dashboardnavbar/DashboardNavbar";
-import "./UserDashboard.css";
+import "./UserBook.css";
 import "../../components/dashboardStyle/DashboardStayle.css";
 
-const UserDashboard: React.FC = () => {
-  const userName: string = "Onyekachi Godswill";
+const UserBook: React.FC = () => {
   return (
     <main className="dashboard__container">
-      <DashboardNavbar activeItem="Dashboard" />
+      <DashboardNavbar activeItem="Book" />
       <div className="content__section">
-        <DashboardHeader headTitle={`Hello, ${userName}`} />
+        <DashboardHeader headTitle="Book" />
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
           nesciunt, sequi accusantium possimus nobis repudiandae, magnam
@@ -132,4 +131,5 @@ const UserDashboard: React.FC = () => {
     </main>
   );
 };
-export default UserDashboard;
+
+export default UserBook;
