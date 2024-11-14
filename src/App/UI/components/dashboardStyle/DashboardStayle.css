@@ -1,0 +1,13 @@
+.dashboard__container {
+  display: flex;
+  min-height: 100vh;
+}
+.content__section {
+  margin-left: 300px;
+  flex: 1;
+  padding: 10px;
+  background: #fff;
+}
+.content__section div {
+  padding: 30px;
+}

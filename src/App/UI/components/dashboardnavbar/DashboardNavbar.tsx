@@ -1,12 +1,14 @@
 import React from "react";
 import "../dashboardnavbar/DashboardNavbar.css";
 import { Assets } from "../../../Utils/constant/Assets";
+import { useNavigate } from "react-router-dom";
 
 interface DashboardNavbarProps {
   activeItem: string;
 }
 
 const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ activeItem }) => {
+  const navigate = useNavigate();
   return (
     <div className="sidebar">
       <div className="dashboardlogo">
@@ -14,11 +16,15 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ activeItem }) => {
       </div>
       <nav className="nav-menu">
         <div
+          onClick={() => navigate("/userdashboard")}
           className={`nav-item ${activeItem === "Dashboard" ? "active" : ""}`}
         >
           Dashboard
         </div>
-        <div className={`nav-item ${activeItem === "Book" ? "active" : ""}`}>
+        <div
+          onClick={() => navigate("/userbook")}
+          className={`nav-item ${activeItem === "Book" ? "active" : ""}`}
+        >
           Book
         </div>
         <div

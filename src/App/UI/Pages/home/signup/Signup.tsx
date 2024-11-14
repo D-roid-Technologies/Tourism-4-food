@@ -12,6 +12,7 @@ const Signup: React.FunctionComponent = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    navigate("/verifyemail");
   };
   return (
     <div>
