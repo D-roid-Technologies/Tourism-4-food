@@ -18,8 +18,9 @@ import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
 import EnterCode from "../UI/Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../UI/Pages/home/signup/Signup";
 import CreateCode from "../UI/Pages/createCode/CreateCode";
-import Resources from "../UI/Pages/resources/Resources";
+// import Resources from "../UI/Pages/resources/Resources";
 import UserDashboard from "../UI/Pages/userdashboard/UserDashboard";
+import Resources from "../UI/Pages/Resources/Resources";
 
 const Index: React.FunctionComponent<RouterType> = () => {
   return (

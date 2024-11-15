@@ -128,10 +128,7 @@ const Navbar: React.FC = () => {
       {/* <button className="login-button" onClick={() => navigate("/login")}>
         Log In
       </button> */}
-      <button
-        className="login-button"
-        onClick={() => navigate("/userdashboard")}
-      >
+      <button className="login-button" onClick={() => navigate("/login")}>
         Log In
       </button>
     </nav>
