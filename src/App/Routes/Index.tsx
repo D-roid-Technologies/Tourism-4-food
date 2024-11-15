@@ -4,6 +4,7 @@ import { RouterType } from "../Utils/Types";
 import Home from "../UI/Pages/home/Home";
 import AboutUs from "../UI/Pages/aboutus/AboutUs";
 import Login from "../UI/Pages/home/login/Login";
+import Signup from "../UI/Pages/home/signup/Signup";
 import Main from "../UI/Pages/main/Main";
 import Programs from "../UI/Pages/programs/Programs";
 import Campaigns from "../UI/Pages/campaigns/Campaigns";
@@ -16,10 +17,10 @@ import Volunteer from "../UI/Pages/volunteer/Volunteer";
 import Onboarding from "../UI/Pages/home/onboarding/Onboarding";
 import VerifyEmail from "../UI/Pages/verifyemail/VerifyEmail";
 import EnterCode from "../UI/Pages/verifyemail/enterCode/EnterCode";
-import Signup from "../UI/Pages/home/signup/Signup";
 import CreateCode from "../UI/Pages/createCode/CreateCode";
 // import Resources from "../UI/Pages/resources/Resources";
 import UserDashboard from "../UI/Pages/userdashboard/UserDashboard";
+import UserBook from "../UI/Pages/userBook/UserBook";
 import Resources from "../UI/Pages/Resources/Resources";
 
 const Index: React.FunctionComponent<RouterType> = () => {
@@ -46,6 +47,7 @@ const Index: React.FunctionComponent<RouterType> = () => {
         <Route path="/entercode" element={<EnterCode />} />
         <Route path="/createcode" element={<CreateCode />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/userbook" element={<UserBook />} />
       </Routes>
     </BrowserRouter>
   );

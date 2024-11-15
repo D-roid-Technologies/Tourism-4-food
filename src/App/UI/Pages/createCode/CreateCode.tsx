@@ -53,7 +53,7 @@ const CreateCode: React.FC = () => {
   const handleDone = () => {
     if (pin.join("") === confirmPin.join("")) {
       successPin();
-      setTimeout(() => navigate("/onboarding"), 3000);
+      setTimeout(() => navigate("/userdashboard"), 3000);
     } else {
       errorPin();
     }
@@ -116,7 +116,7 @@ const CreateCode: React.FC = () => {
       ) : (
         <>
           <Button
-            label="Done"
+            label="Launch Dashboard"
             style={{ marginTop: "20px" }}
             disabled={!isPinComplete}
             onClick={handleDone}
