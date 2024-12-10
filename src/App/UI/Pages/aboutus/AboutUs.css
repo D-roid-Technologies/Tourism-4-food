@@ -26,7 +26,8 @@ body {
 }
 
 .about__banner__content h1,
-span {
+span,
+p {
   color: #fff;
 }
 .about__banner__content h1 {
@@ -40,6 +41,10 @@ span {
 .about__banner__content span {
   font-size: 30px;
   font-weight: bolder;
+}
+.about__banner__content p {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .about__wrapper {
@@ -124,11 +129,17 @@ span {
   margin-top: 70px;
 }
 
-.about__goals_container ol li {
+/* .about__goals_container ol li {
   font-size: 19px;
   color: #333333;
   margin-top: 13px;
   font-weight: 500;
+} */
+.goal-head {
+  color: #333333;
+}
+.goal-details {
+  color: #333333;
 }
 
 /* ----------------------------- */

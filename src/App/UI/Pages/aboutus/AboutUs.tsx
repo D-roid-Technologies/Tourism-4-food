@@ -27,13 +27,13 @@ const aboutContent: AboutContentTwo[] = [
     contentImage: Assets.images.pushPin,
     contentTitle: "our mission",
     contentDescription:
-      "Our mission is to harness tourism's vast resources and networks to support underserved populations through sustainable practices, promoting local economic growth and improved livelihoods.",
+      "To redefine tourism as a tool for social impact and community empowerment, using Pro-Poor Tourism to address poverty and foster sustainable development.",
   },
   {
     contentImage: Assets.images.lightBuld,
     contentTitle: "our vision",
     contentDescription:
-      "We envision a world where tourism catalyzes eradicating hunger, boosting local economies, and fostering sustainable, responsible practices that uplift communities globally.",
+      "To build a tourism industry that actively contributes to human well-being, economic resilience, and cultural enrichment in local communities.",
   },
 ];
 
@@ -76,6 +76,11 @@ const AboutUs: React.FC = () => {
               <span>
                 Tourism 4 food leverages tourism to address global hunger
               </span>
+              <p>
+                Tourism for Food is a social enterprise dedicated to redefining
+                tourism’s role as a driver for sustainable development and
+                poverty alleviation through Pro-Poor Tourism
+              </p>
             </div>
           </div>
         </div>
@@ -105,18 +110,11 @@ const AboutUs: React.FC = () => {
             </div>
             <div className="block-12 block-lg-7 about__history__content">
               <p>
-                {" "}
-                Tourism 4 Food is a non-governmental organization leading a
-                transformative movement by leveraging tourism to address global
-                hunger. Our mission is to utilize resources within the tourism
-                and hospitality sectors to support the poorest communities. We
-                provide nutritious meals to underserved populations while
-                promoting sustainable development. As a pro-poor tourism
-                initiative, we focus on partnerships, strategic fundraising,
-                vocational training, and meal distribution to combat food
-                insecurity. We also raise awareness about food shortages and
-                advocate for food security, partnering with stakeholders in the
-                travel, food, and hospitality sectors.
+                Empowerment: Supporting local talent and fostering skills for
+                economic independence. Sustainability: Promoting eco-friendly
+                and community-focused tourism practices. Impact: Ensuring all
+                efforts contribute directly to community upliftment. Integrity:
+                Building trust with transparency in our practices and results.
               </p>
               <Button label="Reg Certificate" style={{ marginTop: "30px" }} />
             </div>
@@ -128,9 +126,47 @@ const AboutUs: React.FC = () => {
         <div className="wrapper about__goals">
           <div className="group">
             <div className="block-12 block-lg-12 about__goals_container">
-              {" "}
               <h2>Goals and Objectives of Tourism 4 Food</h2>
-              <ol>
+              <h2 className="goal-head">Goals</h2>
+              <p className="goal-details">
+                Lead in Sustainable Tourism and Pro-Poor Tourism (PPT): Position
+                Tourism for Food as a global leader in sustainable tourism
+                practices that prioritize community development and inclusive
+                growth. Foster Community Development: Generate financial support
+                to fund impactful community development initiatives that address
+                food insecurity and promote local economic empowerment.
+                Influence Tourism Policies: Advocate for policies that integrate
+                sustainability and inclusivity, ensuring tourism benefits
+                underserved communities.
+              </p>
+              <h2 className="goal-head">Objectives</h2>
+              <p className="goal-details">
+                Combat Global Hunger: Utilize tourism and hospitality resources
+                to provide nutritious meals and support food security for
+                underserved communities. Promote Sustainable Development:
+                Encourage sustainable tourism practices that stimulate local
+                economic growth and empower communities. Foster Strategic
+                Partnerships: Build collaborations with stakeholders in travel,
+                food, and hospitality sectors to create innovative solutions for
+                food insecurity. Raise Awareness: Advocate for food security and
+                sustainable tourism, bringing attention to the challenges of
+                food shortages and environmental protection. Empower Through
+                Training: Deliver vocational training programs to equip
+                communities with skills for sustainable livelihoods and
+                long-term development. Provide Resources and Consultancy: Offer
+                tailored resources, training, and expert consultancy to empower
+                local communities and enhance their participation in the tourism
+                economy. Engage Donors and Stakeholders: Mobilize support from
+                donors, partners, and stakeholders to implement impactful
+                community projects. Advocate for Responsible Practices Promote
+                environmentally responsible and community-focused tourism and
+                hospitality practices that prioritize poverty reduction through
+                Pro-Poor Tourism (PPT). This approach ensures long-term
+                sustainability, inclusivity, and economic empowerment for
+                underserved communities, leveraging tourism as a tool for
+                meaningful social and economic transformation.
+              </p>
+              {/* <ol>
                 <li>
                   Combat Global Hunger: Use tourism and hospitality resources to
                   provide nutritious meals to underserved communities.
@@ -156,7 +192,7 @@ const AboutUs: React.FC = () => {
                   Vocational Training: Empower communities through
                   skill-building programs aimed at long-term development.
                 </li>
-              </ol>
+              </ol> */}
             </div>
           </div>
         </div>
