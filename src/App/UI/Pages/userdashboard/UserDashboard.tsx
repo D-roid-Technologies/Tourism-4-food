@@ -5,7 +5,7 @@ import "./UserDashboard.css";
 import "../../components/dashboardStyle/DashboardStayle.css";
 
 const UserDashboard: React.FC = () => {
-  const userName: string = "Onyekachi Godswill";
+  const userName: string = "Ciroma";
   return (
     <main className="dashboard__container">
       <DashboardNavbar activeItem="Dashboard" />
