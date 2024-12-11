@@ -17,10 +17,9 @@ import Onboarding from "../../Pages/home/onboarding/Onboarding";
 import VerifyEmail from "../../Pages/verifyemail/VerifyEmail";
 import EnterCode from "../../Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../../Pages/home/signup/Signup";
-// import Resources from "../../Pages/resources/Resources";
+import Resources from "../../Pages/resources/Resources";
 import CreateCode from "../../Pages/createCode/CreateCode";
 import UserDashboard from "../../Pages/userdashboard/UserDashboard";
-import Resources from "../../Pages/Resources/Resources";
 
 const LoadingManager: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +27,7 @@ const LoadingManager: React.FC = () => {
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 3000);
 
     return () => clearTimeout(timer);
   }, [location]);
