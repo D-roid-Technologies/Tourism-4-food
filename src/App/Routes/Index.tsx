@@ -54,18 +54,3 @@ const Index: React.FunctionComponent<RouterType> = () => {
 };
 
 export default Index;
-
-// IGNORE - TESTING A LOADING FUNCTION
-// import React from "react";
-// import { BrowserRouter } from "react-router-dom";
-// import LoadingManager from "../UI/components/loadingManager/Loadingmanager";
-
-// const Index: React.FC = () => {
-//   return (
-//     <BrowserRouter>
-//       <LoadingManager />
-//     </BrowserRouter>
-//   );
-// };
-
-// export default Index;
