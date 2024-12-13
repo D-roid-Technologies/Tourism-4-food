@@ -74,13 +74,15 @@ const AboutUs: React.FC = () => {
             <div className="about__banner__content p-4 p-md-0">
               <h1>about us</h1>
               <span>
-                Tourism 4 food leverages tourism to address global hunger
-              </span>
-              <p>
                 Tourism for Food is a social enterprise dedicated to redefining
                 tourism’s role as a driver for sustainable development and
                 poverty alleviation through Pro-Poor Tourism
-              </p>
+              </span>
+              {/* <p>
+                Tourism for Food is a social enterprise dedicated to redefining
+                tourism’s role as a driver for sustainable development and
+                poverty alleviation through Pro-Poor Tourism
+              </p> */}
             </div>
           </div>
         </div>

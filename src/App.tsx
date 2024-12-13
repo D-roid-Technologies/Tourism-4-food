@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import AppEntry from "./App/UI/AppEntry";
 import { store } from "./App/Redux/Store";
 import React, { useEffect } from "react";
-import Loading from "./App/UI/Loading";
+import Loading from "./App/UI/Pages/Loading";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { storage } from "./Firebase";
 

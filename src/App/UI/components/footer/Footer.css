@@ -53,8 +53,12 @@
 }
 
 .footer-subscribe h4 {
-  font-size: 18px;
+  font-size: 16px;
   color: #001525;
+}
+.updated {
+  font-size: 16px;
+  color: #f17c1b;
 }
 
 .footer-subscribe form {

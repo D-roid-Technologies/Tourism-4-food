@@ -56,6 +56,9 @@ const Footer: React.FC = () => {
 
         <div className="footer-section footer-subscribe">
           <h4>Subscribe and keep up with us</h4>
+          <p className="updated">
+            Stay Updated with the Latest News and Campaigns
+          </p>
           <form>
             <div className="input-name">
               <input type="text" placeholder="First Name" required />
@@ -63,15 +66,17 @@ const Footer: React.FC = () => {
             </div>
 
             <input type="email" placeholder="Email" required />
-            <button type="submit">Book now</button>
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </div>
 
       <div className="footer-bottom">
         <p>COPYRIGHT © 2024 TOURISM4FOOD</p>
-        <p>BUILT BY DROID TECHNOLOGIES</p>
         <a href="#">PRIVACY POLICY</a>
+        <p>TERMS AND CONDITIONS</p>
+        <p>LEGAL INFORMATION</p>
+        <p>BUILT BY DROID TECHNOLOGIES</p>
       </div>
     </footer>
   );
