@@ -15,13 +15,17 @@ export type DimensionType = {
   width: number;
   height: number;
 };
+export type CountryInfo = {
+  name: string;
+  flag: any;
+  iso: string;
+};
+
 export type UserType = {
-  sixDigitCode: string;
-  sixDigitCodeFromUser: string;
-  userFName: string;
-  userLName: string;
-  message: string;
-  userEmail: string;
+  fullName: string;
+  email: string;
+  password: string;
+  countryInfo: CountryInfo;
 };
 export type EmailType = {
   emailFromUser: string;

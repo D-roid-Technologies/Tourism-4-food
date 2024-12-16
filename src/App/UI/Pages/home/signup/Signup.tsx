@@ -4,28 +4,50 @@ import "../signup/Signup.css";
 import { Assets } from "../../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
+import { UserType } from "../../../../Utils/Types";
+import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
 
 const Signup: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    navigate("/verifyemail");
+  const [fullName, setFullName] = useState<string>("");
+  const userData = {
+    fullName: fullName,
+    email: email,
+    password: password,
+    countryInfo: {
+      name: "",
+      iso: "",
+      flag: "",
+    },
   };
+
+  const registerUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await authFunctions
+      .handleUserSignUp(userData)
+      .then((reponse) => {
+        // console.log(reponse);
+        // navigate("/verifyemail");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div>
       <div>
         {/* <Navbar /> */}
-        <div className="login-nav">
+        {/* <div className="login-nav">
           <div className="login-navbar-logo" onClick={() => navigate("/home")}>
             <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
           </div>
-        </div>
+        </div> */}
         {/* BACK BUTTON */}
         <div className="form-project-container">
-          <button onClick={() => navigate("")} className="form-btn-hero">
+          <button onClick={() => navigate("/home")} className="form-btn-hero">
             <IoChevronBackOutline className="form-back-btn-icon" />
           </button>
           <div>
@@ -51,15 +73,15 @@ const Signup: React.FunctionComponent = () => {
               <h1>Create your account</h1>
             </div>
 
-            <form onSubmit={handleSubmit} className="login-forms">
+            <form onSubmit={registerUser} className="login-forms">
               <h3>Sign up</h3>
 
               <div className="login-form-group">
                 <input
-                  type="email"
-                  placeholder="Enter full name"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  placeholder="Emeka Ebuka Eke"
+                  // value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   className="login-input"
                 />
               </div>
@@ -67,7 +89,7 @@ const Signup: React.FunctionComponent = () => {
                 <input
                   type="email"
                   placeholder="Enter Email"
-                  value={email}
+                  // value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
                 />
@@ -76,10 +98,9 @@ const Signup: React.FunctionComponent = () => {
                 <input
                   type="password"
                   placeholder="Password"
-                  value={password}
+                  // value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
-                  // maxLength={50}
                 />
               </div>
 

@@ -14,7 +14,7 @@ const VerifyEmail: React.FC = () => {
           src={Assets.images.companyLogo}
           alt="Tourism4Food Logo"
           // onClick={() => navigate("/")}
-          onClick={() => (window.location.href = "")}
+          onClick={() => (window.location.href = "/home")}
           className="main__logo"
         />
       </div>
