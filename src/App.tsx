@@ -35,7 +35,7 @@ function App() {
     loadingBackEndData();
   }, [loading]);
 
-  console.log("Line 34", listImages, loading);
+  // console.log("Line 34", listImages, loading);
 
   return (
     <Provider store={store}>
