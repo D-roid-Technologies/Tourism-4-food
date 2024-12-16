@@ -15,8 +15,8 @@ const menuItems: MenuItem[] = [
     // title: "About Us",
     description: "",
     submenu: [
-      { label: "ComeEAT", path: "" },
-      { label: "CoachMe", path: "" },
+      { label: "ComeEAT", path: "/programs#comeeat" },
+      { label: "CoachMe", path: "/programs#coachme" },
       { label: "Community Franchise", path: "" },
 
       // { label: "History", path: "/aboutus#history" },
@@ -45,8 +45,8 @@ const menuItems: MenuItem[] = [
     description: "",
     submenu: [
       { label: "Pro poor Tourism", path: "" },
-      { label: "Say No To Dirty Kitchen", path: "" },
-      { label: "Just a wee tip", path: "" },
+      { label: "Say No To Dirty Kitchen", path: "/campaigns#dirtykitchen" },
+      { label: "Just a wee tip", path: "/campaigns#justweetip" },
       { label: "My kindness Diary", path: "" },
       { label: "Under the service smile", path: "" },
 
