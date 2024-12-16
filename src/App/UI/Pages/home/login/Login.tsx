@@ -19,14 +19,14 @@ const Login: React.FunctionComponent = () => {
     <div>
       <div>
         {/* <Navbar /> */}
-        <div className="login-nav">
+        {/* <div className="login-nav">
           <div className="login-navbar-logo" onClick={() => navigate("/home")}>
             <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
           </div>
-        </div>
+        </div> */}
         {/* BACK BUTTON */}
         <div className="form-project-container">
-          <button onClick={() => navigate("")} className="form-btn-hero">
+          <button onClick={() => navigate("/home")} className="form-btn-hero">
             <IoChevronBackOutline className="form-back-btn-icon" />
           </button>
           <div>

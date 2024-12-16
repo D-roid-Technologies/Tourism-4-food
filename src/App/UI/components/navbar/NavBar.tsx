@@ -15,14 +15,9 @@ const menuItems: MenuItem[] = [
     // title: "About Us",
     description: "",
     submenu: [
-      { label: "ComeEAT", path: "" },
-      { label: "CoachMe", path: "" },
+      { label: "ComeEAT", path: "/programs#comeeat" },
+      { label: "CoachMe", path: "/programs#coachme" },
       { label: "Community Franchise", path: "" },
-
-      // { label: "History", path: "/aboutus#history" },
-      // { label: "Achievements", path: "/aboutus#achievements" },
-      // { label: "Team Profile", path: "/aboutus#team" },
-      // { label: "Executive Summary", path: "/aboutus" },
     ],
   },
   {
@@ -32,11 +27,12 @@ const menuItems: MenuItem[] = [
     submenu: [
       { label: "Training and Coaching", path: "" },
       { label: "Consultancy Services", path: "" },
-
-      // { label: "Resources", path: "/resources" },
-      // { label: "Programs", path: "/programs" },
-      // { label: "Campaigns", path: "/campaigns" },
-      // { label: "Legal", path: "/legal" },
+      { label: "Donate", path: "/getinvolved#donate" },
+      { label: "Legal", path: "/legal" },
+      { label: "Resources", path: "/resources" },
+      { label: "Volunteer", path: "/volunteer" },
+      { label: "Parner with Us", path: "/getinvolved#partner" },
+      { label: "Cooperate Engagement", path: "/getinvolved#engagement" },
     ],
   },
   {
@@ -45,8 +41,8 @@ const menuItems: MenuItem[] = [
     description: "",
     submenu: [
       { label: "Pro poor Tourism", path: "" },
-      { label: "Say No To Dirty Kitchen", path: "" },
-      { label: "Just a wee tip", path: "" },
+      { label: "Say No To Dirty Kitchen", path: "/campaigns#dirtykitchen" },
+      { label: "Just a wee tip", path: "/campaigns#justweetip" },
       { label: "My kindness Diary", path: "" },
       { label: "Under the service smile", path: "" },
 
@@ -65,11 +61,6 @@ const menuItems: MenuItem[] = [
       { label: "Our Webinars", path: "" },
       { label: "Lecture Series", path: "" },
       { label: "Our Activities", path: "" },
-
-      // { label: "Volunteer", path: "/volunteer" },
-      // { label: "Donate", path: "/getinvolved#donate" },
-      // { label: "Parner with Us", path: "/getinvolved#partner" },
-      // { label: "Cooperate Engagement", path: "/getinvolved#engagement" },
     ],
   },
   {
@@ -82,13 +73,17 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
-    title: "Contact Us",
+    title: "More",
     description: "",
     submenu: [
       // { label: "General Inquiries", path: "" },
       // { label: "Volunteer Oppurtunities", path: "" },
       // { label: "Media Inquiries", path: "" },
       // { label: "Partnerships", path: "" },
+      { label: "History", path: "/aboutus#history" },
+      { label: "Achievements", path: "/aboutus#achievements" },
+      { label: "Team Profile", path: "/aboutus#team" },
+      { label: "Executive Summary", path: "/aboutus" },
       { label: "Contact Form", path: "/contact" },
       { label: "FAQ", path: "/contact#faq" },
     ],
