@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import "../campaigns/Campaigns.css";
@@ -6,8 +6,19 @@ import "../campaigns/Campaigns.css";
 import "../programs/Programs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
 import Button from "../../components/button/Button";
+import { useLocation } from "react-router-dom";
 
 const Campaigns: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
     <>
       <main>
@@ -28,13 +39,12 @@ const Campaigns: React.FC = () => {
         </div>
         <section className="campaigns">
           <div className="wrapper">
-            <div className="group campaigns__container">
+            <div className="group campaigns__container" id="dirtykitchen">
               <div className="block-12 block-lg-5 campaigns__image">
                 <img src="https://placehold.co/600x600/FFFFFF/png" />
               </div>
               <div className="block-12 block-lg-7 campaigns__content">
                 <p>
-                  {" "}
                   <span>#sayNoToDirtyKitchen:</span> Join the movement to
                   promote improved hygiene standards in kitchen environments.
                   This campaign aims to raise awareness about maintaining
@@ -48,10 +58,9 @@ const Campaigns: React.FC = () => {
               </div>
             </div>
             {/* -----------  */}
-            <div className="group campaigns__container__alt">
+            <div className="group campaigns__container__alt" id="justweetip">
               <div className="block-12 block-lg-7 campaigns__content">
                 <p>
-                  {" "}
                   <span>#justaWeeTip:</span> Join the campaign to encourage
                   responsible tipping in the tourism and hospitality industries.
                   This movement highlights the importance of showing

@@ -135,7 +135,7 @@ const Donate: React.FunctionComponent = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
   };
   return (
     <>

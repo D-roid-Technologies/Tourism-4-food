@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/NavBar";
 import Footer from "../../components/footer/Footer";
 import "../programs/Programs.css";
 import "../../components/liteGrid@v1.0/lite-grid.css";
 import { Assets } from "../../../Utils/constant/Assets";
 import Button from "../../components/button/Button";
+import { useLocation } from "react-router-dom";
 
 const Programs: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
     <>
       <main>
@@ -46,7 +57,7 @@ const Programs: React.FC = () => {
         </div>
         <section className="come__eat">
           <div className="wrapper programs__history">
-            <div className="group programs__history__container">
+            <div id="comeeat" className="group programs__history__container">
               <div className="programs__history__title">
                 <h2>come eat feeding program</h2>
               </div>
@@ -70,7 +81,7 @@ const Programs: React.FC = () => {
           </div>
         </section>
         <section className="coach__me mt-3">
-          <div className="wrapper programs__history">
+          <div className="wrapper programs__history" id="coachme">
             <div className="group programs__history__container">
               <div className="programs__history__title">
                 <h2>coach me program</h2>

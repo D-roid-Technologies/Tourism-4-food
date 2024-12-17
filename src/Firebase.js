@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD8I0U2AynkoUaF36EfcwX95QXqevatVOQ",
-  authDomain: "tourism-4-food.firebaseapp.com",
-  projectId: "tourism-4-food",
-  storageBucket: "tourism-4-food.appspot.com",
-  messagingSenderId: "3518250039",
-  appId: "1:3518250039:web:47e86581e7aa3ca63193b2",
-  measurementId: "G-M8G2PMJYNZ",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
 };
 
 const app = initializeApp(firebaseConfig);
