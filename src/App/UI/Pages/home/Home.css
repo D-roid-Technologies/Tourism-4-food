@@ -1,62 +1,138 @@
-/* HeroSection.css */
+/* Hero Section */
 .home-hero {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  /* padding: 40px; */
+  justify-content: center;
   background-color: #f9f9f9;
   margin-bottom: 150px;
-}
-
-.home-hero-content {
-  max-width: 50%;
-  margin-left: 40px;
-}
-
-.home-hero-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
-  line-height: 65px;
-}
-
-.home-hero-subtitle {
-  font-size: 1.125rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-
-.home-hero-buttons {
-  display: flex;
   gap: 2rem;
 }
 
-.home-hero-btn {
-  padding: 10px 20px;
+/* Content Section */
+.home-hero-content {
+  max-width: 600px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.home-hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.home-hero-subtitle {
   font-size: 1rem;
-  border-radius: 5px;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Buttons Section */
+.home-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.home-hero-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff7043;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-.explore-btn {
-  background-color: #ff7043;
-  /* background-color: #ffa726; */
-  border: none;
-  color: white;
+.home-hero-btn:hover {
+  background-color: #f28d4e;
+  transform: scale(1.05);
 }
 
-.book-btn {
-  background-color: #ff7043;
-  border: none;
-  color: white;
-}
-
+/* Image Section */
 .home-hero-image img {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px; /* Adjust image size dynamically */
+  height: auto;
+  margin: 0 auto;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .home-hero {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .home-hero-content {
+    max-width: 80%;
+  }
+
+  .home-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .home-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-hero-buttons {
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 1rem;
+  }
+
+  .home-hero-btn {
+    width: 100%; /* Full-width buttons for smaller devices */
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero-title {
+    font-size: 2rem;
+  }
+
+  .home-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .home-hero-image img {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .home-hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .home-hero-image img {
+    max-width: 100%;
+  }
+
+  .home-hero-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}
+
 .eat-challenge-video {
   width: 100%;
   height: 600px;

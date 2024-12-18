@@ -1,14 +1,17 @@
+/* Navbar Styles */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
-  border-bottom: 1px solid #333333;
+  /* border-bottom: 1px solid #333333; */
   background-color: #ffffff;
+  position: relative;
 }
 
 .navbar-logo img {
   height: 50px;
+  margin-top: 13px;
 }
 
 .navbar-menu {
@@ -83,8 +86,137 @@
   background-color: #ff7043;
   color: #ffffff;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.login-button :hover {
+  background-color: #f28d4e;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 16px 20px;
+  }
+
+  .navbar-logo {
+    margin-bottom: 0;
+    margin-left: -14px;
+  }
+
+  .logo_small {
+    width: 100%;
+    margin-left: -10px;
+    margin-top: 9px;
+  }
+
+  .logo_small button {
+    width: 100% !important;
+  }
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    z-index: 1;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+    transition: 0.3s;
+  }
+
+  .navbar-item {
+    margin: 8px 0;
+  }
+
+  .menu-button {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .dropdown {
+    position: relative;
+    box-shadow: none;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .dropdown-description {
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    padding-left: 16px;
+  }
+
+  .login-button {
+    margin-left: 16px; /* Add spacing between buttons */
+  }
+}
+
+/* Smaller Screen (Mobile) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 10px 15px;
+  }
+
+  .menu-button {
+    font-size: 12px;
+  }
+
+  .dropdown-item {
+    font-size: 12px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-left: 8px; /* Keep a consistent gap */
+  }
+}
+.navbar-logo img {
+  height: 40px;
+}
+
+@media (min-width: 1100px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .logo_small {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .logo_big {
+    display: none !important;
+  }
 }
