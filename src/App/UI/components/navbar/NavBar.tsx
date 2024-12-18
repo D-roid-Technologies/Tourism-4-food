@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../navbar/NavBar.css";
 import { Assets } from "../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
+import Button from "../button/Button";
 
 interface MenuItem {
   title: string;
@@ -12,7 +13,6 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     title: "Our Programs",
-    // title: "About Us",
     description: "",
     submenu: [
       { label: "ComeEAT", path: "/programs#comeeat" },
@@ -22,7 +22,6 @@ const menuItems: MenuItem[] = [
   },
   {
     title: "Our Services",
-    // title: "Company",
     description: "",
     submenu: [
       { label: "Training and Coaching", path: "" },
@@ -37,7 +36,6 @@ const menuItems: MenuItem[] = [
   },
   {
     title: "Our Campaigns",
-    // title: "Activities",
     description: "",
     submenu: [
       { label: "Pro poor Tourism", path: "" },
@@ -45,17 +43,10 @@ const menuItems: MenuItem[] = [
       { label: "Just a wee tip", path: "/campaigns#justweetip" },
       { label: "My kindness Diary", path: "" },
       { label: "Under the service smile", path: "" },
-
-      // { label: "Book Event", path: "/login" },
-      // { label: "Book Travels", path: "/login" },
-      // { label: "Book Tours", path: "/login" },
-      // { label: "Consultancy Service", path: "/login" },
-      // { label: "Shop for Tourism Products", path: "login" },
     ],
   },
   {
     title: "Our Event",
-    // title: "Get Involved",
     description: "",
     submenu: [
       { label: "Our Webinars", path: "" },
@@ -76,10 +67,6 @@ const menuItems: MenuItem[] = [
     title: "More",
     description: "",
     submenu: [
-      // { label: "General Inquiries", path: "" },
-      // { label: "Volunteer Oppurtunities", path: "" },
-      // { label: "Media Inquiries", path: "" },
-      // { label: "Partnerships", path: "" },
       { label: "History", path: "/aboutus#history" },
       { label: "Achievements", path: "/aboutus#achievements" },
       { label: "Team Profile", path: "/aboutus#team" },
@@ -93,6 +80,7 @@ const menuItems: MenuItem[] = [
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const handleMouseEnter = (menu: string) => {
     setActiveMenu(menu);
@@ -103,6 +91,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleSubmenuClick = (path: string) => {
+    setMenuOpen(false); // Close menu on click
     if (path.includes("#")) {
       const [basePath, anchor] = path.split("#");
       navigate(basePath, { state: { scrollTo: anchor } });
@@ -116,7 +105,13 @@ const Navbar: React.FC = () => {
       <div className="navbar-logo" onClick={() => navigate("/")}>
         <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
       </div>
-      <ul className="navbar-menu">
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        ☰
+      </button>
+      <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
         {menuItems.map((item) => (
           <li
             key={item.title}
@@ -149,13 +144,17 @@ const Navbar: React.FC = () => {
             )}
           </li>
         ))}
+        <div className="logo_small">
+          <button className="login-button" onClick={() => navigate("/login")}>
+            Log In
+          </button>
+        </div>
       </ul>
-      {/* <button className="login-button" onClick={() => navigate("/login")}>
-        Log In
-      </button> */}
-      <button className="login-button" onClick={() => navigate("/login")}>
-        Log In
-      </button>
+      <div className="logo_big">
+        <button className="login-button" onClick={() => navigate("/login")}>
+          Log In
+        </button>
+      </div>
     </nav>
   );
 };

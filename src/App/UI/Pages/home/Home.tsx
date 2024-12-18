@@ -25,24 +25,23 @@ const Home: React.FunctionComponent = () => {
       <section className="home-hero">
         <div className="home-hero-content">
           <h1 className="home-hero-title">
-            Leverage tourism and <br /> hospitality to help <br />
-            combat global hunger.
+            Leverage tourism and hospitality to help combat global hunger.
           </h1>
           <p className="home-hero-subtitle">
             Empowering communities through tourism to fight hunger and build
             sustainable futures.
           </p>
           <div className="home-hero-buttons">
-            <button className="home-hero-btn explore-btn">
-              Explore Projects
-            </button>
-            <button className="home-hero-btn book-btn">Book now</button>
+            <button className="home-hero-btn">Explore Projects</button>
+            <button className="home-hero-btn">Book now</button>
           </div>
         </div>
         <div className="home-hero-image">
           <img src={Assets.images.homeHeroImage} alt="Travel illustration" />
         </div>
       </section>
+
+      {/* --------------  */}
       <div>
         <img
           src={Assets.images.homeEatChallenge}
