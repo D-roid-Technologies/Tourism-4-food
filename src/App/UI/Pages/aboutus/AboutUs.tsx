@@ -125,6 +125,26 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="wrapper about__history alt__alt">
+          <div className="group about__history__container" id="history">
+            <div className="about__history__title">
+              <h2>History</h2>
+            </div>
+            <div className="block-12 block-lg-5 about__history__image">
+              <img src={Assets.images.aboutHistoryImage} />
+            </div>
+            <div className="block-12 block-lg-7 about__history__content">
+              <p>
+                Empowerment: Supporting local talent and fostering skills for
+                economic independence. Sustainability: Promoting eco-friendly
+                and community-focused tourism practices. Impact: Ensuring all
+                efforts contribute directly to community upliftment. Integrity:
+                Building trust with transparency in our practices and results.
+              </p>
+              <Button label="Reg Certificate" style={{ marginTop: "30px" }} />
+            </div>
+          </div>
+        </div>
         <div className="wrapper about__goals">
           <div className="group">
             <h2 className="text-align-center mt-3">

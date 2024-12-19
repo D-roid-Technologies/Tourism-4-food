@@ -216,3 +216,31 @@ p {
   width: 50%;
   gap: 50px;
 }
+
+@media (max-width: 930px) {
+  .about__content__item {
+    padding: 30px 20px;
+  }
+
+  .about__banner__content span {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1016px) {
+  .about__history {
+    display: block !important;
+  }
+  .alt__alt {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1016px) {
+  .about__history {
+    display: none !important;
+  }
+  .alt__alt {
+    display: block !important;
+  }
+}
