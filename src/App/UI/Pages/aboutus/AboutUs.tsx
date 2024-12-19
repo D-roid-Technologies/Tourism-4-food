@@ -125,11 +125,33 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="wrapper about__history alt__alt">
+          <div className="group about__history__container" id="history">
+            <div className="about__history__title">
+              <h2>History</h2>
+            </div>
+            <div className="block-12 block-lg-5 about__history__image">
+              <img src={Assets.images.aboutHistoryImage} />
+            </div>
+            <div className="block-12 block-lg-7 about__history__content">
+              <p>
+                Empowerment: Supporting local talent and fostering skills for
+                economic independence. Sustainability: Promoting eco-friendly
+                and community-focused tourism practices. Impact: Ensuring all
+                efforts contribute directly to community upliftment. Integrity:
+                Building trust with transparency in our practices and results.
+              </p>
+              <Button label="Reg Certificate" style={{ marginTop: "30px" }} />
+            </div>
+          </div>
+        </div>
         <div className="wrapper about__goals">
           <div className="group">
-            <div className="block-12 block-lg-12 about__goals_container">
-              <h2>Goals and Objectives of Tourism 4 Food</h2>
-              <h2 className="goal-head">Goals</h2>
+            <h2 className="text-align-center mt-3">
+              Goals and Objectives of Tourism 4 Food
+            </h2>
+            <div className="block-12 block-lg-6 about__goals_container">
+              <h2 className="goal-head text-align-start">Goals</h2>
               <p className="goal-details">
                 Lead in Sustainable Tourism and Pro-Poor Tourism (PPT): Position
                 Tourism for Food as a global leader in sustainable tourism
@@ -141,7 +163,9 @@ const AboutUs: React.FC = () => {
                 sustainability and inclusivity, ensuring tourism benefits
                 underserved communities.
               </p>
-              <h2 className="goal-head">Objectives</h2>
+            </div>
+            <div className="block-12 block-lg-6 about__goals_container">
+              <h2 className="goal-head text-align-start">Objectives</h2>
               <p className="goal-details">
                 Combat Global Hunger: Utilize tourism and hospitality resources
                 to provide nutritious meals and support food security for
@@ -168,7 +192,8 @@ const AboutUs: React.FC = () => {
                 underserved communities, leveraging tourism as a tool for
                 meaningful social and economic transformation.
               </p>
-              {/* <ol>
+            </div>
+            {/* <ol>
                 <li>
                   Combat Global Hunger: Use tourism and hospitality resources to
                   provide nutritious meals to underserved communities.
@@ -195,7 +220,6 @@ const AboutUs: React.FC = () => {
                   skill-building programs aimed at long-term development.
                 </li>
               </ol> */}
-            </div>
           </div>
         </div>
         <div className="about__achievements" id="achievements">
