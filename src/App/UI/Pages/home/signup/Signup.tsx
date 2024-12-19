@@ -20,6 +20,7 @@ const Signup: React.FunctionComponent = () => {
     email: { message: "", isValid: false },
     password: { message: "", isValid: false },
     confirmPassword: { message: "", isValid: false },
+    fullName: { message: "", isValid: false },
   });
   const userData = {
     fullName: fullName,
@@ -36,6 +37,7 @@ const Signup: React.FunctionComponent = () => {
     const emailRegex = /^\S+@\S+\.\S+$/;
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
+    const nameRegex = /^[a-zA-Z\s]+$/;
 
     const newFieldStatus = {
       email: {
@@ -56,6 +58,12 @@ const Signup: React.FunctionComponent = () => {
             ? "Passwords match"
             : "Passwords do not match",
         isValid: password === confirmPassword && passwordRegex.test(password),
+      },
+      fullName: {
+        message: nameRegex.test(fullName)
+          ? "Name accepted"
+          : "Invalid name, only letters and spaces are allowed",
+        isValid: nameRegex.test(fullName),
       },
     };
 
@@ -78,6 +86,9 @@ const Signup: React.FunctionComponent = () => {
       .catch((error) => {
         console.log(error.message);
       });
+  };
+  const handleSignIn: () => Promise<void> = async () => {
+    navigate("/dashboard");
   };
 
   return (
@@ -198,14 +209,14 @@ const Signup: React.FunctionComponent = () => {
               </div>
 
               <div className="login-btn-container">
-                <button type="submit" className="login-btn">
+                <button
+                  onClick={handleSignIn}
+                  type="submit"
+                  className="login-btn"
+                >
                   Sign up
                 </button>
               </div>
-
-              {/* <p className="signup-prompt">
-                Don't have an account? <a href="/signup">Create an account.</a>
-              </p> */}
             </form>
           </div>
         </div>
