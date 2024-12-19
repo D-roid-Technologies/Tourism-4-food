@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import "../login/Login.css";
+import React, { useState, useEffect } from "react";
 import "../signup/Signup.css";
 import { Assets } from "../../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +7,13 @@ import { UserType } from "../../../../Utils/Types";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
+
+type CountryData = {
+  name: string;
+  iso2: string;
+  dial_code: string;
+  flag: string;
+};
 
 const Signup: React.FunctionComponent = () => {
   const navigate = useNavigate();
@@ -31,6 +37,53 @@ const Signup: React.FunctionComponent = () => {
       iso: "",
       flag: "",
     },
+  };
+  const [countries, setCountries] = useState<CountryData[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(
+    null
+  );
+
+  useEffect(() => {
+    fetchCountries();
+  }, []);
+
+  const fetchCountries = async () => {
+    try {
+      const flagResponse = await fetch(
+        "https://countriesnow.space/api/v0.1/countries/flag/images"
+      );
+      const flagData = await flagResponse.json();
+
+      const codeResponse = await fetch(
+        "https://countriesnow.space/api/v0.1/countries/codes"
+      );
+      const codeData = await codeResponse.json();
+
+      if (
+        flagData.error === false &&
+        Array.isArray(flagData.data) &&
+        codeData.error === false &&
+        Array.isArray(codeData.data)
+      ) {
+        const mergedData = flagData.data.map((flagCountry: { name: any }) => {
+          const codeCountry = codeData.data.find(
+            (c: { name: any }) => c.name === flagCountry.name
+          );
+          return {
+            ...flagCountry,
+            dial_code: codeCountry ? codeCountry.dial_code : "",
+            iso2: codeCountry ? codeCountry.code : "",
+          };
+        });
+        setCountries(mergedData);
+      }
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+    }
+  };
+
+  const handleCountrySelect = (country: CountryData) => {
+    setSelectedCountry(country);
   };
 
   const validateForm = () => {
@@ -189,6 +242,25 @@ const Signup: React.FunctionComponent = () => {
                 />
                 {fieldStatus.confirmPassword.message && (
                   <span>{fieldStatus.confirmPassword.message}</span>
+                )}
+              </div>
+
+              <div className="login-form-group">
+                <select
+                  onChange={(e) =>
+                    handleCountrySelect(countries[e.target.selectedIndex])
+                  }
+                  className="login-input"
+                >
+                  <option value="">Select Country</option>
+                  {countries.map((country) => (
+                    <option key={country.iso2} value={country.name}>
+                      {country.name}
+                    </option>
+                  ))}
+                </select>
+                {selectedCountry && (
+                  <span>{`Selected Country: ${selectedCountry.name}`}</span>
                 )}
               </div>
 
