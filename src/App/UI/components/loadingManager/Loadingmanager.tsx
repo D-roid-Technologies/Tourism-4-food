@@ -18,10 +18,10 @@ import VerifyEmail from "../../Pages/verifyemail/VerifyEmail";
 import EnterCode from "../../Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../../Pages/home/signup/Signup";
 import CreateCode from "../../Pages/createCode/CreateCode";
-import UserDashboard from "../../Pages/userdashboard/UserDashboard";
+import UserDashboard from "../../Pages/userDashboard/UserDashboard";
 import Resources from "../../Pages/Resources/Resources";
 
-const LoadingManager: React.FC = () => {
+const LoadingManager: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
@@ -46,7 +46,7 @@ const LoadingManager: React.FC = () => {
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/getinvolved" element={<GetInvolved />} />
         <Route path="/bookings" element={<Bookings />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />Ï
         <Route path="/legal" element={<Legal />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/volunteer" element={<Volunteer />} />

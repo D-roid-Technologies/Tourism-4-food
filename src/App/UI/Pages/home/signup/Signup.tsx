@@ -43,10 +43,6 @@ const Signup: React.FunctionComponent = () => {
     null
   );
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
-
   const fetchCountries = async () => {
     try {
       const flagResponse = await fetch(
@@ -81,6 +77,10 @@ const Signup: React.FunctionComponent = () => {
       console.error("Error fetching countries:", error);
     }
   };
+
+  useEffect(() => {
+    fetchCountries();
+  }, []);
 
   const handleCountrySelect = (country: CountryData) => {
     setSelectedCountry(country);
