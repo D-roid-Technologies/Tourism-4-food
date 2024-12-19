@@ -5,13 +5,22 @@ import { Assets } from "../../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { UserType } from "../../../../Utils/Types";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
 
 const Signup: React.FunctionComponent = () => {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [fieldStatus, setFieldStatus] = useState({
+    email: { message: "", isValid: false },
+    password: { message: "", isValid: false },
+    confirmPassword: { message: "", isValid: false },
+  });
   const userData = {
     fullName: fullName,
     email: email,
@@ -23,12 +32,47 @@ const Signup: React.FunctionComponent = () => {
     },
   };
 
+  const validateForm = () => {
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
+
+    const newFieldStatus = {
+      email: {
+        message: emailRegex.test(email)
+          ? "Email accepted"
+          : "Invalid email address",
+        isValid: emailRegex.test(email),
+      },
+      password: {
+        message: passwordRegex.test(password)
+          ? "Password accepted"
+          : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
+        isValid: passwordRegex.test(password),
+      },
+      confirmPassword: {
+        message:
+          password === confirmPassword
+            ? "Passwords match"
+            : "Passwords do not match",
+        isValid: password === confirmPassword && passwordRegex.test(password),
+      },
+    };
+
+    setFieldStatus(newFieldStatus);
+    return Object.values(newFieldStatus).every((field) => field.isValid);
+  };
+
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) {
+      alert("Please ensure all fields are valid before submitting.");
+      return;
+    }
     await authFunctions
       .handleUserSignUp(userData)
-      .then((reponse) => {
-        // console.log(reponse);
+      .then((response) => {
+        // console.log(response);
         // navigate("/verifyemail");
       })
       .catch((error) => {
@@ -39,12 +83,6 @@ const Signup: React.FunctionComponent = () => {
   return (
     <div>
       <div>
-        {/* <Navbar /> */}
-        {/* <div className="login-nav">
-          <div className="login-navbar-logo" onClick={() => navigate("/home")}>
-            <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
-          </div>
-        </div> */}
         {/* BACK BUTTON */}
         <div className="form-project-container">
           <button onClick={() => navigate("/home")} className="form-btn-hero">
@@ -93,15 +131,54 @@ const Signup: React.FunctionComponent = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
                 />
+                {fieldStatus.email.message && (
+                  <span>{fieldStatus.email.message}</span>
+                )}
               </div>
-              <div className="login-form-group">
+
+              <div
+                className="login-form-group"
+                style={{ position: "relative" }}
+              >
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
-                  // value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
+                  style={{ paddingRight: "30px" }}
                 />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="password-toggle-icon"
+                  style={{
+                    position: "absolute",
+                    right: "20px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    cursor: "pointer",
+                  }}
+                >
+                  {showPassword ? (
+                    <FaEye style={{ color: "black", fontSize: "20px" }} />
+                  ) : (
+                    <FaEyeSlash style={{ color: "black", fontSize: "20px" }} />
+                  )}{" "}
+                </span>
+                {fieldStatus.password.message && (
+                  <span>{fieldStatus.password.message}</span>
+                )}
+              </div>
+
+              <div className="login-form-group">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="login-input"
+                />
+                {fieldStatus.confirmPassword.message && (
+                  <span>{fieldStatus.confirmPassword.message}</span>
+                )}
               </div>
 
               <div className="divider">
