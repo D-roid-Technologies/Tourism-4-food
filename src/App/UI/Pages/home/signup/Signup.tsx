@@ -9,6 +9,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
 import AppInput from "../../../components/appinput/AppInput";
 import { useAppEntry } from "../../../../Utils/hooks";
+import Button from "../../../components/button/Button";
 // import { useAppEntry } from "../../../../Utils/hooks/UseAppEntry";
 
 // const newFieldStatus: {
@@ -151,14 +152,19 @@ const Signup: React.FunctionComponent = () => {
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) {
-      alert("Please ensure all fields are valid before submitting.");
+      showModal(
+        <div>
+          <p>Please ensure all fields are valid before submitting.</p>
+        </div>
+      );
+      // alert("Please ensure all fields are valid before submitting.");
       return;
     }
     await authFunctions
       .handleUserSignUp(userData)
       .then((response) => {
         // console.log(response);
-        // navigate("/verifyemail");
+        navigate("/verifyemail");
       })
       .catch((error) => {
         console.log(error.message);
@@ -175,7 +181,7 @@ const Signup: React.FunctionComponent = () => {
           </button>
           <div>
             <p>
-              <span style={{ color: "black" }}>
+              <span style={{ color: "#666" }}>
                 Already have an account? &nbsp;
               </span>
               <span className="create-color" onClick={() => navigate("/login")}>
@@ -199,23 +205,7 @@ const Signup: React.FunctionComponent = () => {
             </div>
 
             <form onSubmit={registerUser} className="login-forms">
-              <h3
-                onClick={() =>
-                  showModal(
-                    <div className="chapter-list">
-                      <p style={{ color: "black" }}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Laboriosam, et quod voluptatibus corporis quos
-                        eius praesentium vitae obcaecati, voluptate non natus
-                        consequuntur dicta quisquam ducimus similique sequi
-                        neque repellendus ipsam?
-                      </p>
-                    </div>
-                  )
-                }
-              >
-                Sign up
-              </h3>
+              <h3>Sign up</h3>
               <div style={{ paddingTop: "20px", paddingBottom: "20px" }}>
                 <AppInput
                   // name="fullName"
@@ -242,7 +232,22 @@ const Signup: React.FunctionComponent = () => {
                   className="login-input"
                 />
               </div> */}
-              <div className="login-form-group">
+              {/* EMAIL */}
+              <AppInput
+                type="email"
+                placeholder="Enter Email"
+                variant="standard"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                error={/^\S+@\S+\.\S+$/.test(email)}
+                helperText={
+                  /^\S+@\S+\.\S+$/.test(email)
+                    ? "Email accepted"
+                    : "Invalid email address"
+                }
+                errorColor={/^\S+@\S+\.\S+$/.test(email) ? "green" : "red"}
+              />
+              {/* <div className="login-form-group">
                 <input
                   type="email"
                   placeholder="Enter Email"
@@ -253,20 +258,44 @@ const Signup: React.FunctionComponent = () => {
                 {fieldStatus.email.message && (
                   <span>{fieldStatus.email.message}</span>
                 )}
-              </div>
+              </div> */}
 
               <div
                 className="login-form-group"
                 style={{ position: "relative" }}
               >
-                <input
+                <AppInput
+                  type="password"
+                  placeholder="Password"
+                  variant="standard"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  error={/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                    password
+                  )}
+                  helperText={
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                      password
+                    )
+                      ? "Password accepted"
+                      : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character"
+                  }
+                  errorColor={
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                      password
+                    )
+                      ? "green"
+                      : "red"
+                  }
+                />
+                {/* <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   autoComplete="off"
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
                   style={{ paddingRight: "30px" }}
-                />
+                /> */}
                 <span
                   onClick={() => setShowPassword(!showPassword)}
                   className="password-toggle-icon"
@@ -337,11 +366,7 @@ const Signup: React.FunctionComponent = () => {
               </div>
 
               <div className="login-btn-container-two">
-                <button
-                  // onClick={handleSignIn}
-                  type="submit"
-                  className="login-btn mb-10"
-                >
+                <button type="submit" className="login-btn mb-10">
                   Sign up
                 </button>
               </div>
