@@ -106,6 +106,7 @@
   color: #ff7846;
   letter-spacing: 2px;
   line-height: 10px;
+  font-size: 22px;
 }
 
 .login-form-group {
@@ -170,9 +171,10 @@
   align-items: center;
   justify-content: center;
 }
-.login-btn-container {
+.login-btn-container-two {
   display: flex;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .login-btn {

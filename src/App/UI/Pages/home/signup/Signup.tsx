@@ -141,7 +141,7 @@ const Signup: React.FunctionComponent = () => {
       });
   };
   const handleSignIn: () => Promise<void> = async () => {
-    navigate("/dashboard");
+    navigate("");
   };
 
   return (
@@ -154,7 +154,9 @@ const Signup: React.FunctionComponent = () => {
           </button>
           <div>
             <p>
-              Already have an account? &nbsp;
+              <span style={{ color: "black" }}>
+                Already have an account? &nbsp;
+              </span>
               <span className="create-color" onClick={() => navigate("/login")}>
                 Login
               </span>
@@ -182,7 +184,6 @@ const Signup: React.FunctionComponent = () => {
                 <input
                   type="text"
                   placeholder="Emeka Ebuka Eke"
-                  // value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   className="login-input"
                 />
@@ -191,9 +192,9 @@ const Signup: React.FunctionComponent = () => {
                 <input
                   type="email"
                   placeholder="Enter Email"
-                  // value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
+                  autoComplete="off"
                 />
                 {fieldStatus.email.message && (
                   <span>{fieldStatus.email.message}</span>
@@ -207,6 +208,7 @@ const Signup: React.FunctionComponent = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
+                  autoComplete="off"
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
                   style={{ paddingRight: "30px" }}
@@ -216,16 +218,16 @@ const Signup: React.FunctionComponent = () => {
                   className="password-toggle-icon"
                   style={{
                     position: "absolute",
-                    right: "20px",
+                    right: "16px",
                     top: "50%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                   }}
                 >
                   {showPassword ? (
-                    <FaEye style={{ color: "black", fontSize: "20px" }} />
+                    <FaEye style={{ color: "black", fontSize: "16px" }} />
                   ) : (
-                    <FaEyeSlash style={{ color: "black", fontSize: "20px" }} />
+                    <FaEyeSlash style={{ color: "black", fontSize: "16px" }} />
                   )}{" "}
                 </span>
                 {fieldStatus.password.message && (
@@ -244,7 +246,7 @@ const Signup: React.FunctionComponent = () => {
                   <span>{fieldStatus.confirmPassword.message}</span>
                 )}
               </div>
-
+              {/* country info */}
               <div className="login-form-group">
                 <select
                   onChange={(e) =>
@@ -280,11 +282,11 @@ const Signup: React.FunctionComponent = () => {
                 </button>
               </div>
 
-              <div className="login-btn-container">
+              <div className="login-btn-container-two">
                 <button
                   onClick={handleSignIn}
                   type="submit"
-                  className="login-btn"
+                  className="login-btn mb-10"
                 >
                   Sign up
                 </button>
