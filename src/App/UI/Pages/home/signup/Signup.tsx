@@ -7,6 +7,25 @@ import { UserType } from "../../../../Utils/Types";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
+import AppInput from "../../../components/appinput/AppInput";
+import { useAppEntry } from "../../../../Utils/hooks";
+// import { useAppEntry } from "../../../../Utils/hooks/UseAppEntry";
+
+// const newFieldStatus: {
+//   email: {
+//     message: string;
+//     isValid: boolean;
+//   };
+//   password: {
+//     message: string;
+//     isValid: boolean;
+//   };
+
+//   fullName: {
+//     message: string;
+//     isValid: boolean;
+//   };
+// };
 
 type CountryData = {
   name: string;
@@ -16,16 +35,16 @@ type CountryData = {
 };
 
 const Signup: React.FunctionComponent = () => {
+  const { showModal } = useAppEntry();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
   const [fieldStatus, setFieldStatus] = useState({
     email: { message: "", isValid: false },
     password: { message: "", isValid: false },
-    confirmPassword: { message: "", isValid: false },
     fullName: { message: "", isValid: false },
   });
   const userData = {
@@ -86,38 +105,43 @@ const Signup: React.FunctionComponent = () => {
     setSelectedCountry(country);
   };
 
-  const validateForm = () => {
+  // FORM VALIDATION
+  const validateEmail = (email: string) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
+    return {
+      message: emailRegex.test(email)
+        ? "Email accepted"
+        : "Invalid email address",
+      isValid: emailRegex.test(email),
+    };
+  };
+
+  const validatePassword = (password: string) => {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
-    const nameRegex = /^[a-zA-Z\s]+$/;
+    return {
+      message: passwordRegex.test(password)
+        ? "Password accepted"
+        : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      isValid: passwordRegex.test(password),
+    };
+  };
 
+  const validateFullName = (fullName: string) => {
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return {
+      message: nameRegex.test(fullName)
+        ? "Name accepted"
+        : "Invalid name, only letters and spaces are allowed",
+      isValid: nameRegex.test(fullName),
+    };
+  };
+
+  const validateForm = () => {
     const newFieldStatus = {
-      email: {
-        message: emailRegex.test(email)
-          ? "Email accepted"
-          : "Invalid email address",
-        isValid: emailRegex.test(email),
-      },
-      password: {
-        message: passwordRegex.test(password)
-          ? "Password accepted"
-          : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
-        isValid: passwordRegex.test(password),
-      },
-      confirmPassword: {
-        message:
-          password === confirmPassword
-            ? "Passwords match"
-            : "Passwords do not match",
-        isValid: password === confirmPassword && passwordRegex.test(password),
-      },
-      fullName: {
-        message: nameRegex.test(fullName)
-          ? "Name accepted"
-          : "Invalid name, only letters and spaces are allowed",
-        isValid: nameRegex.test(fullName),
-      },
+      email: validateEmail(email),
+      password: validatePassword(password),
+      fullName: validateFullName(fullName),
     };
 
     setFieldStatus(newFieldStatus);
@@ -139,9 +163,6 @@ const Signup: React.FunctionComponent = () => {
       .catch((error) => {
         console.log(error.message);
       });
-  };
-  const handleSignIn: () => Promise<void> = async () => {
-    navigate("");
   };
 
   return (
@@ -178,16 +199,49 @@ const Signup: React.FunctionComponent = () => {
             </div>
 
             <form onSubmit={registerUser} className="login-forms">
-              <h3>Sign up</h3>
+              <h3
+                onClick={() =>
+                  showModal(
+                    <div className="chapter-list">
+                      <p style={{ color: "black" }}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Laboriosam, et quod voluptatibus corporis quos
+                        eius praesentium vitae obcaecati, voluptate non natus
+                        consequuntur dicta quisquam ducimus similique sequi
+                        neque repellendus ipsam?
+                      </p>
+                    </div>
+                  )
+                }
+              >
+                Sign up
+              </h3>
+              <div style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+                <AppInput
+                  // name="fullName"
+                  type="text"
+                  placeholder="Emeka Ebuka Eke"
+                  variant="standard"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  error={/^[a-zA-Z\s]+$/.test(fullName)}
+                  helperText={
+                    /^[a-zA-Z\s]+$/.test(fullName)
+                      ? "Name accepted"
+                      : "Full name is required"
+                  }
+                  errorColor={/^[a-zA-Z\s]+$/.test(fullName) ? "green" : "red"}
+                />
+              </div>
 
-              <div className="login-form-group">
+              {/* <div className="login-form-group">
                 <input
                   type="text"
                   placeholder="Emeka Ebuka Eke"
                   onChange={(e) => setFullName(e.target.value)}
                   className="login-input"
                 />
-              </div>
+              </div> */}
               <div className="login-form-group">
                 <input
                   type="email"
@@ -235,7 +289,7 @@ const Signup: React.FunctionComponent = () => {
                 )}
               </div>
 
-              <div className="login-form-group">
+              {/* <div className="login-form-group">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm Password"
@@ -245,9 +299,9 @@ const Signup: React.FunctionComponent = () => {
                 {fieldStatus.confirmPassword.message && (
                   <span>{fieldStatus.confirmPassword.message}</span>
                 )}
-              </div>
+              </div> */}
               {/* country info */}
-              <div className="login-form-group">
+              {/* <div className="login-form-group">
                 <select
                   onChange={(e) =>
                     handleCountrySelect(countries[e.target.selectedIndex])
@@ -264,7 +318,7 @@ const Signup: React.FunctionComponent = () => {
                 {selectedCountry && (
                   <span>{`Selected Country: ${selectedCountry.name}`}</span>
                 )}
-              </div>
+              </div> */}
 
               <div className="divider">
                 <span>Or</span>
@@ -284,7 +338,7 @@ const Signup: React.FunctionComponent = () => {
 
               <div className="login-btn-container-two">
                 <button
-                  onClick={handleSignIn}
+                  // onClick={handleSignIn}
                   type="submit"
                   className="login-btn mb-10"
                 >

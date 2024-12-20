@@ -10,6 +10,12 @@ export type AppEntryType = {
 export type RouterType = {
   // width: number;
 };
+export type ModalState = {
+  isOpen: boolean;
+  content: React.ReactNode | null;
+  showCloseButton?: boolean;
+  autoCloseDelay?: number;
+};
 
 export type DimensionType = {
   width: number;
