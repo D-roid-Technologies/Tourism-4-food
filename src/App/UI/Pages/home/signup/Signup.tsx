@@ -7,6 +7,26 @@ import { UserType } from "../../../../Utils/Types";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
+import AppInput from "../../../components/appinput/AppInput";
+import { useAppEntry } from "../../../../Utils/hooks";
+import Button from "../../../components/button/Button";
+// import { useAppEntry } from "../../../../Utils/hooks/UseAppEntry";
+
+// const newFieldStatus: {
+//   email: {
+//     message: string;
+//     isValid: boolean;
+//   };
+//   password: {
+//     message: string;
+//     isValid: boolean;
+//   };
+
+//   fullName: {
+//     message: string;
+//     isValid: boolean;
+//   };
+// };
 
 type CountryData = {
   name: string;
@@ -16,16 +36,16 @@ type CountryData = {
 };
 
 const Signup: React.FunctionComponent = () => {
+  const { showModal } = useAppEntry();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
   const [fieldStatus, setFieldStatus] = useState({
     email: { message: "", isValid: false },
     password: { message: "", isValid: false },
-    confirmPassword: { message: "", isValid: false },
     fullName: { message: "", isValid: false },
   });
   const userData = {
@@ -86,38 +106,43 @@ const Signup: React.FunctionComponent = () => {
     setSelectedCountry(country);
   };
 
-  const validateForm = () => {
+  // FORM VALIDATION
+  const validateEmail = (email: string) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
+    return {
+      message: emailRegex.test(email)
+        ? "Email accepted"
+        : "Invalid email address",
+      isValid: emailRegex.test(email),
+    };
+  };
+
+  const validatePassword = (password: string) => {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
-    const nameRegex = /^[a-zA-Z\s]+$/;
+    return {
+      message: passwordRegex.test(password)
+        ? "Password accepted"
+        : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      isValid: passwordRegex.test(password),
+    };
+  };
 
+  const validateFullName = (fullName: string) => {
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return {
+      message: nameRegex.test(fullName)
+        ? "Name accepted"
+        : "Invalid name, only letters and spaces are allowed",
+      isValid: nameRegex.test(fullName),
+    };
+  };
+
+  const validateForm = () => {
     const newFieldStatus = {
-      email: {
-        message: emailRegex.test(email)
-          ? "Email accepted"
-          : "Invalid email address",
-        isValid: emailRegex.test(email),
-      },
-      password: {
-        message: passwordRegex.test(password)
-          ? "Password accepted"
-          : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
-        isValid: passwordRegex.test(password),
-      },
-      confirmPassword: {
-        message:
-          password === confirmPassword
-            ? "Passwords match"
-            : "Passwords do not match",
-        isValid: password === confirmPassword && passwordRegex.test(password),
-      },
-      fullName: {
-        message: nameRegex.test(fullName)
-          ? "Name accepted"
-          : "Invalid name, only letters and spaces are allowed",
-        isValid: nameRegex.test(fullName),
-      },
+      email: validateEmail(email),
+      password: validatePassword(password),
+      fullName: validateFullName(fullName),
     };
 
     setFieldStatus(newFieldStatus);
@@ -127,21 +152,24 @@ const Signup: React.FunctionComponent = () => {
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) {
-      alert("Please ensure all fields are valid before submitting.");
+      showModal(
+        <div>
+          <p className="validate-modal">
+            Please ensure all fields are valid before submitting.
+          </p>
+        </div>
+      );
       return;
     }
     await authFunctions
       .handleUserSignUp(userData)
       .then((response) => {
         // console.log(response);
-        // navigate("/verifyemail");
+        navigate("/verifyemail");
       })
       .catch((error) => {
         console.log(error.message);
       });
-  };
-  const handleSignIn: () => Promise<void> = async () => {
-    navigate("/dashboard");
   };
 
   return (
@@ -154,7 +182,9 @@ const Signup: React.FunctionComponent = () => {
           </button>
           <div>
             <p>
-              Already have an account? &nbsp;
+              <span style={{ color: "#666" }}>
+                Already have an account? &nbsp;
+              </span>
               <span className="create-color" onClick={() => navigate("/login")}>
                 Login
               </span>
@@ -177,55 +207,111 @@ const Signup: React.FunctionComponent = () => {
 
             <form onSubmit={registerUser} className="login-forms">
               <h3>Sign up</h3>
+              <div style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+                <AppInput
+                  // name="fullName"
+                  type="text"
+                  placeholder="Emeka Ebuka Eke"
+                  variant="standard"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  error={/^[a-zA-Z\s]+$/.test(fullName)}
+                  helperText={
+                    /^[a-zA-Z\s]+$/.test(fullName)
+                      ? "Name accepted"
+                      : "Full name is required"
+                  }
+                  errorColor={/^[a-zA-Z\s]+$/.test(fullName) ? "green" : "red"}
+                />
+              </div>
 
-              <div className="login-form-group">
+              {/* <div className="login-form-group">
                 <input
                   type="text"
                   placeholder="Emeka Ebuka Eke"
-                  // value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   className="login-input"
                 />
-              </div>
-              <div className="login-form-group">
+              </div> */}
+              {/* EMAIL */}
+              <AppInput
+                type="email"
+                placeholder="Enter Email"
+                variant="standard"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                error={/^\S+@\S+\.\S+$/.test(email)}
+                helperText={
+                  /^\S+@\S+\.\S+$/.test(email)
+                    ? "Email accepted"
+                    : "Invalid email address"
+                }
+                errorColor={/^\S+@\S+\.\S+$/.test(email) ? "green" : "red"}
+              />
+              {/* <div className="login-form-group">
                 <input
                   type="email"
                   placeholder="Enter Email"
-                  // value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
+                  autoComplete="off"
                 />
                 {fieldStatus.email.message && (
                   <span>{fieldStatus.email.message}</span>
                 )}
-              </div>
+              </div> */}
 
               <div
                 className="login-form-group"
                 style={{ position: "relative" }}
               >
-                <input
+                <AppInput
+                  type="password"
+                  placeholder="Password"
+                  variant="standard"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  error={/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                    password
+                  )}
+                  helperText={
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                      password
+                    )
+                      ? "Password accepted"
+                      : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character"
+                  }
+                  errorColor={
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
+                      password
+                    )
+                      ? "green"
+                      : "red"
+                  }
+                />
+                {/* <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
+                  autoComplete="off"
                   onChange={(e) => setPassword(e.target.value)}
                   className="login-input"
                   style={{ paddingRight: "30px" }}
-                />
+                /> */}
                 <span
                   onClick={() => setShowPassword(!showPassword)}
                   className="password-toggle-icon"
                   style={{
                     position: "absolute",
-                    right: "20px",
+                    right: "16px",
                     top: "50%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                   }}
                 >
                   {showPassword ? (
-                    <FaEye style={{ color: "black", fontSize: "20px" }} />
+                    <FaEye style={{ color: "black", fontSize: "16px" }} />
                   ) : (
-                    <FaEyeSlash style={{ color: "black", fontSize: "20px" }} />
+                    <FaEyeSlash style={{ color: "black", fontSize: "16px" }} />
                   )}{" "}
                 </span>
                 {fieldStatus.password.message && (
@@ -233,7 +319,7 @@ const Signup: React.FunctionComponent = () => {
                 )}
               </div>
 
-              <div className="login-form-group">
+              {/* <div className="login-form-group">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm Password"
@@ -243,9 +329,9 @@ const Signup: React.FunctionComponent = () => {
                 {fieldStatus.confirmPassword.message && (
                   <span>{fieldStatus.confirmPassword.message}</span>
                 )}
-              </div>
-
-              <div className="login-form-group">
+              </div> */}
+              {/* country info */}
+              {/* <div className="login-form-group">
                 <select
                   onChange={(e) =>
                     handleCountrySelect(countries[e.target.selectedIndex])
@@ -262,7 +348,7 @@ const Signup: React.FunctionComponent = () => {
                 {selectedCountry && (
                   <span>{`Selected Country: ${selectedCountry.name}`}</span>
                 )}
-              </div>
+              </div> */}
 
               <div className="divider">
                 <span>Or</span>
@@ -280,12 +366,8 @@ const Signup: React.FunctionComponent = () => {
                 </button>
               </div>
 
-              <div className="login-btn-container">
-                <button
-                  onClick={handleSignIn}
-                  type="submit"
-                  className="login-btn"
-                >
+              <div className="login-btn-container-two">
+                <button type="submit" className="login-btn mb-10">
                   Sign up
                 </button>
               </div>

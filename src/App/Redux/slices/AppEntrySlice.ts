@@ -1,32 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AppEntrySliceType } from "../../Utils/Types";
+import { ModalState } from "../../Utils/Types";
 
-const initialState: AppEntrySliceType = {
-  showModal: false,
-  showToast: false,
-  appTitle: "",
-  appBody: "",
+const initialState: ModalState = {
+  isOpen: false,
+  content: null,
 };
+
 export const AppEntrySlice = createSlice({
   name: "appEntry",
   initialState,
   reducers: {
-    updateModal: (state, action) => {
-      const showModal = action.payload;
-      state.showModal = showModal;
+    openModal: (state, action) => {
+      state.isOpen = true;
+      state.content = action.payload;
     },
-    updateToast: (state, action) => {
-      const showToast = action.payload;
-      state.showModal = showToast;
-    },
-    updateModalContent: (state, action) => {
-      const { appTitle, appBody } = action.payload;
-      state.appTitle = appTitle;
-      state.appBody = appBody;
+    closeModal: (state) => {
+      state.isOpen = false;
+      state.content = null;
     },
   },
 });
 
-export default AppEntrySlice.reducer;
-export const { updateModal, updateToast, updateModalContent } =
-  AppEntrySlice.actions;
+export const { openModal, closeModal } = AppEntrySlice.actions;
