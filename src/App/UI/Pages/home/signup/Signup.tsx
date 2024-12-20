@@ -154,10 +154,11 @@ const Signup: React.FunctionComponent = () => {
     if (!validateForm()) {
       showModal(
         <div>
-          <p>Please ensure all fields are valid before submitting.</p>
+          <p className="validate-modal">
+            Please ensure all fields are valid before submitting.
+          </p>
         </div>
       );
-      // alert("Please ensure all fields are valid before submitting.");
       return;
     }
     await authFunctions
