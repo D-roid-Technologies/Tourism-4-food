@@ -21,17 +21,12 @@ export type DimensionType = {
   width: number;
   height: number;
 };
-export type CountryInfo = {
-  name: string;
-  flag: any;
-  iso: string;
-};
 
 export type UserType = {
   fullName: string;
   email: string;
   password: string;
-  countryInfo: CountryInfo;
+  countryInfo: object | null | undefined;
 };
 export type EmailType = {
   emailFromUser: string;

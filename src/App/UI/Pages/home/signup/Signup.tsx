@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../signup/Signup.css";
 import { Assets } from "../../../../Utils/constant/Assets";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { UserType } from "../../../../Utils/Types";
 import { FaEye } from "react-icons/fa";
@@ -42,78 +42,84 @@ const Signup: React.FunctionComponent = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
+  const [country, setCountry] = useState<object | null>();
 
   const [fieldStatus, setFieldStatus] = useState({
     email: { message: "", isValid: false },
     password: { message: "", isValid: false },
     fullName: { message: "", isValid: false },
   });
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(async (res) => {
+      const geoApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${res.coords.latitude}&longitude=${res.coords.longitude}&localityLanguage=en`
+      await fetch(geoApi).then((res) => res.json()).then((data) => {
+        setCountry(data);
+      })
+    })
+  }, [])
+
   const userData = {
     fullName: fullName,
     email: email,
     password: password,
-    countryInfo: {
-      name: "",
-      iso: "",
-      flag: "",
-    },
+    countryInfo: country,
   };
-  const [countries, setCountries] = useState<CountryData[]>([]);
-  const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(
-    null
-  );
+  // const [countries, setCountries] = useState<CountryData[]>([]);
+  // const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(
+  //   null
+  // );
 
-  const fetchCountries = async () => {
-    try {
-      const flagResponse = await fetch(
-        "https://countriesnow.space/api/v0.1/countries/flag/images"
-      );
-      const flagData = await flagResponse.json();
+  // const fetchCountries = async () => {
+  //   try {
+  //     const flagResponse = await fetch(
+  //       "https://countriesnow.space/api/v0.1/countries/flag/images"
+  //     );
+  //     const flagData = await flagResponse.json();
 
-      const codeResponse = await fetch(
-        "https://countriesnow.space/api/v0.1/countries/codes"
-      );
-      const codeData = await codeResponse.json();
+  //     const codeResponse = await fetch(
+  //       "https://countriesnow.space/api/v0.1/countries/codes"
+  //     );
+  //     const codeData = await codeResponse.json();
 
-      if (
-        flagData.error === false &&
-        Array.isArray(flagData.data) &&
-        codeData.error === false &&
-        Array.isArray(codeData.data)
-      ) {
-        const mergedData = flagData.data.map((flagCountry: { name: any }) => {
-          const codeCountry = codeData.data.find(
-            (c: { name: any }) => c.name === flagCountry.name
-          );
-          return {
-            ...flagCountry,
-            dial_code: codeCountry ? codeCountry.dial_code : "",
-            iso2: codeCountry ? codeCountry.code : "",
-          };
-        });
-        setCountries(mergedData);
-      }
-    } catch (error) {
-      console.error("Error fetching countries:", error);
-    }
-  };
+  //     if (
+  //       flagData.error === false &&
+  //       Array.isArray(flagData.data) &&
+  //       codeData.error === false &&
+  //       Array.isArray(codeData.data)
+  //     ) {
+  //       const mergedData = flagData.data.map((flagCountry: { name: any }) => {
+  //         const codeCountry = codeData.data.find(
+  //           (c: { name: any }) => c.name === flagCountry.name
+  //         );
+  //         return {
+  //           ...flagCountry,
+  //           dial_code: codeCountry ? codeCountry.dial_code : "",
+  //           iso2: codeCountry ? codeCountry.code : "",
+  //         };
+  //       });
+  //       setCountries(mergedData);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching countries:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
+  // useEffect(() => {
+  //   fetchCountries();
+  // }, []);
 
-  const handleCountrySelect = (country: CountryData) => {
-    setSelectedCountry(country);
-  };
+  // const handleCountrySelect = (country: CountryData) => {
+  //   setSelectedCountry(country);
+  // };
 
   // FORM VALIDATION
   const validateEmail = (email: string) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
     return {
-      message: emailRegex.test(email)
-        ? "Email accepted"
-        : "Invalid email address",
+      message: emailRegex.test(email) ? "Email accepted" : "Invalid email address",
       isValid: emailRegex.test(email),
+      errorColor: emailRegex.test(email) ? 'green' : "red"
     };
   };
 
@@ -125,6 +131,7 @@ const Signup: React.FunctionComponent = () => {
         ? "Password accepted"
         : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
       isValid: passwordRegex.test(password),
+      errorColor: passwordRegex.test(password) ? 'green' : "red"
     };
   };
 
@@ -135,41 +142,29 @@ const Signup: React.FunctionComponent = () => {
         ? "Name accepted"
         : "Invalid name, only letters and spaces are allowed",
       isValid: nameRegex.test(fullName),
+      errorColor: nameRegex.test(fullName) ? 'green' : "red"
     };
   };
 
-  const validateForm = () => {
-    const newFieldStatus = {
-      email: validateEmail(email),
-      password: validatePassword(password),
-      fullName: validateFullName(fullName),
-    };
-
-    setFieldStatus(newFieldStatus);
-    return Object.values(newFieldStatus).every((field) => field.isValid);
+  const newFieldStatus = {
+    email: validateEmail(email),
+    password: validatePassword(password),
+    fullName: validateFullName(fullName),
   };
+
+  const allValid: boolean = newFieldStatus.email.isValid === true && newFieldStatus.fullName.isValid && newFieldStatus.password.isValid
 
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) {
-      showModal(
-        <div>
-          <p className="validate-modal">
-            Please ensure all fields are valid before submitting.
-          </p>
-        </div>
-      );
-      return;
-    }
-    await authFunctions
-      .handleUserSignUp(userData)
-      .then((response) => {
-        // console.log(response);
-        navigate("/verifyemail");
+    if (allValid) {
+      await authFunctions.handleUserSignUp(userData).then(() => {
+        // navigate("/dashboard");
+      }).catch((err) => {
+        console.log(err.message)
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    } else {
+      return
+    }
   };
 
   return (
@@ -182,7 +177,7 @@ const Signup: React.FunctionComponent = () => {
           </button>
           <div>
             <p>
-              <span style={{ color: "#666" }}>
+              <span style={{ color: "#666666" }}>
                 Already have an account? &nbsp;
               </span>
               <span className="create-color" onClick={() => navigate("/login")}>
@@ -215,51 +210,23 @@ const Signup: React.FunctionComponent = () => {
                   variant="standard"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  error={/^[a-zA-Z\s]+$/.test(fullName)}
+                  error={newFieldStatus.fullName.isValid}
                   helperText={
-                    /^[a-zA-Z\s]+$/.test(fullName)
-                      ? "Name accepted"
-                      : "Full name is required"
+                    newFieldStatus.fullName.message
                   }
-                  errorColor={/^[a-zA-Z\s]+$/.test(fullName) ? "green" : "red"}
+                  errorColor={newFieldStatus.fullName.errorColor}
                 />
               </div>
-
-              {/* <div className="login-form-group">
-                <input
-                  type="text"
-                  placeholder="Emeka Ebuka Eke"
-                  onChange={(e) => setFullName(e.target.value)}
-                  className="login-input"
-                />
-              </div> */}
-              {/* EMAIL */}
               <AppInput
                 type="email"
                 placeholder="Enter Email"
                 variant="standard"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                error={/^\S+@\S+\.\S+$/.test(email)}
-                helperText={
-                  /^\S+@\S+\.\S+$/.test(email)
-                    ? "Email accepted"
-                    : "Invalid email address"
-                }
-                errorColor={/^\S+@\S+\.\S+$/.test(email) ? "green" : "red"}
+                error={newFieldStatus.email.isValid}
+                helperText={newFieldStatus.email.message}
+                errorColor={newFieldStatus.email.errorColor}
               />
-              {/* <div className="login-form-group">
-                <input
-                  type="email"
-                  placeholder="Enter Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="login-input"
-                  autoComplete="off"
-                />
-                {fieldStatus.email.message && (
-                  <span>{fieldStatus.email.message}</span>
-                )}
-              </div> */}
 
               <div
                 className="login-form-group"
@@ -271,32 +238,10 @@ const Signup: React.FunctionComponent = () => {
                   variant="standard"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  error={/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
-                    password
-                  )}
-                  helperText={
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
-                      password
-                    )
-                      ? "Password accepted"
-                      : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character"
-                  }
-                  errorColor={
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/.test(
-                      password
-                    )
-                      ? "green"
-                      : "red"
-                  }
+                  error={newFieldStatus.password.isValid}
+                  helperText={newFieldStatus.password.message}
+                  errorColor={newFieldStatus.password.errorColor}
                 />
-                {/* <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  autoComplete="off"
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="login-input"
-                  style={{ paddingRight: "30px" }}
-                /> */}
                 <span
                   onClick={() => setShowPassword(!showPassword)}
                   className="password-toggle-icon"
