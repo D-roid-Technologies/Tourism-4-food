@@ -45,8 +45,8 @@ const GetInvolved: React.FC = () => {
                 <h2>Tourism4Food Current Volunteering</h2>
               </div>
 
-              <div className="block-12 block-lg-7 get__involved__content">
-                <p>
+              <div className="block-sm-12 block-lg-7 get__involved__content">
+                <p style={{ color: "#333" }}>
                   Write the history of Tourism4food Lorem ipsum dolor sit amet,
                   adipiscing elit, sed diam nonummy nibh evismod tincidune.
                   Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy
@@ -62,7 +62,7 @@ const GetInvolved: React.FC = () => {
                   style={{ marginTop: "30px" }}
                 />
               </div>
-              <div className="block-12 block-lg-5 get__involved__image">
+              <div className="block-sm-12 block-md-5 get__involved__image">
                 <img src={Assets.images.volunteerCorp} />
               </div>
             </div>
@@ -70,10 +70,10 @@ const GetInvolved: React.FC = () => {
               <div className="get__involved__title">
                 <h2>Our Partnerships</h2>
               </div>
-              <div className="block-12 block-lg-5 get__involved__image">
+              <div className="block-sm-12 block-md-5 get__involved__image">
                 <img src={Assets.images.ourPartnerships} />
               </div>
-              <div className="block-12 block-lg-7 get__involved__content__alt">
+              <div className="block-sm-12 block-lg-7 get__involved__content__alt">
                 <p>
                   Write the history of Tourism4food Lorem ipsum dolor sit amet,
                   adipiscing elit, sed diam nonummy nibh evismod tincidune.

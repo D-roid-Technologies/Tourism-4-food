@@ -55,3 +55,13 @@
   font-size: 1.6rem;
   font-weight: bolder;
 }
+
+@media (max-width: 500px) {
+  .campaigns__image {
+    width: 95%;
+    height: 95%;
+  }
+  .campaigns__content {
+    padding: 3px;
+  }
+}

@@ -41,3 +41,16 @@
   margin: 10px 0;
   text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+  .legal__section,
+  .legal__section__alt {
+    padding: 1rem;
+  }
+  .legal__container .legal__title_p {
+    font-size: 20px;
+  }
+  .legal__container .legal__p {
+    font-size: 15px;
+  }
+}

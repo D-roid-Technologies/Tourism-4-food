@@ -40,7 +40,9 @@ span {
 .placeholder {
   margin: 70px -15px 70px 0;
 }
-
+.programs__icons__item {
+  text-align: center;
+}
 .programs__icons__item img {
   border-radius: 50%;
 }
@@ -62,7 +64,7 @@ span {
 .programs__history__title h2 {
   width: 100%;
   text-align: center;
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 10px;
   text-transform: capitalize;
   color: #333333;
@@ -99,4 +101,14 @@ span {
   color: #333333;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .programs__history__content {
+    padding: 10px;
+  }
+  .programs__history__image {
+    width: 95%;
+    height: 950%;
+  }
 }

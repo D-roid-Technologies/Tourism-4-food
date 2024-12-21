@@ -68,7 +68,7 @@ span {
 }
 
 .get__involved__image img {
-  width: 100%;
+  max-width: 600px;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
@@ -82,19 +82,19 @@ span {
 .get__involved__content {
   padding: 45px;
   text-align: left;
-  margin-top: 35px;
+  /* margin-top: 15%; */
 }
 .get__involved__content,
 .get__involved__content__alt p {
-  margin-top: 25px;
-  color: #333333;
+  margin-top: 15%;
+  color: #333333 !important;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.get__involved__content__alt p {
+/* .get__involved__content__alt p {
   margin-top: 18px;
-}
+} */
 
 .get__involved__section,
 .get__involved__section__alt {
@@ -156,4 +156,36 @@ span {
   color: #fff;
   font-weight: bolder;
   margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .get__involved__banner__content span {
+    font-size: 20px;
+  }
+  .get__involved__image {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .get__involved h2 {
+    font-size: 25px;
+    padding: 0 15px;
+  }
+  .get__involved__content {
+    padding: 0px 5px;
+  }
+  .get__involved__section,
+  .get__involved__section__alt {
+    background-attachment: fixed;
+    /* border-radius: none !important; */
+  }
+
+  .get__involved__section__alt {
+    background-attachment: fixed;
+  }
+  .get__involved__center__content {
+    width: 98%;
+  }
 }

@@ -86,7 +86,9 @@ const Programs: React.FC = () => {
               <div className="programs__history__title">
                 <h2>coach me program</h2>
               </div>
-
+              <div className="block-12 block-lg-5 programs__history__image img__alt">
+                <img src={Assets.images.coachMe} />
+              </div>
               <div className="block-12 block-lg-7 programs__history__content">
                 <p>
                   {" "}
@@ -103,7 +105,7 @@ const Programs: React.FC = () => {
                 </p>
                 <Button label="Get Involved" style={{ marginTop: "30px" }} />
               </div>
-              <div className="block-12 block-lg-5 programs__history__image">
+              <div className="block-12 block-lg-5 programs__history__image img__alt_alt">
                 <img src={Assets.images.coachMe} />
               </div>
             </div>

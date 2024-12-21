@@ -125,7 +125,7 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="wrapper about__history alt__alt">
+        <div className="wrapper about__history alt__alt" id="history">
           <div className="group about__history__container" id="history">
             <div className="about__history__title">
               <h2>History</h2>
@@ -267,7 +267,7 @@ const AboutUs: React.FC = () => {
             {team__section.map((team, index) => {
               return (
                 <div className="block-12 block-lg-6">
-                  <div key={index} className="about__content__item p-5">
+                  <div key={index} className="about__content__item p-2 p-lg-5">
                     <img
                       className="image-fluid"
                       src={team.teamImage}
