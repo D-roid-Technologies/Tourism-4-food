@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 80px;
-  background-color: #ffffff
+  background-color: #ffffff;
 }
 .form-project-btn {
   padding: 10px 35px;
@@ -100,13 +100,14 @@
 .login-forms {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0;
 }
-.login-forms h3 {
+.sign-up-heading {
   color: #ff7846;
   letter-spacing: 2px;
   line-height: 10px;
   font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .login-form-group {
@@ -174,6 +175,7 @@
 .login-btn-container-two {
   display: flex;
   justify-content: center;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 

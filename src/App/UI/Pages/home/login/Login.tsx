@@ -1,29 +1,56 @@
 import React, { useState } from "react";
-import "../login/Login.css";
-// import { Assets } from "../../../../Utils/constant/Assets";
 import { useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
-
-import Navbar from "../../../components/navbar/NavBar";
 import { Assets } from "../../../../Utils/constant/Assets";
+import AppInput from "../../../components/appinput/AppInput";
+import { validateEmail, validatePassword } from "../signup/Signup";
+import Spinner from "../../../components/spinner/Spinner";
+import "../login/Login.css";
 
 const Login: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [fieldStatus, setFieldStatus] = useState({
+    email: { message: "", isValid: false },
+    password: { message: "", isValid: false },
+  });
+
+  const handleEmailChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const emailValue = e.target.value;
+    setEmail(emailValue);
+    const validation = validateEmail(emailValue);
+    setFieldStatus((prev) => ({ ...prev, email: validation }));
+  };
+
+  const handlePasswordChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const passwordValue = e.target.value;
+    setPassword(passwordValue);
+    const validation = validatePassword(passwordValue);
+    setFieldStatus((prev) => ({ ...prev, password: validation }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (fieldStatus.email.isValid && fieldStatus.password.isValid) {
+      setLoading(true);
+      setTimeout(() => {
+        navigate("/dashboard");
+        setLoading(false);
+      }, 2000);
+    }
   };
+
   return (
     <div>
+      {loading && <Spinner />}
       <div>
-        {/* <Navbar /> */}
-        {/* <div className="login-nav">
-          <div className="login-navbar-logo" onClick={() => navigate("/home")}>
-            <img src={Assets.images.companyLogo} alt="Tourism4Food Logo" />
-          </div>
-        </div> */}
         {/* BACK BUTTON */}
         <div className="form-project-container">
           <button onClick={() => navigate("/home")} className="form-btn-hero">
@@ -53,30 +80,41 @@ const Login: React.FunctionComponent = () => {
           <div className="login-right">
             <div className="login-header">
               <h1>Welcome back 👋</h1>
-              <p>Welcome, put in your account information to continue</p>
+              <p style={{ color: "#333" }}>
+                Welcome, put in your account information to continue
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="login-forms">
-              <h3>Login</h3>
+              <h3 className="login-heading">Login</h3>
 
               <div className="login-form-group">
-                <input
+                <AppInput
                   type="email"
                   placeholder="Enter Email"
+                  variant="standard"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="login-input"
+                  onChange={handleEmailChange}
+                  error={!fieldStatus.email.isValid}
+                  helperText={fieldStatus.email.message}
+                  errorColor={fieldStatus.email.isValid ? "green" : "red"}
+                  // className="login-input"
                 />
               </div>
               <div className="login-form-group">
-                <input
+                <AppInput
                   type="password"
                   placeholder="Password"
+                  variant="standard"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="login-input"
-                  // maxLength={50}
+                  onChange={handlePasswordChange}
+                  error={!fieldStatus.password.isValid}
+                  helperText={fieldStatus.password.message}
+                  errorColor={fieldStatus.password.isValid ? "green" : "red"}
+
+                  // className="login-input"
                 />
+
                 <a href="/forgot-password" className="forgot-password">
                   Forgot password?
                 </a>
@@ -98,15 +136,11 @@ const Login: React.FunctionComponent = () => {
                 </button>
               </div>
 
-              <div className="login-btn-container">
+              <div className="login-btn-container-two">
                 <button type="submit" className="login-btn">
                   Login
                 </button>
               </div>
-
-              {/* <p className="signup-prompt">
-                Don't have an account? <a href="/signup">Create an account.</a>
-              </p> */}
             </form>
           </div>
         </div>
