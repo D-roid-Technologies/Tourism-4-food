@@ -10,23 +10,8 @@ import { authFunctions } from "../../../../Redux/authFunctions/Auth.functions";
 import AppInput from "../../../components/appinput/AppInput";
 import { useAppEntry } from "../../../../Utils/hooks";
 import Button from "../../../components/button/Button";
-// import { useAppEntry } from "../../../../Utils/hooks/UseAppEntry";
-
-// const newFieldStatus: {
-//   email: {
-//     message: string;
-//     isValid: boolean;
-//   };
-//   password: {
-//     message: string;
-//     isValid: boolean;
-//   };
-
-//   fullName: {
-//     message: string;
-//     isValid: boolean;
-//   };
-// };
+import Modal from "../../../components/modal/Modal";
+import Spinner from "../../../components/spinner/Spinner";
 
 type CountryData = {
   name: string;
@@ -34,15 +19,39 @@ type CountryData = {
   dial_code: string;
   flag: string;
 };
+export const validateEmail = (email: string) => {
+  const emailRegex = /^\S+@\S+\.\S+$/;
+  return {
+    message: emailRegex.test(email)
+      ? "Email accepted"
+      : "Invalid email address",
+    isValid: emailRegex.test(email),
+    errorColor: emailRegex.test(email) ? "green" : "red",
+  };
+};
+
+export const validatePassword = (password: string) => {
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
+  return {
+    message: passwordRegex.test(password)
+      ? "Password accepted"
+      : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
+    isValid: passwordRegex.test(password),
+    errorColor: passwordRegex.test(password) ? "green" : "red",
+  };
+};
 
 const Signup: React.FunctionComponent = () => {
-  const { showModal } = useAppEntry();
+  // const { showModal } = useAppEntry();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
   const [country, setCountry] = useState<object | null>();
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const [fieldStatus, setFieldStatus] = useState({
     email: { message: "", isValid: false },
@@ -52,12 +61,14 @@ const Signup: React.FunctionComponent = () => {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (res) => {
-      const geoApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${res.coords.latitude}&longitude=${res.coords.longitude}&localityLanguage=en`
-      await fetch(geoApi).then((res) => res.json()).then((data) => {
-        setCountry(data);
-      })
-    })
-  }, [])
+      const geoApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${res.coords.latitude}&longitude=${res.coords.longitude}&localityLanguage=en`;
+      await fetch(geoApi)
+        .then((res) => res.json())
+        .then((data) => {
+          setCountry(data);
+        });
+    });
+  }, []);
 
   const userData = {
     fullName: fullName,
@@ -65,75 +76,9 @@ const Signup: React.FunctionComponent = () => {
     password: password,
     countryInfo: country,
   };
-  // const [countries, setCountries] = useState<CountryData[]>([]);
-  // const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(
-  //   null
-  // );
-
-  // const fetchCountries = async () => {
-  //   try {
-  //     const flagResponse = await fetch(
-  //       "https://countriesnow.space/api/v0.1/countries/flag/images"
-  //     );
-  //     const flagData = await flagResponse.json();
-
-  //     const codeResponse = await fetch(
-  //       "https://countriesnow.space/api/v0.1/countries/codes"
-  //     );
-  //     const codeData = await codeResponse.json();
-
-  //     if (
-  //       flagData.error === false &&
-  //       Array.isArray(flagData.data) &&
-  //       codeData.error === false &&
-  //       Array.isArray(codeData.data)
-  //     ) {
-  //       const mergedData = flagData.data.map((flagCountry: { name: any }) => {
-  //         const codeCountry = codeData.data.find(
-  //           (c: { name: any }) => c.name === flagCountry.name
-  //         );
-  //         return {
-  //           ...flagCountry,
-  //           dial_code: codeCountry ? codeCountry.dial_code : "",
-  //           iso2: codeCountry ? codeCountry.code : "",
-  //         };
-  //       });
-  //       setCountries(mergedData);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching countries:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchCountries();
-  // }, []);
-
-  // const handleCountrySelect = (country: CountryData) => {
-  //   setSelectedCountry(country);
-  // };
 
   // FORM VALIDATION
-  const validateEmail = (email: string) => {
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    return {
-      message: emailRegex.test(email) ? "Email accepted" : "Invalid email address",
-      isValid: emailRegex.test(email),
-      errorColor: emailRegex.test(email) ? 'green' : "red"
-    };
-  };
-
-  const validatePassword = (password: string) => {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
-    return {
-      message: passwordRegex.test(password)
-        ? "Password accepted"
-        : "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character",
-      isValid: passwordRegex.test(password),
-      errorColor: passwordRegex.test(password) ? 'green' : "red"
-    };
-  };
+  //  Took Email and Password function up because of the export for login validation
 
   const validateFullName = (fullName: string) => {
     const nameRegex = /^[a-zA-Z\s]+$/;
@@ -142,7 +87,7 @@ const Signup: React.FunctionComponent = () => {
         ? "Name accepted"
         : "Invalid name, only letters and spaces are allowed",
       isValid: nameRegex.test(fullName),
-      errorColor: nameRegex.test(fullName) ? 'green' : "red"
+      errorColor: nameRegex.test(fullName) ? "green" : "red",
     };
   };
 
@@ -152,23 +97,36 @@ const Signup: React.FunctionComponent = () => {
     fullName: validateFullName(fullName),
   };
 
-  const allValid: boolean = newFieldStatus.email.isValid === true && newFieldStatus.fullName.isValid && newFieldStatus.password.isValid
+  const allValid: boolean =
+    newFieldStatus.email.isValid === true &&
+    newFieldStatus.fullName.isValid &&
+    newFieldStatus.password.isValid;
 
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
     if (allValid) {
-      await authFunctions.handleUserSignUp(userData).then(() => {
-        // navigate("/dashboard");
-      }).catch((err) => {
-        console.log(err.message)
-      })
+      await authFunctions
+        .handleUserSignUp(userData)
+        .then(() => {
+          // navigate("/dashboard");
+          setLoading(true);
+          setTimeout(() => {
+            navigate("/dashboard");
+            setLoading(false);
+          }, 2000);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
     } else {
-      return
+      setShowModal(true);
+      return;
     }
   };
 
   return (
     <div>
+      {loading && <Spinner />}
       <div>
         {/* BACK BUTTON */}
         <div className="form-project-container">
@@ -201,8 +159,8 @@ const Signup: React.FunctionComponent = () => {
             </div>
 
             <form onSubmit={registerUser} className="login-forms">
-              <h3>Sign up</h3>
-              <div style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+              <h3 className="sign-up-heading">Sign up</h3>
+              <div style={{ paddingTop: "0", paddingBottom: "0" }}>
                 <AppInput
                   // name="fullName"
                   type="text"
@@ -211,9 +169,7 @@ const Signup: React.FunctionComponent = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   error={newFieldStatus.fullName.isValid}
-                  helperText={
-                    newFieldStatus.fullName.message
-                  }
+                  helperText={newFieldStatus.fullName.message}
                   errorColor={newFieldStatus.fullName.errorColor}
                 />
               </div>
@@ -233,7 +189,7 @@ const Signup: React.FunctionComponent = () => {
                 style={{ position: "relative" }}
               >
                 <AppInput
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   variant="standard"
                   value={password}
@@ -248,7 +204,7 @@ const Signup: React.FunctionComponent = () => {
                   style={{
                     position: "absolute",
                     right: "16px",
-                    top: "50%",
+                    top: "40%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                   }}
@@ -263,37 +219,6 @@ const Signup: React.FunctionComponent = () => {
                   <span>{fieldStatus.password.message}</span>
                 )}
               </div>
-
-              {/* <div className="login-form-group">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Confirm Password"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="login-input"
-                />
-                {fieldStatus.confirmPassword.message && (
-                  <span>{fieldStatus.confirmPassword.message}</span>
-                )}
-              </div> */}
-              {/* country info */}
-              {/* <div className="login-form-group">
-                <select
-                  onChange={(e) =>
-                    handleCountrySelect(countries[e.target.selectedIndex])
-                  }
-                  className="login-input"
-                >
-                  <option value="">Select Country</option>
-                  {countries.map((country) => (
-                    <option key={country.iso2} value={country.name}>
-                      {country.name}
-                    </option>
-                  ))}
-                </select>
-                {selectedCountry && (
-                  <span>{`Selected Country: ${selectedCountry.name}`}</span>
-                )}
-              </div> */}
 
               <div className="divider">
                 <span>Or</span>
@@ -317,6 +242,15 @@ const Signup: React.FunctionComponent = () => {
                 </button>
               </div>
             </form>
+
+            <div>
+              {/* Using the external Modal component */}
+              <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+                <p className="validate-modal">
+                  Please fill in all fields before signing up.
+                </p>
+              </Modal>
+            </div>
           </div>
         </div>
       </div>

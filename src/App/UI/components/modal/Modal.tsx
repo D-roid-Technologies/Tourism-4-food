@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({
 
   if (!isOpen) return null;
 
-  const modalClassName = className || "#ff7846";
+  const modalClassName = className || "#f97316";
 
   return (
     <>
