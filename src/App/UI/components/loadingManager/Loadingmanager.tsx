@@ -19,8 +19,9 @@ import EnterCode from "../../Pages/verifyemail/enterCode/EnterCode";
 import Signup from "../../Pages/home/signup/Signup";
 import CreateCode from "../../Pages/createCode/CreateCode";
 // import UserDashboard from "../../Pages/userDashboard/UserDashboard";
-import Resources from "../../Pages/resources/Resources";
-import UserDashboard from "../../Pages/userdashboard/UserDashboard";
+import Resources from "../../Pages/Resources/Resources";
+import UserDashboard from "../../Pages/userDashboard/UserDashboard";
+// import UserDashboard from "../../Pages/userDashboard/UserDashboard";
 
 const LoadingManager: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);

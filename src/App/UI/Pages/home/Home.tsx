@@ -32,8 +32,18 @@ const Home: React.FunctionComponent = () => {
             sustainable futures.
           </p>
           <div className="home-hero-buttons">
-            <button className="home-hero-btn">Explore Projects</button>
-            <button className="home-hero-btn">Book now</button>
+            <button
+              onClick={() => navigate("/programs")}
+              className="home-hero-btn"
+            >
+              Explore Projects
+            </button>
+            <button
+              onClick={() => navigate("/bookings")}
+              className="home-hero-btn"
+            >
+              Book now
+            </button>
           </div>
         </div>
         <div className="home-hero-image">
@@ -75,7 +85,7 @@ const Home: React.FunctionComponent = () => {
               </span>
               {/* <a href="#volunteer">Volunteer</a> */}
               <span
-                onClick={() => navigate("")}
+                onClick={() => navigate("/volunteer")}
                 className="donate-home-details"
               >
                 Volunteer
@@ -116,7 +126,12 @@ const Home: React.FunctionComponent = () => {
             <h2>
               Enjoy Seamless booking services and travel wherever you want
             </h2>
-            <button className="booking-button">Book now</button>
+            <button
+              onClick={() => navigate("/login")}
+              className="booking-button"
+            >
+              Book now
+            </button>
           </div>
           <div className="booking-image">
             <img src={Assets.images.travelBag} alt="Travel bags" />

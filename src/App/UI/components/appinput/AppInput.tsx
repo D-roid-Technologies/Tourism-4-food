@@ -164,6 +164,7 @@ const AppInput: React.FC<InputProps> = ({
           onChange={handleInputChange}
           // onChange={onChange as React.ChangeEventHandler<HTMLInputElement>}
           className="input-field"
+          autoComplete="off"
           // disabled={disabled}
           {...(inputProps as React.InputHTMLAttributes<HTMLInputElement>)}
         />
