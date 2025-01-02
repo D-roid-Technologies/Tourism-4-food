@@ -244,3 +244,17 @@ p {
     display: block !important;
   }
 }
+
+@media (max-width: 500px) {
+  .about__achievements .skip {
+    width: 93%;
+  }
+  .button__group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .center__content span {
+    font-size: 2.5rem !important;
+  }
+}

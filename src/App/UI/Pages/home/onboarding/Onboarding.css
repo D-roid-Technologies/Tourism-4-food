@@ -143,3 +143,9 @@
 .slick-dots li.slick-active button:before {
   color: #ff914d;
 }
+
+@media (max-width: 500px) {
+  .slide__content {
+    max-width: 95%;
+  }
+}

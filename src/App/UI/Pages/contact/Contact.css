@@ -117,3 +117,9 @@
 .last__sec .btn__con {
   margin-bottom: 50px;
 }
+
+@media (max-width: 500px) {
+  .faq__section {
+    padding: 0.7rem;
+  }
+}

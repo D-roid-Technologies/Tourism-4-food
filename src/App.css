@@ -38,3 +38,21 @@
   max-width: 100%;
   height: auto;
 }
+
+@media (min-width: 1016px) {
+  .img__alt {
+    display: none !important;
+  }
+  .img__alt_alt {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1016px) {
+  .img__alt {
+    display: block !important;
+  }
+  .img__alt_alt {
+    display: none !important;
+  }
+}

@@ -59,6 +59,9 @@ const Campaigns: React.FC = () => {
             </div>
             {/* -----------  */}
             <div className="group campaigns__container__alt" id="justweetip">
+              <div className="block-12 block-lg-5 campaigns__image img__alt">
+                <img src="https://placehold.co/600x600/FFFFFF/png" />
+              </div>
               <div className="block-12 block-lg-7 campaigns__content">
                 <p>
                   <span>#justaWeeTip:</span> Join the campaign to encourage
@@ -72,7 +75,7 @@ const Campaigns: React.FC = () => {
                 </p>
                 <Button label="Join Campaign" style={{ marginTop: "30px" }} />
               </div>
-              <div className="block-12 block-lg-5 campaigns__image">
+              <div className="block-12 block-lg-5 campaigns__image img__alt_alt">
                 <img src="https://placehold.co/600x600/FFFFFF/png" />
               </div>
             </div>
@@ -98,6 +101,9 @@ const Campaigns: React.FC = () => {
             </div>
             {/* ------------  */}
             <div className="group campaigns__container__alt">
+              <div className="block-12 block-lg-5 campaigns__image img__alt">
+                <img src="https://placehold.co/600x600/FFFFFF/png" />
+              </div>
               <div className="block-12 block-lg-7 campaigns__content">
                 <p>
                   {" "}
@@ -112,7 +118,7 @@ const Campaigns: React.FC = () => {
                 </p>
                 <Button label="Join Campaign" style={{ marginTop: "30px" }} />
               </div>
-              <div className="block-12 block-lg-5 campaigns__image">
+              <div className="block-12 block-lg-5 campaigns__image img__alt_alt">
                 <img src="https://placehold.co/600x600/FFFFFF/png" />
               </div>
             </div>

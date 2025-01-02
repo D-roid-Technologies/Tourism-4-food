@@ -159,4 +159,7 @@
   .programs__banner__content span {
     font-size: 20px;
   }
+  .center__content {
+    width: 95%;
+  }
 }

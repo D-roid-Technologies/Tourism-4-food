@@ -211,3 +211,84 @@
   align-items: center;
   height: 50vh;
 }
+
+/* Responsive styles for signup page */
+
+/* For small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .login-left {
+    display: none;
+  }
+  .form-project-container {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .login-container {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 2rem;
+  }
+
+  .login-left img {
+    height: auto;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .login-right {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .login-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-forms {
+    gap: 1rem;
+  }
+
+  .social-login {
+    gap: 1rem;
+  }
+
+  .social-login button {
+    width: 80px;
+    height: 35px;
+  }
+
+  .login-btn {
+    width: 100%;
+  }
+}
+
+/* For extra small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .form-project-container {
+    padding: 10px;
+  }
+
+  .login-container {
+    padding: 0 10px;
+  }
+
+  .login-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .divider span {
+    padding: 0 0.5rem;
+  }
+
+  .social-login button {
+    width: 60px;
+    height: 30px;
+  }
+
+  .login-btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
