@@ -111,11 +111,8 @@ const GetInvolved: React.FC = () => {
         <br />
         <br />
         <br />
-        <section
-          className="wrapper get__involved__section__alt"
-          id="engagement"
-        >
-          <div className="cover">
+        <section className="wrapper get__involved__section__alt">
+          <div className="cover" id="engagement">
             <div className="get__involved__center__content">
               <span>CORPORATE ENGAGEMENT</span>
               <p>
