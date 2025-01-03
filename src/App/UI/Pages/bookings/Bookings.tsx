@@ -55,7 +55,7 @@ const Bookings: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="booking__card block-12 block-lg-6">
+            <div className="booking__card block-12 block-lg-6 mt-4 mt-lg-0">
               <img
                 src={Assets.images.bookingsCardTwo}
                 className="image-fluid"

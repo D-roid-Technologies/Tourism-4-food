@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 80px;
+  padding: 20px 80px;
   background-color: #ffffff;
 }
 .form-project-btn {
@@ -50,20 +50,7 @@
   cursor: pointer;
   transform: scale(1.1);
 }
-.create-color {
-  color: #ff7846;
-  cursor: pointer;
-}
 /* login section */
-.login-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* min-height: 50vh; */
-  padding: 0 80px;
-  gap: 8rem;
-  background-color: #ffffff;
-}
 
 /* .login-left {
   flex: 1;
@@ -126,25 +113,26 @@
   background-color: #f8fafc; */
 }
 
-.forgot-password {
+.forgot-password,
+.create-color {
   align-self: flex-end;
   color: #f97316;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .divider {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .divider::before,
 .divider::after {
   content: "";
   flex: 1;
-  border-bottom: 3px solid #948f8f;
+  border-bottom: 1px solid #948f8f;
 }
 
 .divider span {
@@ -199,4 +187,11 @@
   color: #f97316;
   text-decoration: none;
   font-weight: 600;
+}
+
+@media (max-width: 545px) {
+  .form-project-container {
+    align-items: start;
+    padding: 15px;
+  }
 }

@@ -133,16 +133,6 @@ const Signup: React.FunctionComponent = () => {
           <button onClick={() => navigate("/home")} className="form-btn-hero">
             <IoChevronBackOutline className="form-back-btn-icon" />
           </button>
-          <div>
-            <p>
-              <span style={{ color: "#666666" }}>
-                Already have an account? &nbsp;
-              </span>
-              <span className="create-color" onClick={() => navigate("/login")}>
-                Login
-              </span>
-            </p>
-          </div>
         </div>
         {/* login section */}
         <div className="login-container">
@@ -219,7 +209,19 @@ const Signup: React.FunctionComponent = () => {
                   <span>{fieldStatus.password.message}</span>
                 )}
               </div>
-
+              <div>
+                <p>
+                  <span style={{ color: "#666666" }}>
+                    Already have an account? &nbsp;
+                  </span>
+                  <span
+                    className="create-color"
+                    onClick={() => navigate("/login")}
+                  >
+                    Login
+                  </span>
+                </p>
+              </div>
               <div className="divider">
                 <span>Or</span>
               </div>

@@ -52,7 +52,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
-  width: 25%;
+  width: 50;
 }
 
 .create__pin__container button:disabled {
