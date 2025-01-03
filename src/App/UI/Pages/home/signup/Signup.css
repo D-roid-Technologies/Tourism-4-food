@@ -90,6 +90,7 @@
 .login-header {
   margin-bottom: 2rem;
   text-align: center;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .login-header h1 {

@@ -56,17 +56,7 @@ const Login: React.FunctionComponent = () => {
           <button onClick={() => navigate("/home")} className="form-btn-hero">
             <IoChevronBackOutline className="form-back-btn-icon" />
           </button>
-          <div>
-            <p>
-              Don’t have an account? &nbsp;
-              <span
-                className="create-color"
-                onClick={() => navigate("/onboarding")}
-              >
-                Create an account.
-              </span>
-            </p>
-          </div>
+          <div></div>
         </div>
         {/* login section */}
         <div className="login-container">
@@ -114,10 +104,23 @@ const Login: React.FunctionComponent = () => {
 
                   // className="login-input"
                 />
-
-                <a href="/forgot-password" className="forgot-password">
-                  Forgot password?
-                </a>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    margin: "10px 20px 0 0",
+                  }}
+                >
+                  <span
+                    className="create-color"
+                    onClick={() => navigate("/onboarding")}
+                  >
+                    Create an account.
+                  </span>
+                  <a href="/forgot-password" className="forgot-password">
+                    Forgot password?
+                  </a>
+                </div>
               </div>
 
               <div className="divider">
